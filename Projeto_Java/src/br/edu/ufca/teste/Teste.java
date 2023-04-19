@@ -6,7 +6,7 @@ public class Teste {
     String x = "teste";
     System.out.println(x);
     
-    int j = 3;
-    System.out.println(j);
+    int h = 3;
+    System.out.println(h);
   }
 }
