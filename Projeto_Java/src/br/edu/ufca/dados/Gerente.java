@@ -18,4 +18,30 @@ public class Gerente {
 	public void realizarShow() {
 		
 	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Banda getBanda() {
+		return banda;
+	}
+
+	public void setBanda(Banda banda) {
+		this.banda = banda;
+	}
+
+	public int getDinheiro() {
+		return dinheiro;
+	}
+
+	public void setDinheiro(int dinheiro) {
+		this.dinheiro = dinheiro;
+	}
+	
+	
 }

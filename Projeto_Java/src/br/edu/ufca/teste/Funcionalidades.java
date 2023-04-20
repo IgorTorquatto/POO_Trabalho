@@ -6,7 +6,7 @@ import br.edu.ufca.repositorio.*;
 
 public class Funcionalidades {
 	//Aqui cabe usar interface futuramente
-	public static Banda gerarBanda() {
+	/*public static Banda gerarBanda() {
 
 		Random random = new Random();
 		
@@ -18,5 +18,5 @@ public class Funcionalidades {
 		
 		Banda banda = new Banda(baixista ,baterista , guitarrista, tecladista, vocalista);
 		return banda;
-	}
+	}*/
 }
