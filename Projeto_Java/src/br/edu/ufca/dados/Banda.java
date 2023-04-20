@@ -63,17 +63,33 @@ public class Banda {
 	public void gerarBanda() {
 		Random random = new Random();
 		
-		vocalista = new Vocalista("Vocalista",random.nextInt(30),10);
-		baixista = new Baixista("Baixista",random.nextInt(30),10);
-		baterista = new Baterista("Baterista",random.nextInt(30),10);
-		tecladista = new Tecladista("Tecladista",random.nextInt(30),10);
-		guitarrista = new Guitarrista("Guitarrista",random.nextInt(30),10);
+		//Os músicos iniciais devem ficar na casa do 60
+		//Os músicos médios na casa dos 70
+		//Os músicos bons na casa dos 80
+		//Os músicos lendários na casa dos 90
+		
+		//Para gerar na range certa (max-min)+min
+		vocalista = new Vocalista("Vocalista",random.nextInt(69-60)+60,0);
+		baixista = new Baixista("Baixista",random.nextInt(69-60)+60,0);
+		baterista = new Baterista("Baterista",random.nextInt(69-60)+60,0);
+		tecladista = new Tecladista("Tecladista",random.nextInt(69-60)+60,0);
+		guitarrista = new Guitarrista("Guitarrista",random.nextInt(69-60)+60,0);
 		
 	}
 	
-	public String imprimirBanda() {
-		String nome_integrantes = "Vocalista: "+getVocalista().getNome()+"\nBaixista: "+getBaixista().getNome()+"\nBaterista: "+getBaterista().getNome()+"\nTecladista: "+getTecladista().getNome()+"\nGuitarrista: "+getGuitarrista().getNome();
-		return nome_integrantes;
+	public String[] imprimirBanda() {
+		String nome_integrantes = "Vocalista: "+getVocalista().getNome()+"\nBaixista: "+getBaixista().getNome()
+				+"\nBaterista: "+getBaterista().getNome()+"\nTecladista: "+getTecladista().getNome()
+				+"\nGuitarrista: "+getGuitarrista().getNome();
+		
+		String[] integrantes = {
+				"Vocalista: "+getVocalista().getNome()+" exp: "+getVocalista().getExp(),
+				"Baixista: "+getBaixista().getNome()+" exp: "+getBaixista().getExp(),
+				"Baterista: "+getBaterista().getNome()+" exp: "+getBaterista().getExp(),
+				"Tecladista: "+getTecladista().getNome()+ " exp: "+getTecladista().getExp(),
+				"Guitarrista: "+getGuitarrista().getNome()+" exp: "+getGuitarrista().getExp(),
+		};
+		return integrantes;
 	}
 	
 }
