@@ -1,11 +1,13 @@
 package br.edu.ufca.dados;
 
+import java.util.Random;
+
 public class Banda {
-	Baixista baixista;
-	Baterista baterista;
-	Guitarrista guitarrista;
-	Tecladista tecladista;
-	Vocalista vocalista;
+	private Baixista baixista;
+	private Baterista baterista;
+	private Guitarrista guitarrista;
+	private Tecladista tecladista;
+	private Vocalista vocalista;
 	
 	public Banda(Baixista baixista, Baterista baterista, Guitarrista guitarrista, Tecladista tecladista, Vocalista vocalista) {
 		this.baixista = baixista;
@@ -14,6 +16,8 @@ public class Banda {
 		this.tecladista = tecladista;
 		this.vocalista = vocalista;
 	}
+	
+	//Getters and setters:
 
 	public Baixista getBaixista() {
 		return baixista;
@@ -55,5 +59,21 @@ public class Banda {
 		this.vocalista = vocalista;
 	}
 	
+	//Métodos:
+	public void gerarBanda() {
+		Random random = new Random();
+		
+		vocalista = new Vocalista("Vocalista",random.nextInt(30),10);
+		baixista = new Baixista("Baixista",random.nextInt(30),10);
+		baterista = new Baterista("Baterista",random.nextInt(30),10);
+		tecladista = new Tecladista("Tecladista",random.nextInt(30),10);
+		guitarrista = new Guitarrista("Guitarrista",random.nextInt(30),10);
+		
+	}
+	
+	public String imprimirBanda() {
+		String nome_integrantes = "Vocalista: "+getVocalista().getNome()+"\nBaixista: "+getBaixista().getNome()+"\nBaterista: "+getBaterista().getNome()+"\nTecladista: "+getTecladista().getNome()+"\nGuitarrista: "+getGuitarrista().getNome();
+		return nome_integrantes;
+	}
 	
 }
