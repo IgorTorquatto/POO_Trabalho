@@ -10,7 +10,7 @@ public class Funcionalidades {
 
 		Random random = new Random();
 		
-		Vocalistagit config pull.rebase falsegit config pull.rebase false vocalista = new Vocalista("Vocalista",random.nextInt(30),10);
+		Vocalista vocalista = new Vocalista("Vocalista",random.nextInt(30),10);
 		Baixista baixista = new Baixista("Baixista",random.nextInt(30),10);
 		Baterista baterista = new Baterista("Baterista",random.nextInt(30),10);
 		Tecladista tecladista = new Tecladista("Tecladista",random.nextInt(30),10);
