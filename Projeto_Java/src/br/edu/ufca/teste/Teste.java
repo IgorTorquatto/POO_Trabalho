@@ -16,6 +16,7 @@ public class Teste {
 	  	   Scanner input = new Scanner(System.in);
 	  	   String nome;
 	  	   int escolha_usuario;
+	  	   int i;
 	  	   
 		   System.out.println("Digite seu nome: ");
 		   nome = input.nextLine();		  
@@ -41,8 +42,7 @@ public class Teste {
 		  
 		   while(sair == false ) {
 			   
-			   System.out.println("\n[1] - Realizar show \n[2] - Ver lista de integrantes\n[3] - Ir para a loja"
-			   		+ "\n[4] - Encerrar programa\n");
+			   System.out.println("\n1-Realizar show \n2-Ver lista de integrantes\n3-Ir para a loja\n4-Encerrar programa\n");
 			   escolha_usuario = input.nextInt();
 			   
 			   switch(escolha_usuario) {
@@ -53,7 +53,10 @@ public class Teste {
 				   
 			   case 2:
 				   System.out.println("Integrantes da banda: ");
-				   System.out.println(banda.imprimirBanda());
+				   String[] nome_integrantes = banda.imprimirBanda();
+				   for(i=0;i<5;i++) {
+					   System.out.println(nome_integrantes[i]);
+				   }
 				   break;
 				   
 			   case 3:
@@ -72,7 +75,6 @@ public class Teste {
 		   }
 		   System.out.println("Parabéns pelo seu progresso " +gerente.getNome()+" !");
 		   System.exit(0);
-		   input.close();
   }
   
 }
