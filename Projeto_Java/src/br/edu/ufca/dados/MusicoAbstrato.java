@@ -1,12 +1,12 @@
 package br.edu.ufca.dados;
 
-public abstract class ArtistaAbstrato {
+public abstract class MusicoAbstrato {
 	private String nome;
 	private int exp;
 	private int preco;
 	
 	
-	public ArtistaAbstrato(String nome,int exp,int preco) {
+	public MusicoAbstrato(String nome,int exp,int preco) {
 		this.preco = preco;
 		this.exp = exp;
 		this.nome = nome;

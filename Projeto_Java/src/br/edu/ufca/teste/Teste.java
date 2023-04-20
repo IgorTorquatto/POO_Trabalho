@@ -41,7 +41,8 @@ public class Teste {
 		  
 		   while(sair == false ) {
 			   
-			   System.out.println("\n1-Realizar show \n2-Ver lista de integrantes\n3-Ir para a loja\n4-Encerrar programa\n");
+			   System.out.println("\n[1] - Realizar show \n[2] - Ver lista de integrantes\n[3] - Ir para a loja"
+			   		+ "\n[4] - Encerrar programa\n");
 			   escolha_usuario = input.nextInt();
 			   
 			   switch(escolha_usuario) {
@@ -71,6 +72,7 @@ public class Teste {
 		   }
 		   System.out.println("Parabéns pelo seu progresso " +gerente.getNome()+" !");
 		   System.exit(0);
+		   input.close();
   }
   
 }
