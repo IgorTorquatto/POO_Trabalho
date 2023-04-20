@@ -3,15 +3,17 @@ package br.edu.ufca.dados;
 public abstract class ArtistaAbstrato {
 	private String nome;
 	private int exp;
-	private double gold;
+	private int preco;
 	
-	public ArtistaAbstrato(String nome,int exp,double gold) {
-		this.gold = 0.0;
+	
+	public ArtistaAbstrato(String nome,int exp,int preco) {
+		this.preco = preco;
 		this.exp = exp;
 		this.nome = nome;
 	
 	}
-
+	
+	//Getters and Setters:
 	public String getNome() {
 		return nome;
 	}
@@ -28,13 +30,15 @@ public abstract class ArtistaAbstrato {
 		this.exp = exp;
 	}
 
-	public double getGold() {
-		return gold;
+	public int getPreco() {
+		return preco;
 	}
 
-	public void setGold(double gold) {
-		this.gold = gold;
+	public void setPreco(int preco) {
+		this.preco = preco;
 	}
+	
+	//Métodos:
 	
 	
 }
