@@ -16,6 +16,7 @@ public class Teste {
 	  	   Scanner input = new Scanner(System.in);
 	  	   String nome;
 	  	   int escolha_usuario;
+	  	   int i;
 	  	   
 		   System.out.println("Digite seu nome: ");
 		   nome = input.nextLine();		  
@@ -52,7 +53,10 @@ public class Teste {
 				   
 			   case 2:
 				   System.out.println("Integrantes da banda: ");
-				   System.out.println(banda.imprimirBanda());
+				   String[] nome_integrantes = banda.imprimirBanda();
+				   for(i=0;i<5;i++) {
+					   System.out.println(nome_integrantes[i]);
+				   }
 				   break;
 				   
 			   case 3:
