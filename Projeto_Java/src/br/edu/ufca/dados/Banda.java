@@ -78,6 +78,19 @@ public class Banda {
 		
 	}
 	
+	public int calcularExp() {
+		int media = vocalista.getExp() + baixista.getExp() + baterista.getExp() + tecladista.getExp() + guitarrista.getExp();
+		return (media/5);
+	}
+	
+	public void atualizarExp(int notas) {
+		vocalista.setExp(notas);
+		baixista.setExp(notas);
+		baterista.setExp(notas);
+		tecladista.setExp(notas);
+		guitarrista.setExp(notas);
+	}
+	
 	public String[] imprimirBanda() {
 		String nome_integrantes = "Vocalista: "+getVocalista().getNome()+"\nBaixista: "+getBaixista().getNome()
 				+"\nBaterista: "+getBaterista().getNome()+"\nTecladista: "+getTecladista().getNome()
