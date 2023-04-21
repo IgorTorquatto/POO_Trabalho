@@ -10,15 +10,8 @@ public class Gerente {
 		this.banda = banda;
 		this.dinheiro = dinheiro;
 	}
-	
-	public void comprarArtista() {
 		
-	}
-	
-	public void realizarShow() {
-		
-	}
-
+	//Getters and Setters:
 	public String getNome() {
 		return nome;
 	}
@@ -41,6 +34,16 @@ public class Gerente {
 
 	public void setDinheiro(int dinheiro) {
 		this.dinheiro = dinheiro;
+	}
+	
+	
+	//Métodos:
+	public void comprarArtista() {
+		
+	}
+	
+	public void realizarShow() {
+		
 	}
 	
 	
