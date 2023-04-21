@@ -1,5 +1,4 @@
 package br.edu.ufca.teste;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -32,6 +31,7 @@ public class Teste {
 		   System.out.println("Cadastro incial: ");
 		   ArrayList<String> nome_musicos_inicial = new ArrayList<String>();
 		   String[] musicos = {"vocalista","tecladista","guitarrista","baterista","baixista"};
+		   input.nextLine();
 		   
 		   for(i=0;i<5;i++) {
 			   System.out.println("Insira o nome do "+musicos[i]+" da sua banda.");
