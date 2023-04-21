@@ -21,17 +21,27 @@ public class Teste {
 		   System.out.println("Digite seu nome: ");
 		   nome = input.nextLine();		  
 		   
-		   System.out.println("Olá " + nome + " vamos começar o seu sistema de gerenciamento da banda, escolha uma das opções a seguir: ");
-		   System.out.printf("1- Criar banda \n2-Encerrar programa \n");
+		   System.out.println("Olá," + nome + " vamos começar o seu sistema de gerenciamento da banda, escolha uma das opções a seguir: ");
+		   System.out.printf("1- Criar banda \n2- Encerrar programa \n");
 		   escolha_usuario = input.nextInt();
 		   
 		   if(escolha_usuario == 2) System.exit(0);
 		   
+		   //Cadastrar nome dos músicos baseado na escolha de nomes passado pelo usuário/gerente:
+		   
+		   System.out.println("Cadastro incial: ");
+		   ArrayList<String> nome_musicos_inicial = new ArrayList<String>();
+		   String[] musicos = {"vocalista","tecladista","guitarrista","baterista","baixista"};
+		   
+		   for(i=0;i<5;i++) {
+			   System.out.println("Insira o nome do "+musicos[i]+" da sua banda.");
+			   nome_musicos_inicial.add(input.nextLine());
+		   }
 		   //Criando banda e gerente:
 		   
 		   System.out.println("Criando sua banda inicial...");
 		   Banda banda = new Banda(null,null,null,null,null);
-		   banda.gerarBanda();
+		   banda.gerarBanda(nome_musicos_inicial);
 		   Gerente gerente = new Gerente(nome,banda,500);
 		   
 		   //Operações:
@@ -61,6 +71,15 @@ public class Teste {
 				   
 			   case 3:
 				   System.out.println("Loja: ");
+				   boolean sair_loja = false;
+				   int escolha;
+				   while(sair_loja == false) {
+					   System.out.println("1- Verificar saldo \n2- Sair da loja\n");
+					   escolha = input.nextInt();
+					   if(escolha==1) Loja.imprimirSaldo(gerente);
+					   if(escolha==2) sair_loja= true;
+					   
+				   }
 				   break;
 				   
 			   case 4:

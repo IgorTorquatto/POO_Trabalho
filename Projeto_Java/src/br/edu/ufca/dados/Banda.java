@@ -1,5 +1,6 @@
 package br.edu.ufca.dados;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Banda {
@@ -60,7 +61,7 @@ public class Banda {
 	}
 	
 	//Métodos:
-	public void gerarBanda() {
+	public void gerarBanda(ArrayList<String> nomes) {
 		Random random = new Random();
 		
 		//Os músicos iniciais devem ficar na casa do 60
@@ -69,11 +70,11 @@ public class Banda {
 		//Os músicos lendários na casa dos 90
 		
 		//Para gerar na range certa (max-min)+min
-		vocalista = new Vocalista("Vocalista",random.nextInt(69-60)+60,0);
-		baixista = new Baixista("Baixista",random.nextInt(69-60)+60,0);
-		baterista = new Baterista("Baterista",random.nextInt(69-60)+60,0);
-		tecladista = new Tecladista("Tecladista",random.nextInt(69-60)+60,0);
-		guitarrista = new Guitarrista("Guitarrista",random.nextInt(69-60)+60,0);
+		vocalista = new Vocalista(nomes.get(0),random.nextInt(69-60)+60,0);
+		baixista = new Baixista(nomes.get(1),random.nextInt(69-60)+60,0);
+		baterista = new Baterista(nomes.get(2),random.nextInt(69-60)+60,0);
+		tecladista = new Tecladista(nomes.get(3),random.nextInt(69-60)+60,0);
+		guitarrista = new Guitarrista(nomes.get(4),random.nextInt(69-60)+60,0);
 		
 	}
 	
