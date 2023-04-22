@@ -78,17 +78,27 @@ public class Banda {
 		
 	}
 	
+	public int calcularExp() {
+		int media = vocalista.getExp() + baixista.getExp() + baterista.getExp() + tecladista.getExp() + guitarrista.getExp();
+		return (media/5);
+	}
+	
+	public void atualizarExp(int notas) {
+		vocalista.setExp(notas);
+		baixista.setExp(notas);
+		baterista.setExp(notas);
+		tecladista.setExp(notas);
+		guitarrista.setExp(notas);
+	}
+	
 	public String[] imprimirBanda() {
-		String nome_integrantes = "Vocalista: "+getVocalista().getNome()+"\nBaixista: "+getBaixista().getNome()
-				+"\nBaterista: "+getBaterista().getNome()+"\nTecladista: "+getTecladista().getNome()
-				+"\nGuitarrista: "+getGuitarrista().getNome();
-		
+	
 		String[] integrantes = {
-				"Vocalista: "+getVocalista().getNome()+" exp: "+getVocalista().getExp(),
-				"Baixista: "+getBaixista().getNome()+" exp: "+getBaixista().getExp(),
-				"Baterista: "+getBaterista().getNome()+" exp: "+getBaterista().getExp(),
-				"Tecladista: "+getTecladista().getNome()+ " exp: "+getTecladista().getExp(),
-				"Guitarrista: "+getGuitarrista().getNome()+" exp: "+getGuitarrista().getExp(),
+				"Vocalista: "+getVocalista().getNome()+" exp("+getVocalista().getExp()+")",
+				"Baixista: "+getBaixista().getNome()+" exp("+getBaixista().getExp()+")",
+				"Baterista: "+getBaterista().getNome()+" exp("+getBaterista().getExp()+")",
+				"Tecladista: "+getTecladista().getNome()+ " exp("+getTecladista().getExp()+")",
+				"Guitarrista: "+getGuitarrista().getNome()+" exp("+getGuitarrista().getExp()+")",
 		};
 		return integrantes;
 	}
