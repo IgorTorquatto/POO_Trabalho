@@ -92,16 +92,13 @@ public class Banda {
 	}
 	
 	public String[] imprimirBanda() {
-		String nome_integrantes = "Vocalista: "+getVocalista().getNome()+"\nBaixista: "+getBaixista().getNome()
-				+"\nBaterista: "+getBaterista().getNome()+"\nTecladista: "+getTecladista().getNome()
-				+"\nGuitarrista: "+getGuitarrista().getNome();
-		
+	
 		String[] integrantes = {
-				"Vocalista: "+getVocalista().getNome()+" exp: "+getVocalista().getExp(),
-				"Baixista: "+getBaixista().getNome()+" exp: "+getBaixista().getExp(),
-				"Baterista: "+getBaterista().getNome()+" exp: "+getBaterista().getExp(),
-				"Tecladista: "+getTecladista().getNome()+ " exp: "+getTecladista().getExp(),
-				"Guitarrista: "+getGuitarrista().getNome()+" exp: "+getGuitarrista().getExp(),
+				"Vocalista: "+getVocalista().getNome()+" exp("+getVocalista().getExp()+")",
+				"Baixista: "+getBaixista().getNome()+" exp("+getBaixista().getExp()+")",
+				"Baterista: "+getBaterista().getNome()+" exp("+getBaterista().getExp()+")",
+				"Tecladista: "+getTecladista().getNome()+ " exp("+getTecladista().getExp()+")",
+				"Guitarrista: "+getGuitarrista().getNome()+" exp("+getGuitarrista().getExp()+")",
 		};
 		return integrantes;
 	}

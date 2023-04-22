@@ -74,10 +74,38 @@ public class Teste {
 				   boolean sair_loja = false;
 				   int escolha;
 				   while(sair_loja == false) {
-					   System.out.println("1- Verificar saldo \n2- Sair da loja\n");
+					   System.out.println("1- Verificar saldo\n2-Comprar novo músico\n3- Sair da loja\n");
 					   escolha = input.nextInt();
 					   if(escolha==1) Loja.imprimirSaldo(gerente);
-					   if(escolha==2) sair_loja= true;
+					   if(escolha==2) {
+						   
+						   System.out.println("Qual integrante você deseja comprar? ");
+						   System.out.println("1-Vocalista\n2-Tecladista\n3-guitarrista\n4-baterista\n5-baixista\n");
+						   int escolh = input.nextInt();
+						   
+						   switch(escolh) {
+						   
+						   case 1:
+							   Loja.comprarVocalista(gerente,gerente.getDinheiro());
+							   break;
+						   case 2:
+							   Loja.comprarVocalista(gerente,gerente.getDinheiro());
+							   break;
+						   case 3:
+							   Loja.comprarVocalista(gerente,gerente.getDinheiro());
+							   break;
+						   case 4:
+							   Loja.comprarVocalista(gerente,gerente.getDinheiro());
+							   break;
+						   case 5:
+							   Loja.comprarVocalista(gerente,gerente.getDinheiro());
+							   break;
+							
+							default:
+								System.out.println("Opção inválida! ");
+						   }
+					   }
+					   if(escolha==3) sair_loja= true;
 					   
 				   }
 				   break;
