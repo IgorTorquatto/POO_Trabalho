@@ -42,7 +42,7 @@ public class Gerente {
 		
 	}
 	
-	public void realizarShow() {
+	public void realizarShow(Banda banda, double ) {
 		
 	}
 	
