@@ -1,5 +1,6 @@
 package br.edu.ufca.dados;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Random;
 
