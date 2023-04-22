@@ -2,11 +2,11 @@ package br.edu.ufca.dados;
 
 public abstract class MusicoAbstrato {
 	private String nome;
-	private int exp;
+	private double exp;
 	private int preco;
 	
 	
-	public MusicoAbstrato(String nome,int exp,int preco) {
+	public MusicoAbstrato(String nome,double exp,int preco) {
 		this.preco = preco;
 		this.exp = exp;
 		this.nome = nome;
@@ -22,11 +22,11 @@ public abstract class MusicoAbstrato {
 		this.nome = nome;
 	}
 
-	public int getExp() {
+	public double getExp() {
 		return exp;
 	}
 
-	public void setExp(int exp) {
+	public void setExp(double exp) {
 		this.exp = exp;
 	}
 

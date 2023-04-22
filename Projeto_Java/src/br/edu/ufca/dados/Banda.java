@@ -78,17 +78,26 @@ public class Banda {
 		
 	}
 	
-	public int calcularExp() {
-		int media = vocalista.getExp() + baixista.getExp() + baterista.getExp() + tecladista.getExp() + guitarrista.getExp();
+	public double calcularExp() {
+		double media = vocalista.getExp() + baixista.getExp() + baterista.getExp() + tecladista.getExp() + guitarrista.getExp();
 		return (media/5);
 	}
 	
-	public void atualizarExp(int notas) {
-		vocalista.setExp(notas);
-		baixista.setExp(notas);
-		baterista.setExp(notas);
-		tecladista.setExp(notas);
-		guitarrista.setExp(notas);
+	public void atualizarExp(double exp, double expShow, MusicoAbstrato musico) {
+		exp = musico.getExp();
+		exp += expShow;
+		Math.ceil(exp);
+		musico.setExp(exp);
+	}
+	
+	
+	public void atualizarExp(double exp) {
+		double aux = 0;
+		atualizarExp(aux, exp, vocalista);
+		atualizarExp(aux, exp, baixista);
+		atualizarExp(aux, exp, baterista);
+		atualizarExp(aux, exp, tecladista);
+		atualizarExp(aux, exp, guitarrista);
 	}
 	
 	public String[] imprimirBanda() {
