@@ -58,7 +58,9 @@ public class Teste {
 			   switch(escolha_usuario) {
 			   
 			   case 1:
+				   Show show = new Show();
 				   System.out.println("Relizando show");
+				   show.realizarShow(banda);
 				   break;
 				   
 			   case 2:
