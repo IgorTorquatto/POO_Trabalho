@@ -35,7 +35,30 @@ public class RepositorioMusicos {
 			System.out.println(vocalistas.get(i).getNome()+" "+vocalistas.get(i).getPreco()+" R$");
 		}
 	}
-
+	
+	public void imprimirTecladistas() {
+		for(int i = 0; i < 3 ; i++) {
+			System.out.println(tecladistas.get(i).getNome()+" "+tecladistas.get(i).getPreco()+" R$");
+		}
+	}
+	
+	public void imprimirGuitarristas() {
+		for(int i = 0; i < 3 ; i++) {
+			System.out.println(guitarristas.get(i).getNome()+" "+guitarristas.get(i).getPreco()+" R$");
+		}
+	}
+	
+	public void imprimirBaixistas() {
+		for(int i = 0; i < 3 ; i++) {
+			System.out.println(baixistas.get(i).getNome()+" "+baixistas.get(i).getPreco()+" R$");
+		}
+	}
+	
+	public void imprimirBaterstas() {
+		for(int i = 0; i < 3 ; i++) {
+			System.out.println(bateristas.get(i).getNome()+" "+bateristas.get(i).getPreco()+" R$");
+		}
+	}
 
 	public ArrayList<Tecladista> getTecladistas() {
 		return tecladistas;

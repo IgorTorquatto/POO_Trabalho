@@ -42,7 +42,7 @@ public class Teste {
 		   System.out.println("Criando sua banda inicial...");
 		   Banda banda = new Banda(null,null,null,null,null);
 		   banda.gerarBanda(nome_musicos_inicial);
-		   Gerente gerente = new Gerente(nome,banda,5000000);
+		   Gerente gerente = new Gerente(nome,banda,300);
 		   
 		   //Operações:
 		   
@@ -82,7 +82,7 @@ public class Teste {
 					   if(escolha==2) {
 						   
 						   System.out.println("Qual integrante você deseja comprar? ");
-						   System.out.println("1-Vocalista\n2-Tecladista\n3-guitarrista\n4-baterista\n5-baixista\n");
+						   System.out.println("1-Vocalista\n2-Tecladista\n3-Guitarrista\n4-Baterista\n5-Baixista\n");
 						   int escolh = input.nextInt();
 						   
 						   switch(escolh) {
@@ -91,7 +91,7 @@ public class Teste {
 							   Loja.comprarVocalista(gerente);
 							   break;
 						   case 2:
-							   Loja.comprarVocalista(gerente);
+							   Loja.comprarTecladista(gerente);
 							   break;
 						   case 3:
 							   Loja.comprarVocalista(gerente);
