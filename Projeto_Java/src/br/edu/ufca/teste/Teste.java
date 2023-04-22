@@ -42,7 +42,7 @@ public class Teste {
 		   System.out.println("Criando sua banda inicial...");
 		   Banda banda = new Banda(null,null,null,null,null);
 		   banda.gerarBanda(nome_musicos_inicial);
-		   Gerente gerente = new Gerente(nome,banda,500);
+		   Gerente gerente = new Gerente(nome,banda,5000000);
 		   
 		   //Operações:
 		   
@@ -58,7 +58,9 @@ public class Teste {
 			   switch(escolha_usuario) {
 			   
 			   case 1:
+				   Show show = new Show();
 				   System.out.println("Relizando show");
+				   show.realizarShow(banda);
 				   break;
 				   
 			   case 2:
@@ -86,19 +88,19 @@ public class Teste {
 						   switch(escolh) {
 						   
 						   case 1:
-							   Loja.comprarVocalista(gerente,gerente.getDinheiro());
+							   Loja.comprarVocalista(gerente);
 							   break;
 						   case 2:
-							   Loja.comprarVocalista(gerente,gerente.getDinheiro());
+							   Loja.comprarVocalista(gerente);
 							   break;
 						   case 3:
-							   Loja.comprarVocalista(gerente,gerente.getDinheiro());
+							   Loja.comprarVocalista(gerente);
 							   break;
 						   case 4:
-							   Loja.comprarVocalista(gerente,gerente.getDinheiro());
+							   Loja.comprarVocalista(gerente);
 							   break;
 						   case 5:
-							   Loja.comprarVocalista(gerente,gerente.getDinheiro());
+							   Loja.comprarVocalista(gerente);
 							   break;
 							
 							default:
