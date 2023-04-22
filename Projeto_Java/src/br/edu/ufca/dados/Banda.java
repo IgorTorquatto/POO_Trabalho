@@ -1,5 +1,6 @@
 package br.edu.ufca.dados;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -86,7 +87,7 @@ public class Banda {
 	public void atualizarExp(double exp, double expShow, MusicoAbstrato musico) {
 		exp = musico.getExp();
 		exp += expShow;
-//		Math.ceil(exp);
+		Math.ceil(exp);
 		musico.setExp(exp);
 	}
 	

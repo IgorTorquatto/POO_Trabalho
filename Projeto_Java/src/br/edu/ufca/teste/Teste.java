@@ -60,7 +60,7 @@ public class Teste {
 			   case 1:
 				   Show show = new Show();
 				   System.out.println("Relizando show");
-				   show.realizarShow(banda);
+				   show.realizarShow(banda, gerente);
 				   break;
 				   
 			   case 2:
