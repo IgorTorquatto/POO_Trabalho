@@ -94,13 +94,13 @@ public class Teste {
 							   Loja.comprarTecladista(gerente);
 							   break;
 						   case 3:
-							   Loja.comprarVocalista(gerente);
+							  Loja.comprarGuitarrista(gerente);
 							   break;
 						   case 4:
 							   Loja.comprarVocalista(gerente);
 							   break;
 						   case 5:
-							   Loja.comprarVocalista(gerente);
+							   Loja.comprarBaixista(gerente);
 							   break;
 							
 							default:
