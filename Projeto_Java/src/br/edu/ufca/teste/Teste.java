@@ -97,7 +97,7 @@ public class Teste {
 							  Loja.comprarGuitarrista(gerente);
 							   break;
 						   case 4:
-							   Loja.comprarVocalista(gerente);
+							   Loja.comprarBaterista(gerente);
 							   break;
 						   case 5:
 							   Loja.comprarBaixista(gerente);
