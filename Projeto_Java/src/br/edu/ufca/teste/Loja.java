@@ -441,7 +441,437 @@ public class Loja {
 		else {
 			System.out.println("Opção inválida!");
 		}
+				
+	}
+	
+public static void comprarGuitarrista(Gerente gerente) {
 		
+		RepositorioMusicos guitarristas_lendarios = new RepositorioMusicos();
+		guitarristas_lendarios.setGuitarristas(Funcionalidades.GuitarristasLendarios());
+		RepositorioMusicos guitarristas_bons = new RepositorioMusicos();
+		guitarristas_bons.setGuitarristas(Funcionalidades.GuitarristasBons());
+		RepositorioMusicos guitarristas_medios = new RepositorioMusicos();
+		guitarristas_medios.setGuitarristas(Funcionalidades.GuitarristasMedios());
+		
+		System.out.println("Selecione a categoria de guitarristas: ");
+		System.out.println("1-Lendários\n2-Bons\n3-Médios");
+		Scanner input = new Scanner(System.in);
+		int categoria = input.nextInt();
+		
+		if(categoria == 1) {
+			//Vocalistas Lendários:
+			
+			guitarristas_lendarios.imprimirGuitarristas();
+			System.out.println("Qual guitarrista você quer comprar? [1/2/3]");
+			int posicao = input.nextInt();
+			
+			if(posicao == 1) {
+				
+				if(gerente.getDinheiro() > guitarristas_lendarios.getGuitarristas().get(0).getPreco()) {
+					
+					int dinheiro_gerente = gerente.getDinheiro();
+					int preco_guitarrista = guitarristas_lendarios.getGuitarristas().get(0).getPreco();
+					int novo_saldo = dinheiro_gerente - preco_guitarrista;
+					
+					gerente.setDinheiro(novo_saldo);
+					gerente.getBanda().setGuitarrista(guitarristas_lendarios.getGuitarristas().get(0));
+					System.out.println("Parabéns,você comprou "+guitarristas_lendarios.getGuitarristas().get(0).getNome());
+					
+				}
+				else {
+					System.out.println("Saldo insuficiente!");
+				}
+				
+			}
+			
+			if(posicao == 2) {
+				
+				if(gerente.getDinheiro() > guitarristas_lendarios.getGuitarristas().get(1).getPreco()) {
+					
+					int dinheiro_gerente = gerente.getDinheiro();
+					int preco_Guitarristas = guitarristas_lendarios.getGuitarristas().get(1).getPreco();
+					int novo_saldo = dinheiro_gerente - preco_Guitarristas;
+					
+					gerente.setDinheiro(novo_saldo);
+					gerente.getBanda().setGuitarrista(guitarristas_lendarios.getGuitarristas().get(1));
+					System.out.println("Parabéns,você comprou "+guitarristas_lendarios.getGuitarristas().get(1).getNome());
+					
+				}
+				else {
+					System.out.println("Saldo insuficiente!");
+				}
+			}
+			
+			if(posicao == 3) {
+				
+				if(gerente.getDinheiro() > guitarristas_lendarios.getGuitarristas().get(2).getPreco()) {
+					
+					int dinheiro_gerente = gerente.getDinheiro();
+					int preco_guitarrista = guitarristas_lendarios.getGuitarristas().get(2).getPreco();
+					int novo_saldo = dinheiro_gerente - preco_guitarrista;
+					
+					gerente.setDinheiro(novo_saldo);
+					gerente.getBanda().setGuitarrista(guitarristas_lendarios.getGuitarristas().get(2));
+					System.out.println("Parabéns,você comprou "+guitarristas_lendarios.getGuitarristas().get(2).getNome());
+					
+				}
+				else {
+					System.out.println("Saldo insuficiente!");
+				}
+			}
+		}
+		
+		
+		
+		else if(categoria == 2) {
+			//Vocalistas bons
+			
+			guitarristas_bons.imprimirGuitarristas();
+			System.out.println("Qual guitarrista você quer comprar? [1/2/3]");
+			int posicao = input.nextInt();
+			
+			if(posicao == 1) {
+				
+				if(gerente.getDinheiro() > guitarristas_bons.getGuitarristas().get(0).getPreco()) {
+					
+					int dinheiro_gerente = gerente.getDinheiro();
+					int preco_guitarrista = guitarristas_bons.getGuitarristas().get(0).getPreco();
+					int novo_saldo = dinheiro_gerente - preco_guitarrista;
+					
+					gerente.setDinheiro(novo_saldo);
+					gerente.getBanda().setGuitarrista(guitarristas_bons.getGuitarristas().get(0));
+					System.out.println("Parabéns,você comprou "+ guitarristas_bons.getGuitarristas().get(0).getNome());
+					
+				}
+				else {
+					System.out.println("Saldo insuficiente!");
+				}
+				
+			}
+			
+			if(posicao == 2) {
+				
+				if(gerente.getDinheiro() > guitarristas_bons.getGuitarristas().get(1).getPreco()) {
+					
+					int dinheiro_gerente = gerente.getDinheiro();
+					int preco_guitarrista = guitarristas_bons.getGuitarristas().get(1).getPreco();
+					int novo_saldo = dinheiro_gerente - preco_guitarrista;
+					
+					gerente.setDinheiro(novo_saldo);
+					gerente.getBanda().setGuitarrista(guitarristas_bons.getGuitarristas().get(1));
+					System.out.println("Parabéns,você comprou "+guitarristas_bons.getGuitarristas().get(1).getNome());
+					
+				}
+				else {
+					System.out.println("Saldo insuficiente!");
+				}
+			}
+			
+			if(posicao == 3) {
+				
+				if(gerente.getDinheiro() > guitarristas_bons.getGuitarristas().get(2).getPreco()) {
+					
+					int dinheiro_gerente = gerente.getDinheiro();
+					int preco_guitarrista = guitarristas_bons.getGuitarristas().get(2).getPreco();
+					int novo_saldo = dinheiro_gerente - preco_guitarrista;
+					
+					gerente.setDinheiro(novo_saldo);
+					gerente.getBanda().setGuitarrista(guitarristas_bons.getGuitarristas().get(2));
+					System.out.println("Parabéns,você comprou "+guitarristas_bons.getGuitarristas().get(2).getNome());
+					
+				}
+				else {
+					System.out.println("Saldo insuficiente!");
+				}
+			}
+			
+		}
+		
+		
+		else if(categoria == 3) {
+			//Vocalistas médios
+		
+			guitarristas_medios.imprimirGuitarristas();
+			System.out.println("Qual guitarrista você quer comprar? [1/2/3]");
+			int posicao = input.nextInt();
+			
+			if(posicao == 1) {
+				
+				if(gerente.getDinheiro() > guitarristas_medios.getGuitarristas().get(0).getPreco()) {
+					
+					int dinheiro_gerente = gerente.getDinheiro();
+					int preco_guitarrista = guitarristas_medios.getGuitarristas().get(0).getPreco();
+					int novo_saldo = dinheiro_gerente - preco_guitarrista;
+					
+					gerente.setDinheiro(novo_saldo);
+					gerente.getBanda().setGuitarrista(guitarristas_medios.getGuitarristas().get(0));
+					System.out.println("Parabéns,você comprou "+guitarristas_medios.getGuitarristas().get(0).getNome());
+					
+				}
+				else {
+					System.out.println("Saldo insuficiente!");
+				}
+				
+			}
+			
+			if(posicao == 2) {
+				
+				if(gerente.getDinheiro() > guitarristas_medios.getGuitarristas().get(1).getPreco()) {
+					
+					int dinheiro_gerente = gerente.getDinheiro();
+					int preco_guitarrista = guitarristas_medios.getGuitarristas().get(1).getPreco();
+					int novo_saldo = dinheiro_gerente - preco_guitarrista;
+					
+					gerente.setDinheiro(novo_saldo);
+					gerente.getBanda().setGuitarrista(guitarristas_medios.getGuitarristas().get(1));
+					System.out.println("Parabéns,você comprou "+guitarristas_medios.getGuitarristas().get(1).getNome());
+					
+				}
+				else {
+					System.out.println("Saldo insuficiente!");
+				}
+			}
+			
+			if(posicao == 3) {
+				
+				if(gerente.getDinheiro() > guitarristas_medios.getGuitarristas().get(2).getPreco()) {
+					
+					int dinheiro_gerente = gerente.getDinheiro();
+					int preco_guitarrista = guitarristas_medios.getGuitarristas().get(2).getPreco();
+					int novo_saldo = dinheiro_gerente - preco_guitarrista;
+					
+					gerente.setDinheiro(novo_saldo);
+					gerente.getBanda().setGuitarrista(guitarristas_medios.getGuitarristas().get(2));
+					System.out.println("Parabéns,você comprou "+guitarristas_medios.getGuitarristas().get(2).getNome());
+					
+				}
+				else {
+					System.out.println("Saldo insuficiente!");
+				}
+			}
+			
+		}
+		
+		else {
+			System.out.println("Opção inválida!");
+		}
 		
 	}
+	
+public static void comprarBaixista(Gerente gerente) {
+	
+	RepositorioMusicos baixistas_lendarios = new RepositorioMusicos();
+	baixistas_lendarios.setBaixistas(Funcionalidades.BaixistasLendarios());
+	RepositorioMusicos baixistas_bons = new RepositorioMusicos();
+	baixistas_bons.setBaixistas(Funcionalidades.BaixistasBons());
+	RepositorioMusicos baixistas_medios = new RepositorioMusicos();
+	baixistas_medios.setBaixistas(Funcionalidades.BaixistasMedios());
+	
+	System.out.println("Selecione a categoria de baixistas: ");
+	System.out.println("1-Lendários\n2-Bons\n3-Médios");
+	Scanner input = new Scanner(System.in);
+	int categoria = input.nextInt();
+	
+	if(categoria == 1) {
+		//Vocalistas Lendários:
+		
+		baixistas_lendarios.imprimirBaixistas();
+		System.out.println("Qual baixista você quer comprar? [1/2/3]");
+		int posicao = input.nextInt();
+		
+		if(posicao == 1) {
+			
+			if(gerente.getDinheiro() > baixistas_lendarios.getBaixistas().get(0).getPreco()) {
+				
+				int dinheiro_gerente = gerente.getDinheiro();
+				int preco_Baixista = baixistas_lendarios.getBaixistas().get(0).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_Baixista;
+				
+				gerente.setDinheiro(novo_saldo);
+				gerente.getBanda().setBaixista(baixistas_lendarios.getBaixistas().get(0));
+				System.out.println("Parabéns,você comprou "+baixistas_lendarios.getBaixistas().get(0).getNome());
+				
+			}
+			else {
+				System.out.println("Saldo insuficiente!");
+			}
+			
+		}
+		
+		if(posicao == 2) {
+			
+			if(gerente.getDinheiro() > baixistas_lendarios.getBaixistas().get(1).getPreco()) {
+				
+				int dinheiro_gerente = gerente.getDinheiro();
+				int preco_Baixistas = baixistas_lendarios.getBaixistas().get(1).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_Baixistas;
+				
+				gerente.setDinheiro(novo_saldo);
+				gerente.getBanda().setBaixista(baixistas_lendarios.getBaixistas().get(1));
+				System.out.println("Parabéns,você comprou "+baixistas_lendarios.getBaixistas().get(1).getNome());
+				
+			}
+			else {
+				System.out.println("Saldo insuficiente!");
+			}
+		}
+		
+		if(posicao == 3) {
+			
+			if(gerente.getDinheiro() > baixistas_lendarios.getBaixistas().get(2).getPreco()) {
+				
+				int dinheiro_gerente = gerente.getDinheiro();
+				int preco_baixista = baixistas_lendarios.getBaixistas().get(2).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_baixista;
+				
+				gerente.setDinheiro(novo_saldo);
+				gerente.getBanda().setBaixista(baixistas_lendarios.getBaixistas().get(2));
+				System.out.println("Parabéns,você comprou "+baixistas_lendarios.getBaixistas().get(2).getNome());
+				
+			}
+			else {
+				System.out.println("Saldo insuficiente!");
+			}
+		}
+	}
+	
+	
+	
+	else if(categoria == 2) {
+		//Vocalistas bons
+		
+		baixistas_bons.imprimirBaixistas();
+		System.out.println("Qual baixista você quer comprar? [1/2/3]");
+		int posicao = input.nextInt();
+		
+		if(posicao == 1) {
+			
+			if(gerente.getDinheiro() > baixistas_bons.getBaixistas().get(0).getPreco()) {
+				
+				int dinheiro_gerente = gerente.getDinheiro();
+				int preco_baixista = baixistas_bons.getBaixistas().get(0).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_baixista;
+				
+				gerente.setDinheiro(novo_saldo);
+				gerente.getBanda().setBaixista(baixistas_bons.getBaixistas().get(0));
+				System.out.println("Parabéns,você comprou "+ baixistas_bons.getBaixistas().get(0).getNome());
+				
+			}
+			else {
+				System.out.println("Saldo insuficiente!");
+			}
+			
+		}
+		
+		if(posicao == 2) {
+			
+			if(gerente.getDinheiro() > baixistas_bons.getBaixistas().get(1).getPreco()) {
+				
+				int dinheiro_gerente = gerente.getDinheiro();
+				int preco_baixista = baixistas_bons.getBaixistas().get(1).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_baixista;
+				
+				gerente.setDinheiro(novo_saldo);
+				gerente.getBanda().setBaixista(baixistas_bons.getBaixistas().get(1));
+				System.out.println("Parabéns,você comprou "+baixistas_bons.getBaixistas().get(1).getNome());
+				
+			}
+			else {
+				System.out.println("Saldo insuficiente!");
+			}
+		}
+		
+		if(posicao == 3) {
+			
+			if(gerente.getDinheiro() > baixistas_bons.getBaixistas().get(2).getPreco()) {
+				
+				int dinheiro_gerente = gerente.getDinheiro();
+				int preco_baixista = baixistas_bons.getBaixistas().get(2).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_baixista;
+				
+				gerente.setDinheiro(novo_saldo);
+				gerente.getBanda().setBaixista(baixistas_bons.getBaixistas().get(2));
+				System.out.println("Parabéns,você comprou "+baixistas_bons.getBaixistas().get(2).getNome());
+				
+			}
+			else {
+				System.out.println("Saldo insuficiente!");
+			}
+		}
+		
+	}
+	
+	
+	else if(categoria == 3) {
+		//Vocalistas médios
+	
+		baixistas_medios.imprimirBaixistas();
+		System.out.println("Qual baixista você quer comprar? [1/2/3]");
+		int posicao = input.nextInt();
+		
+		if(posicao == 1) {
+			
+			if(gerente.getDinheiro() > baixistas_medios.getBaixistas().get(0).getPreco()) {
+				
+				int dinheiro_gerente = gerente.getDinheiro();
+				int preco_baixista = baixistas_medios.getBaixistas().get(0).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_baixista;
+				
+				gerente.setDinheiro(novo_saldo);
+				gerente.getBanda().setBaixista(baixistas_medios.getBaixistas().get(0));
+				System.out.println("Parabéns,você comprou "+baixistas_medios.getBaixistas().get(0).getNome());
+				
+			}
+			else {
+				System.out.println("Saldo insuficiente!");
+			}
+			
+		}
+		
+		if(posicao == 2) {
+			
+			if(gerente.getDinheiro() > baixistas_medios.getBaixistas().get(1).getPreco()) {
+				
+				int dinheiro_gerente = gerente.getDinheiro();
+				int preco_baixista = baixistas_medios.getBaixistas().get(1).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_baixista;
+				
+				gerente.setDinheiro(novo_saldo);
+				gerente.getBanda().setBaixista(baixistas_medios.getBaixistas().get(1));
+				System.out.println("Parabéns,você comprou "+baixistas_medios.getBaixistas().get(1).getNome());
+				
+			}
+			else {
+				System.out.println("Saldo insuficiente!");
+			}
+		}
+		
+		if(posicao == 3) {
+			
+			if(gerente.getDinheiro() > baixistas_medios.getBaixistas().get(2).getPreco()) {
+				
+				int dinheiro_gerente = gerente.getDinheiro();
+				int preco_baixista = baixistas_medios.getBaixistas().get(2).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_baixista;
+				
+				gerente.setDinheiro(novo_saldo);
+				gerente.getBanda().setBaixista(baixistas_medios.getBaixistas().get(2));
+				System.out.println("Parabéns,você comprou "+baixistas_medios.getBaixistas().get(2).getNome());
+				
+			}
+			else {
+				System.out.println("Saldo insuficiente!");
+			}
+		}
+		
+	}
+	
+	else {
+		System.out.println("Opção inválida!");
+	}
+	
+	
+}
+
+
 }
