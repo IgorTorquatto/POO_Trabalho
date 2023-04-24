@@ -684,8 +684,8 @@ public static void comprarBaixista(Gerente gerente) {
 			if(gerente.getDinheiro() > baixistas_lendarios.getBaixistas().get(0).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_Baixista = baixistas_lendarios.getBaixistas().get(0).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_Baixista;
+				int preco_baixista = baixistas_lendarios.getBaixistas().get(0).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_baixista;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaixista(baixistas_lendarios.getBaixistas().get(0));
@@ -703,8 +703,8 @@ public static void comprarBaixista(Gerente gerente) {
 			if(gerente.getDinheiro() > baixistas_lendarios.getBaixistas().get(1).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_Baixistas = baixistas_lendarios.getBaixistas().get(1).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_Baixistas;
+				int preco_baixista = baixistas_lendarios.getBaixistas().get(1).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_baixista;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaixista(baixistas_lendarios.getBaixistas().get(1));
@@ -873,5 +873,218 @@ public static void comprarBaixista(Gerente gerente) {
 	
 }
 
+public static void comprarBaterista(Gerente gerente) {
+	
+	RepositorioMusicos bateristas_lendarios = new RepositorioMusicos();
+	bateristas_lendarios.setBateristas(Funcionalidades.BateristasLendarios());
+	RepositorioMusicos bateristas_bons = new RepositorioMusicos();
+	bateristas_bons.setBateristas(Funcionalidades.BateristasBons());
+	RepositorioMusicos bateristas_medios = new RepositorioMusicos();
+	bateristas_medios.setBateristas(Funcionalidades.BateristasMedios());
+	
+	System.out.println("Selecione a categoria de bateristas: ");
+	System.out.println("1-Lendários\n2-Bons\n3-Médios");
+	Scanner input = new Scanner(System.in);
+	int categoria = input.nextInt();
+	
+	if(categoria == 1) {
+		//Vocalistas Lendários:
+		
+		bateristas_lendarios.imprimirBateristas();
+		System.out.println("Qual baterista você quer comprar? [1/2/3]");
+		int posicao = input.nextInt();
+		
+		if(posicao == 1) {
+			
+			if(gerente.getDinheiro() > bateristas_lendarios.getBateristas().get(0).getPreco()) {
+				
+				int dinheiro_gerente = gerente.getDinheiro();
+				int preco_baterista = bateristas_lendarios.getBateristas().get(0).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_baterista;
+				
+				gerente.setDinheiro(novo_saldo);
+				gerente.getBanda().setBaterista(bateristas_lendarios.getBateristas().get(0));
+				System.out.println("Parabéns,você comprou "+bateristas_lendarios.getBateristas().get(0).getNome());
+				
+			}
+			else {
+				System.out.println("Saldo insuficiente!");
+			}
+			
+		}
+		
+		if(posicao == 2) {
+			
+			if(gerente.getDinheiro() > bateristas_lendarios.getBateristas().get(1).getPreco()) {
+				
+				int dinheiro_gerente = gerente.getDinheiro();
+				int preco_bateristas = bateristas_lendarios.getBateristas().get(1).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_bateristas;
+				
+				gerente.setDinheiro(novo_saldo);
+				gerente.getBanda().setBaterista(bateristas_lendarios.getBateristas().get(1));
+				System.out.println("Parabéns,você comprou "+bateristas_lendarios.getBateristas().get(1).getNome());
+				
+			}
+			else {
+				System.out.println("Saldo insuficiente!");
+			}
+		}
+		
+		if(posicao == 3) {
+			
+			if(gerente.getDinheiro() > bateristas_lendarios.getBateristas().get(2).getPreco()) {
+				
+				int dinheiro_gerente = gerente.getDinheiro();
+				int preco_baterista = bateristas_lendarios.getBateristas().get(2).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_baterista;
+				
+				gerente.setDinheiro(novo_saldo);
+				gerente.getBanda().setBaterista(bateristas_lendarios.getBateristas().get(2));
+				System.out.println("Parabéns,você comprou "+bateristas_lendarios.getBateristas().get(2).getNome());
+				
+			}
+			else {
+				System.out.println("Saldo insuficiente!");
+			}
+		}
+	}
+	
+	
+	
+	else if(categoria == 2) {
+		//Vocalistas bons
+		
+		bateristas_bons.imprimirBateristas();
+		System.out.println("Qual baterista você quer comprar? [1/2/3]");
+		int posicao = input.nextInt();
+		
+		if(posicao == 1) {
+			
+			if(gerente.getDinheiro() > bateristas_bons.getBateristas().get(0).getPreco()) {
+				
+				int dinheiro_gerente = gerente.getDinheiro();
+				int preco_baterista = bateristas_bons.getBateristas().get(0).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_baterista;
+				
+				gerente.setDinheiro(novo_saldo);
+				gerente.getBanda().setBaterista(bateristas_bons.getBateristas().get(0));
+				System.out.println("Parabéns,você comprou "+ bateristas_bons.getBateristas().get(0).getNome());
+				
+			}
+			else {
+				System.out.println("Saldo insuficiente!");
+			}
+			
+		}
+		
+		if(posicao == 2) {
+			
+			if(gerente.getDinheiro() > bateristas_bons.getBateristas().get(1).getPreco()) {
+				
+				int dinheiro_gerente = gerente.getDinheiro();
+				int preco_baterista = bateristas_bons.getBateristas().get(1).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_baterista;
+				
+				gerente.setDinheiro(novo_saldo);
+				gerente.getBanda().setBaterista(bateristas_bons.getBateristas().get(1));
+				System.out.println("Parabéns,você comprou "+bateristas_bons.getBateristas().get(1).getNome());
+				
+			}
+			else {
+				System.out.println("Saldo insuficiente!");
+			}
+		}
+		
+		if(posicao == 3) {
+			
+			if(gerente.getDinheiro() > bateristas_bons.getBateristas().get(2).getPreco()) {
+				
+				int dinheiro_gerente = gerente.getDinheiro();
+				int preco_baterista = bateristas_bons.getBateristas().get(2).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_baterista;
+				
+				gerente.setDinheiro(novo_saldo);
+				gerente.getBanda().setBaterista(bateristas_bons.getBateristas().get(2));
+				System.out.println("Parabéns,você comprou "+bateristas_bons.getBateristas().get(2).getNome());
+				
+			}
+			else {
+				System.out.println("Saldo insuficiente!");
+			}
+		}
+		
+	}
+	
+	
+	else if(categoria == 3) {
+		//Vocalistas médios
+	
+		bateristas_medios.imprimirBateristas();
+		System.out.println("Qual baterista você quer comprar? [1/2/3]");
+		int posicao = input.nextInt();
+		
+		if(posicao == 1) {
+			
+			if(gerente.getDinheiro() > bateristas_medios.getBateristas().get(0).getPreco()) {
+				
+				int dinheiro_gerente = gerente.getDinheiro();
+				int preco_baterista = bateristas_medios.getBateristas().get(0).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_baterista;
+				
+				gerente.setDinheiro(novo_saldo);
+				gerente.getBanda().setBaterista(bateristas_medios.getBateristas().get(0));
+				System.out.println("Parabéns,você comprou "+bateristas_medios.getBateristas().get(0).getNome());
+				
+			}
+			else {
+				System.out.println("Saldo insuficiente!");
+			}
+			
+		}
+		
+		if(posicao == 2) {
+			
+			if(gerente.getDinheiro() > bateristas_medios.getBateristas().get(1).getPreco()) {
+				
+				int dinheiro_gerente = gerente.getDinheiro();
+				int preco_baterista = bateristas_medios.getBateristas().get(1).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_baterista;
+				
+				gerente.setDinheiro(novo_saldo);
+				gerente.getBanda().setBaterista(bateristas_medios.getBateristas().get(1));
+				System.out.println("Parabéns,você comprou "+bateristas_medios.getBateristas().get(1).getNome());
+				
+			}
+			else {
+				System.out.println("Saldo insuficiente!");
+			}
+		}
+		
+		if(posicao == 3) {
+			
+			if(gerente.getDinheiro() > bateristas_medios.getBateristas().get(2).getPreco()) {
+				
+				int dinheiro_gerente = gerente.getDinheiro();
+				int preco_baterista = bateristas_medios.getBateristas().get(2).getPreco();
+				int novo_saldo = dinheiro_gerente - preco_baterista;
+				
+				gerente.setDinheiro(novo_saldo);
+				gerente.getBanda().setBaterista(bateristas_medios.getBateristas().get(2));
+				System.out.println("Parabéns,você comprou "+bateristas_medios.getBateristas().get(2).getNome());
+				
+			}
+			else {
+				System.out.println("Saldo insuficiente!");
+			}
+		}
+		
+	}
+	
+	else {
+		System.out.println("Opção inválida!");
+	}
+	
+}
 
 }
