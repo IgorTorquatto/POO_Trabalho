@@ -65,11 +65,6 @@ public class Banda {
 	public void gerarBanda(ArrayList<String> nomes) {
 		Random random = new Random();
 		
-		//Os músicos iniciais devem ficar na casa do 60
-		//Os músicos médios na casa dos 70
-		//Os músicos bons na casa dos 80
-		//Os músicos lendários na casa dos 90
-		
 		//Para gerar na range certa (max-min)+min
 		vocalista = new Vocalista(nomes.get(0),random.nextInt(69-60)+60,0);
 		baixista = new Baixista(nomes.get(1),random.nextInt(69-60)+60,0);

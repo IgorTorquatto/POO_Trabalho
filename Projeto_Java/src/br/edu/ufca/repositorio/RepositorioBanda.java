@@ -18,15 +18,15 @@ public class RepositorioBanda {
 	//Fazer o CRUD desse repositorio:
 	
 	
-	public void read() {
+	public void consultaBanda() {
 		
 	}
 	
-	public void update() {
+	public void adicionaBanda() {
 		
 	}
 	
-	public void delete() {
+	public void removeBanda() {
 		
 	}
 }

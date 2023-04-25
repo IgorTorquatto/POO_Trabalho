@@ -5,98 +5,71 @@ import br.edu.ufca.dados.*;
 
 public class RepositorioMusicos {
 	
-	private ArrayList<Vocalista> vocalistas ;
-	private ArrayList<Tecladista> tecladistas ;
-	private ArrayList<Guitarrista> guitarristas ;
-	private ArrayList<Baterista> bateristas ;
-	private ArrayList<Baixista> baixistas ;
-	
+	private ArrayList<MusicoAbstrato> musicos;
 	//CRUD:
 	
 	//Create
 	public RepositorioMusicos() {
-		this.vocalistas = new ArrayList<Vocalista>();
-		this.tecladistas = new ArrayList<Tecladista>();
-		this.guitarristas = new ArrayList<Guitarrista>();
-		this.bateristas = new ArrayList<Baterista>();
-		this.baixistas = new ArrayList<Baixista>();
+		this.musicos = new ArrayList<MusicoAbstrato>();
 	}
 
 	//Read
-	public ArrayList<Vocalista> getVocalistas() {
-		return vocalistas;
-	}
-
-	public ArrayList<Tecladista> getTecladistas() {
-		return tecladistas;
-	}
-
-	public ArrayList<Guitarrista> getGuitarristas() {
-		return guitarristas;
-	}
-
-	public ArrayList<Baterista> getBateristas() {
-		return bateristas;
-	}
-	
-	public ArrayList<Baixista> getBaixistas() {
-		return baixistas;
+	public void consultaMusico(MusicoAbstrato musico) {
+		if(musicos.contains(musico)) {
+			System.out.println(musicos.indexOf(musico)); 
+		}
 	}
 	
 	//Update
-	public void setVocalistas(ArrayList<Vocalista> vocalistas) {
-		this.vocalistas = vocalistas;
+	public void adicionaMusico(MusicoAbstrato musico) {
+		this.musicos.add(musico);
 	}
-	
-	public void setBaixistas(ArrayList<Baixista> baixistas) {
-		this.baixistas = baixistas;
-	}
-	
-	public void setTecladistas(ArrayList<Tecladista> tecladistas) {
-		this.tecladistas = tecladistas;
-	}
-	
-	public void setGuitarristas(ArrayList<Guitarrista> guitarristas) {
-		this.guitarristas = guitarristas;
-	}
-	
-	public void setBateristas(ArrayList<Baterista> bateristas) {
-		this.bateristas = bateristas;
-	}
-	
 	//Delete
+	public void removeMusico(MusicoAbstrato musico) {
+		if(musicos.contains(musico)) {
+			musicos.remove(musico);
+		}
+	}
 	
+	//Get & Set:
 	
+	public ArrayList<MusicoAbstrato> getMusicos() {
+		return musicos;
+	}
+
+	public void setMusicos(ArrayList<MusicoAbstrato> musicos) {
+		this.musicos = musicos;
+	}
 	
 	//Outros métodos:
+	
 	public void imprimirVocalistas() {
 		for(int i = 0; i < 3 ; i++) {
-			System.out.println(vocalistas.get(i).getNome()+" "+vocalistas.get(i).getPreco()+" R$");
+			System.out.println(musicos.get(i).getNome()+" "+musicos.get(i).getPreco()+" R$");
 		}
 	}
 	
 	public void imprimirTecladistas() {
 		for(int i = 0; i < 3 ; i++) {
-			System.out.println(tecladistas.get(i).getNome()+" "+tecladistas.get(i).getPreco()+" R$");
+			System.out.println(musicos.get(i).getNome()+" "+musicos.get(i).getPreco()+" R$");
 		}
 	}
 	
 	public void imprimirGuitarristas() {
 		for(int i = 0; i < 3 ; i++) {
-			System.out.println(guitarristas.get(i).getNome()+" "+guitarristas.get(i).getPreco()+" R$");
+			System.out.println(musicos.get(i).getNome()+" "+musicos.get(i).getPreco()+" R$");
 		}
 	}
 	
 	public void imprimirBaixistas() {
 		for(int i = 0; i < 3 ; i++) {
-			System.out.println(baixistas.get(i).getNome()+" "+baixistas.get(i).getPreco()+" R$");
+			System.out.println(musicos.get(i).getNome()+" "+musicos.get(i).getPreco()+" R$");
 		}
 	}
 	
 	public void imprimirBateristas() {
 		for(int i = 0; i < 3 ; i++) {
-			System.out.println(bateristas.get(i).getNome()+" "+bateristas.get(i).getPreco()+" R$");
+			System.out.println(musicos.get(i).getNome()+" "+musicos.get(i).getPreco()+" R$");
 		}
 	}
-	
 }
