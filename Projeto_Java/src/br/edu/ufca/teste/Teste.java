@@ -24,7 +24,10 @@ public class Teste {
 		   System.out.printf("1- Criar banda \n2- Encerrar programa \n");
 		   escolha_usuario = input.nextInt();
 		   
-		   if(escolha_usuario == 2) System.exit(0);
+		   if(escolha_usuario == 2) {
+			   System.out.println("Programa encerrado.");
+			   System.exit(0);
+		   }
 		   
 		   //Cadastrar nome dos músicos baseado na escolha de nomes passado pelo usuário/gerente:
 		   
