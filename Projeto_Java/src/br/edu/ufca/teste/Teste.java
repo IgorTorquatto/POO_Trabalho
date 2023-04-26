@@ -1,12 +1,10 @@
 package br.edu.ufca.teste;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import br.edu.ufca.dados.*;
 import br.edu.ufca.repositorio.*;
 
 public class Teste {
-	//Esse package é onde fica a main
 	
   public static void main(String[] args) {
 	  
@@ -29,33 +27,48 @@ public class Teste {
 			   System.exit(0);
 		   }
 		   
-		   //Cadastrar nome dos músicos baseado na escolha de nomes passado pelo usuário/gerente:
-		   
-		   System.out.println("Cadastro incial: ");
-		   ArrayList<String> nome_musicos_inicial = new ArrayList<String>();
-		   String[] musicos = {"vocalista","tecladista","guitarrista","baterista","baixista"};
-		   input.nextLine();
-		   
-		   for(i=0;i<5;i++) {
-			   System.out.println("Insira o nome do "+musicos[i]+" da sua banda.");
-			   nome_musicos_inicial.add(input.nextLine());
-		   }
-		   //Criando banda e gerente:
-		   
-		   System.out.println("Criando sua banda inicial...");
-		   Banda banda = new Banda(null,null,null,null,null);
-		   banda.gerarBanda(nome_musicos_inicial);
-		   Gerente gerente = new Gerente(nome,banda,300);
+		
+		  System.out.println("Cadastro incial: ");
+		  ArrayList<String> nome_musicos_inicial = new ArrayList<String>();
+		  String[] musicos = {"vocalista","tecladista","guitarrista","baterista","baixista"};
+		  input.nextLine();
+			
+		  //Cadastrar nome dos músicos baseado na escolha de nomes passado pelo usuário/gerente:
+			
+		  for(i=0;i<5;i++) {
+			  System.out.println("Insira o nome do "+musicos[i]+" que você quer contratar.");
+			  nome_musicos_inicial.add(input.nextLine());
+		  }
+		
+		  System.out.println("Qual o nome da sua nova banda? ");
+		  String nome_banda = input.nextLine();
+		  double saldo = 3000;
+			
+		  //Criando banda e o gerente:
+			
+		  System.out.println("Criando sua banda inicial...");
+		  Banda banda = new Banda(null,null,null,null,null,null);
+		  banda.gerarBanda(nome_musicos_inicial,nome_banda);
+		  Gerente gerente = new Gerente(nome,banda,saldo);
+		  RepositorioBanda bandas = new RepositorioBanda();
+		  bandas.adicionaBanda(banda);
+		  System.out.println("Banda criada, "+nome+" você é gerente da banda "+nome_banda+" e inicia com saldo de "+saldo);
 		   
 		   //Operações:
 		   
-		   System.out.println("Sua banda foi criada com sucesso! Agora escolha uma das opções abaixo: ");
+		   System.out.println("Agora escolha uma das opções abaixo: ");
 		   
 		   Boolean sair = false;
 		  
 		   while(sair == false ) {
 			   
-			   System.out.println("\n1-Realizar show \n2-Ver lista de integrantes\n3-Ir para a loja\n4-Encerrar programa\n");
+			   System.out.println(
+					  "\n1-Realizar show\n"
+			   		+ "2-Ver lista de integrantes\n"
+			   		+ "3-Ir para a loja\n"
+			   		+ "4-Encerrar programa\n"
+			   		+ "5-Verificar bandas gerenciadas\n");
+			   
 			   escolha_usuario = input.nextInt();
 			   
 			   switch(escolha_usuario) {
@@ -79,13 +92,21 @@ public class Teste {
 				   boolean sair_loja = false;
 				   int escolha;
 				   while(sair_loja == false) {
-					   System.out.println("1- Verificar saldo\n2-Comprar novo músico\n3- Sair da loja\n");
+					   System.out.println(
+							  "1- Verificar saldo\n"
+					   		+ "2-Comprar novo músico\n"
+					   		+ "3- Sair da loja\n");
 					   escolha = input.nextInt();
 					   if(escolha==1) Loja.imprimirSaldo(gerente);
 					   if(escolha==2) {
-						   
 						   System.out.println("Qual integrante você deseja comprar? ");
-						   System.out.println("1-Vocalista\n2-Tecladista\n3-Guitarrista\n4-Baterista\n5-Baixista\n");
+						   System.out.println(
+								   "1-Vocalista\n"
+								   + "2-Tecladista\n"
+								   + "3-Guitarrista\n"
+								   + "4-Baterista\n"
+								   + "5-Baixista\n");
+						   
 						   int escolh = input.nextInt();
 						   
 						   switch(escolh) {
@@ -111,12 +132,16 @@ public class Teste {
 						   }
 					   }
 					   if(escolha==3) sair_loja= true;
-					   
 				   }
 				   break;
 				   
 			   case 4:
 				   sair = true;
+				   break;
+			   case 5:
+				   System.out.println("Número bandas: "+gerente.getBanda());
+				   System.out.println("Nomes bandas: ");
+				   bandas.imprimeNomesBandas();
 				   break;
 				   
 			   default:

@@ -5,18 +5,22 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Banda {
+	private String nome;
 	private Baixista baixista;
 	private Baterista baterista;
 	private Guitarrista guitarrista;
 	private Tecladista tecladista;
 	private Vocalista vocalista;
 	
-	public Banda(Baixista baixista, Baterista baterista, Guitarrista guitarrista, Tecladista tecladista, Vocalista vocalista) {
+	public Banda(Baixista baixista, Baterista baterista,
+			Guitarrista guitarrista, Tecladista tecladista,
+			Vocalista vocalista,String nome) {
 		this.baixista = baixista;
 		this.baterista = baterista;
 		this.guitarrista = guitarrista;
 		this.tecladista = tecladista;
 		this.vocalista = vocalista;
+		this.nome = nome;
 	}
 	
 	//Getters and setters:
@@ -61,8 +65,16 @@ public class Banda {
 		this.vocalista = vocalista;
 	}
 	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 	//Métodos:
-	public void gerarBanda(ArrayList<String> nomes) {
+	public void gerarBanda(ArrayList<String> nomes,String nome_banda) {
 		Random random = new Random();
 		
 		//Para gerar na range certa (max-min)+min
@@ -71,6 +83,7 @@ public class Banda {
 		baterista = new Baterista(nomes.get(2),random.nextInt(69-60)+60,0);
 		tecladista = new Tecladista(nomes.get(3),random.nextInt(69-60)+60,0);
 		guitarrista = new Guitarrista(nomes.get(4),random.nextInt(69-60)+60,0);
+		nome = nome_banda;
 		
 	}
 	

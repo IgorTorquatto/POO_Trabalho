@@ -1,5 +1,4 @@
 package br.edu.ufca.repositorio;
-
 import java.util.ArrayList;
 import br.edu.ufca.dados.*;
 
@@ -43,33 +42,10 @@ public class RepositorioMusicos {
 	
 	//Outros métodos:
 	
-	public void imprimirVocalistas() {
+	public void imprimirMusicos() {
 		for(int i = 0; i < 3 ; i++) {
 			System.out.println(musicos.get(i).getNome()+" "+musicos.get(i).getPreco()+" R$");
 		}
 	}
 	
-	public void imprimirTecladistas() {
-		for(int i = 0; i < 3 ; i++) {
-			System.out.println(musicos.get(i).getNome()+" "+musicos.get(i).getPreco()+" R$");
-		}
-	}
-	
-	public void imprimirGuitarristas() {
-		for(int i = 0; i < 3 ; i++) {
-			System.out.println(musicos.get(i).getNome()+" "+musicos.get(i).getPreco()+" R$");
-		}
-	}
-	
-	public void imprimirBaixistas() {
-		for(int i = 0; i < 3 ; i++) {
-			System.out.println(musicos.get(i).getNome()+" "+musicos.get(i).getPreco()+" R$");
-		}
-	}
-	
-	public void imprimirBateristas() {
-		for(int i = 0; i < 3 ; i++) {
-			System.out.println(musicos.get(i).getNome()+" "+musicos.get(i).getPreco()+" R$");
-		}
-	}
 }
