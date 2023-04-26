@@ -22,8 +22,8 @@ public class Loja {
 		RepositorioMusicos vocalistas_medios = new RepositorioMusicos();
 		
 		String[] nomes_lendarios = {"Freddie Mercury","Elvis Presley","Paul McCartney"};
-		String[] nomes_bons = {"Freddie Mercury","Elvis Presley","Paul McCartney"};
-		String[] nomes_medios = {"Freddie Mercury","Elvis Presley","Paul McCartney"};
+		String[] nomes_bons = {"Mike Patton","Steven Tyler","Mick Jagger"};
+		String[] nomes_medios = {"Ozzy Osbourne","David Coverdale","Bruce Dickinson"};
 		
 		Random random = new Random();
 		
@@ -158,8 +158,8 @@ public class Loja {
 				if(gerente.getDinheiro() > vocalistas_bons.getMusicos().get(2).getPreco()) {
 					
 					int dinheiro_gerente = gerente.getDinheiro();
-					int preco_vocalista = vocalistas_bons.getMusicos().get(2).getPreco();
-					int novo_saldo = dinheiro_gerente - preco_vocalista;
+					int preco = vocalistas_bons.getMusicos().get(2).getPreco();
+					int novo_saldo = dinheiro_gerente - preco;
 					
 					gerente.setDinheiro(novo_saldo);
 					gerente.getBanda().setVocalista((Vocalista)vocalistas_bons.getMusicos().get(2));
@@ -249,8 +249,8 @@ public static void comprarTecladista(Gerente gerente) {
 		RepositorioMusicos tecladistas_medios = new RepositorioMusicos();
 		
 		String[] nomes_lendarios = {"Rick Wakeman","Jon Lord","Keith Emerson"};
-		String[] nomes_bons = {"Freddie Mercury","Elvis Presley","Paul McCartney"};
-		String[] nomes_medios = {"Freddie Mercury","Elvis Presley","Paul McCartney"};
+		String[] nomes_bons = {"Josh Silver","Geddy Lee","Trent Reznor"};
+		String[] nomes_medios = {"Jon Oliva","Per Wiberg","Steven Wilson"};
 		
 		Random random = new Random();
 		
@@ -283,8 +283,8 @@ public static void comprarTecladista(Gerente gerente) {
 				if(gerente.getDinheiro() > tecladistas_lendarios.getMusicos().get(0).getPreco()) {
 					
 					int dinheiro_gerente = gerente.getDinheiro();
-					int preco_tecladista = tecladistas_lendarios.getMusicos().get(0).getPreco();
-					int novo_saldo = dinheiro_gerente - preco_tecladista;
+					int preco = tecladistas_lendarios.getMusicos().get(0).getPreco();
+					int novo_saldo = dinheiro_gerente - preco;
 	
 					gerente.setDinheiro(novo_saldo);
 					gerente.getBanda().setTecladista((Tecladista)(tecladistas_lendarios.getMusicos().get(0)));
@@ -302,8 +302,8 @@ public static void comprarTecladista(Gerente gerente) {
 				if(gerente.getDinheiro() > tecladistas_lendarios.getMusicos().get(1).getPreco()) {
 					
 					int dinheiro_gerente = gerente.getDinheiro();
-					int preco_tecladista = tecladistas_lendarios.getMusicos().get(1).getPreco();
-					int novo_saldo = dinheiro_gerente - preco_tecladista;
+					int preco = tecladistas_lendarios.getMusicos().get(1).getPreco();
+					int novo_saldo = dinheiro_gerente - preco;
 					
 					gerente.setDinheiro(novo_saldo);
 					gerente.getBanda().setTecladista((Tecladista)tecladistas_lendarios.getMusicos().get(1));
@@ -320,8 +320,8 @@ public static void comprarTecladista(Gerente gerente) {
 				if(gerente.getDinheiro() > tecladistas_lendarios.getMusicos().get(2).getPreco()) {
 					
 					int dinheiro_gerente = gerente.getDinheiro();
-					int preco_tecladista = tecladistas_lendarios.getMusicos().get(2).getPreco();
-					int novo_saldo = dinheiro_gerente - preco_tecladista;
+					int preco = tecladistas_lendarios.getMusicos().get(2).getPreco();
+					int novo_saldo = dinheiro_gerente - preco;
 					
 					gerente.setDinheiro(novo_saldo);
 					gerente.getBanda().setTecladista((Tecladista)tecladistas_lendarios.getMusicos().get(2));
@@ -348,8 +348,8 @@ public static void comprarTecladista(Gerente gerente) {
 				if(gerente.getDinheiro() > tecladistas_bons.getMusicos().get(0).getPreco()) {
 					
 					int dinheiro_gerente = gerente.getDinheiro();
-					int  preco_tecladista = tecladistas_bons.getMusicos().get(0).getPreco();
-					int novo_saldo = dinheiro_gerente - preco_tecladista;
+					int  preco = tecladistas_bons.getMusicos().get(0).getPreco();
+					int novo_saldo = dinheiro_gerente - preco;
 					
 					gerente.setDinheiro(novo_saldo);
 					gerente.getBanda().setTecladista((Tecladista)tecladistas_bons.getMusicos().get(0));
@@ -367,8 +367,8 @@ public static void comprarTecladista(Gerente gerente) {
 				if(gerente.getDinheiro() > tecladistas_bons.getMusicos().get(1).getPreco()) {
 					
 					int dinheiro_gerente = gerente.getDinheiro();
-					int preco_tecladista = tecladistas_bons.getMusicos().get(1).getPreco();
-					int novo_saldo = dinheiro_gerente - preco_tecladista;
+					int preco = tecladistas_bons.getMusicos().get(1).getPreco();
+					int novo_saldo = dinheiro_gerente - preco;
 					
 					gerente.setDinheiro(novo_saldo);
 					gerente.getBanda().setTecladista((Tecladista)tecladistas_bons.getMusicos().get(1));
@@ -385,8 +385,8 @@ public static void comprarTecladista(Gerente gerente) {
 				if(gerente.getDinheiro() > tecladistas_bons.getMusicos().get(2).getPreco()) {
 					
 					int dinheiro_gerente = gerente.getDinheiro();
-					int preco_tecladista = tecladistas_bons.getMusicos().get(2).getPreco();
-					int novo_saldo = dinheiro_gerente - preco_tecladista;
+					int preco = tecladistas_bons.getMusicos().get(2).getPreco();
+					int novo_saldo = dinheiro_gerente - preco;
 					
 					gerente.setDinheiro(novo_saldo);
 					gerente.getBanda().setTecladista((Tecladista)tecladistas_bons.getMusicos().get(2));
@@ -413,8 +413,8 @@ public static void comprarTecladista(Gerente gerente) {
 				if(gerente.getDinheiro() > tecladistas_medios.getMusicos().get(0).getPreco()) {
 					
 					int dinheiro_gerente = gerente.getDinheiro();
-					int preco_tecladista = tecladistas_medios.getMusicos().get(0).getPreco();
-					int novo_saldo = dinheiro_gerente - preco_tecladista;
+					int preco = tecladistas_medios.getMusicos().get(0).getPreco();
+					int novo_saldo = dinheiro_gerente - preco;
 					
 					gerente.setDinheiro(novo_saldo);
 					gerente.getBanda().setTecladista((Tecladista)tecladistas_medios.getMusicos().get(0));
@@ -432,8 +432,8 @@ public static void comprarTecladista(Gerente gerente) {
 				if(gerente.getDinheiro() > tecladistas_medios.getMusicos().get(1).getPreco()) {
 					
 					int dinheiro_gerente = gerente.getDinheiro();
-					int preco_tecladista = tecladistas_medios.getMusicos().get(1).getPreco();
-					int novo_saldo = dinheiro_gerente - preco_tecladista;
+					int preco = tecladistas_medios.getMusicos().get(1).getPreco();
+					int novo_saldo = dinheiro_gerente - preco;
 					
 					gerente.setDinheiro(novo_saldo);
 					gerente.getBanda().setTecladista((Tecladista)tecladistas_medios.getMusicos().get(1));
@@ -450,8 +450,8 @@ public static void comprarTecladista(Gerente gerente) {
 				if(gerente.getDinheiro() > tecladistas_medios.getMusicos().get(2).getPreco()) {
 					
 					int dinheiro_gerente = gerente.getDinheiro();
-					int preco_tecladista = tecladistas_medios.getMusicos().get(2).getPreco();
-					int novo_saldo = dinheiro_gerente - preco_tecladista;
+					int preco = tecladistas_medios.getMusicos().get(2).getPreco();
+					int novo_saldo = dinheiro_gerente - preco;
 					
 					gerente.setDinheiro(novo_saldo);
 					gerente.getBanda().setTecladista((Tecladista)tecladistas_medios.getMusicos().get(2));
@@ -476,8 +476,8 @@ public static void comprarGuitarrista(Gerente gerente) {
 	RepositorioMusicos guitarristas_medios = new RepositorioMusicos();
 	
 	String[] nomes_lendarios = {"Jimmy Hendrix","Duane Allman"," B. B. King"};
-	String[] nomes_bons = {"Freddie Mercury","Elvis Presley","Paul McCartney"};
-	String[] nomes_medios = {"Freddie Mercury","Elvis Presley","Paul McCartney"};
+	String[] nomes_bons = {"Angus Young","Steve Vai","George Harrison"};
+	String[] nomes_medios = {"Santana","David Gilmour","Eddie Van Halen"};
 	
 	Random random = new Random();
 	
@@ -510,8 +510,8 @@ public static void comprarGuitarrista(Gerente gerente) {
 			if(gerente.getDinheiro() > guitarristas_lendarios.getMusicos().get(0).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = guitarristas_lendarios.getMusicos().get(0).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = guitarristas_lendarios.getMusicos().get(0).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setGuitarrista((Guitarrista)(guitarristas_lendarios.getMusicos().get(0)));
@@ -529,8 +529,8 @@ public static void comprarGuitarrista(Gerente gerente) {
 			if(gerente.getDinheiro() > guitarristas_lendarios.getMusicos().get(1).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = guitarristas_lendarios.getMusicos().get(1).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = guitarristas_lendarios.getMusicos().get(1).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setGuitarrista((Guitarrista)guitarristas_lendarios.getMusicos().get(1));
@@ -547,8 +547,8 @@ public static void comprarGuitarrista(Gerente gerente) {
 			if(gerente.getDinheiro() > guitarristas_lendarios.getMusicos().get(2).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = guitarristas_lendarios.getMusicos().get(2).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = guitarristas_lendarios.getMusicos().get(2).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setGuitarrista((Guitarrista)guitarristas_lendarios.getMusicos().get(2));
@@ -575,8 +575,8 @@ public static void comprarGuitarrista(Gerente gerente) {
 			if(gerente.getDinheiro() > guitarristas_bons.getMusicos().get(0).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int  preco_tecladista = guitarristas_bons.getMusicos().get(0).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int  preco = guitarristas_bons.getMusicos().get(0).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setGuitarrista((Guitarrista)guitarristas_bons.getMusicos().get(0));
@@ -594,8 +594,8 @@ public static void comprarGuitarrista(Gerente gerente) {
 			if(gerente.getDinheiro() > guitarristas_bons.getMusicos().get(1).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = guitarristas_bons.getMusicos().get(1).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = guitarristas_bons.getMusicos().get(1).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setGuitarrista((Guitarrista)guitarristas_bons.getMusicos().get(1));
@@ -612,8 +612,8 @@ public static void comprarGuitarrista(Gerente gerente) {
 			if(gerente.getDinheiro() > guitarristas_bons.getMusicos().get(2).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = guitarristas_bons.getMusicos().get(2).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = guitarristas_bons.getMusicos().get(2).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setGuitarrista((Guitarrista)guitarristas_bons.getMusicos().get(2));
@@ -640,8 +640,8 @@ public static void comprarGuitarrista(Gerente gerente) {
 			if(gerente.getDinheiro() > guitarristas_medios.getMusicos().get(0).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = guitarristas_medios.getMusicos().get(0).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = guitarristas_medios.getMusicos().get(0).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setGuitarrista((Guitarrista)guitarristas_medios.getMusicos().get(0));
@@ -659,8 +659,8 @@ public static void comprarGuitarrista(Gerente gerente) {
 			if(gerente.getDinheiro() > guitarristas_medios.getMusicos().get(1).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = guitarristas_medios.getMusicos().get(1).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = guitarristas_medios.getMusicos().get(1).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setGuitarrista((Guitarrista)guitarristas_medios.getMusicos().get(1));
@@ -677,8 +677,8 @@ public static void comprarGuitarrista(Gerente gerente) {
 			if(gerente.getDinheiro() > guitarristas_medios.getMusicos().get(2).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = guitarristas_medios.getMusicos().get(2).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = guitarristas_medios.getMusicos().get(2).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setGuitarrista((Guitarrista)guitarristas_medios.getMusicos().get(2));
@@ -703,8 +703,8 @@ public static void comprarBaixista(Gerente gerente) {
 	RepositorioMusicos baixistas_medios = new RepositorioMusicos();
 	
 	String[] nomes_lendarios = {"James Jamerson","Charles Mingus","John Entwistle"};
-	String[] nomes_bons = {"Freddie Mercury","Elvis Presley","Paul McCartney"};
-	String[] nomes_medios = {"Freddie Mercury","Elvis Presley","Paul McCartney"};
+	String[] nomes_bons = {"Justin Chancellor","John Myung","Joe Dart"};
+	String[] nomes_medios = {"Paz Lenchantin","Mike Kerr","Matt Freeman"};
 	
 	Random random = new Random();
 	
@@ -737,8 +737,8 @@ public static void comprarBaixista(Gerente gerente) {
 			if(gerente.getDinheiro() > baixistas_lendarios.getMusicos().get(0).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = baixistas_lendarios.getMusicos().get(0).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = baixistas_lendarios.getMusicos().get(0).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaixista((Baixista)(baixistas_lendarios.getMusicos().get(0)));
@@ -756,8 +756,8 @@ public static void comprarBaixista(Gerente gerente) {
 			if(gerente.getDinheiro() > baixistas_lendarios.getMusicos().get(1).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = baixistas_lendarios.getMusicos().get(1).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = baixistas_lendarios.getMusicos().get(1).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaixista((Baixista)baixistas_lendarios.getMusicos().get(1));
@@ -774,8 +774,8 @@ public static void comprarBaixista(Gerente gerente) {
 			if(gerente.getDinheiro() > baixistas_lendarios.getMusicos().get(2).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = baixistas_lendarios.getMusicos().get(2).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = baixistas_lendarios.getMusicos().get(2).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaixista((Baixista)baixistas_lendarios.getMusicos().get(2));
@@ -802,8 +802,8 @@ public static void comprarBaixista(Gerente gerente) {
 			if(gerente.getDinheiro() > baixistas_bons.getMusicos().get(0).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int  preco_tecladista = baixistas_bons.getMusicos().get(0).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int  preco = baixistas_bons.getMusicos().get(0).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaixista((Baixista)baixistas_bons.getMusicos().get(0));
@@ -821,8 +821,8 @@ public static void comprarBaixista(Gerente gerente) {
 			if(gerente.getDinheiro() > baixistas_bons.getMusicos().get(1).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = baixistas_bons.getMusicos().get(1).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = baixistas_bons.getMusicos().get(1).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaixista((Baixista)baixistas_bons.getMusicos().get(1));
@@ -839,8 +839,8 @@ public static void comprarBaixista(Gerente gerente) {
 			if(gerente.getDinheiro() > baixistas_bons.getMusicos().get(2).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = baixistas_bons.getMusicos().get(2).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = baixistas_bons.getMusicos().get(2).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaixista((Baixista)baixistas_bons.getMusicos().get(2));
@@ -867,8 +867,8 @@ public static void comprarBaixista(Gerente gerente) {
 			if(gerente.getDinheiro() > baixistas_medios.getMusicos().get(0).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = baixistas_medios.getMusicos().get(0).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = baixistas_medios.getMusicos().get(0).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaixista((Baixista)baixistas_medios.getMusicos().get(0));
@@ -886,8 +886,8 @@ public static void comprarBaixista(Gerente gerente) {
 			if(gerente.getDinheiro() > baixistas_medios.getMusicos().get(1).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = baixistas_medios.getMusicos().get(1).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = baixistas_medios.getMusicos().get(1).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaixista((Baixista)baixistas_medios.getMusicos().get(1));
@@ -904,8 +904,8 @@ public static void comprarBaixista(Gerente gerente) {
 			if(gerente.getDinheiro() > baixistas_medios.getMusicos().get(2).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = baixistas_medios.getMusicos().get(2).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = baixistas_medios.getMusicos().get(2).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaixista((Baixista)baixistas_medios.getMusicos().get(2));
@@ -930,8 +930,8 @@ public static void comprarBaterista(Gerente gerente) {
 	RepositorioMusicos bateristas_medios = new RepositorioMusicos();
 	
 	String[] nomes_lendarios = {"John Bonham","Keith Moon","Ginger Baker"};
-	String[] nomes_bons = {"Freddie Mercury","Elvis Presley","Paul McCartney"};
-	String[] nomes_medios = {"Freddie Mercury","Elvis Presley","Paul McCartney"};
+	String[] nomes_bons = {"Lars Ulrich","Mike Portnoy","Ginger Baker"};
+	String[] nomes_medios = {"Ringo Starr","Stewars Copeland","John Freese"};
 	
 	Random random = new Random();
 	
@@ -964,8 +964,8 @@ public static void comprarBaterista(Gerente gerente) {
 			if(gerente.getDinheiro() > bateristas_lendarios.getMusicos().get(0).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = bateristas_lendarios.getMusicos().get(0).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = bateristas_lendarios.getMusicos().get(0).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaterista((Baterista)(bateristas_lendarios.getMusicos().get(0)));
@@ -983,8 +983,8 @@ public static void comprarBaterista(Gerente gerente) {
 			if(gerente.getDinheiro() > bateristas_lendarios.getMusicos().get(1).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = bateristas_lendarios.getMusicos().get(1).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = bateristas_lendarios.getMusicos().get(1).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaterista((Baterista)bateristas_lendarios.getMusicos().get(1));
@@ -1001,8 +1001,8 @@ public static void comprarBaterista(Gerente gerente) {
 			if(gerente.getDinheiro() > bateristas_lendarios.getMusicos().get(2).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = bateristas_lendarios.getMusicos().get(2).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = bateristas_lendarios.getMusicos().get(2).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaterista((Baterista)bateristas_lendarios.getMusicos().get(2));
@@ -1029,8 +1029,8 @@ public static void comprarBaterista(Gerente gerente) {
 			if(gerente.getDinheiro() > bateristas_bons.getMusicos().get(0).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int  preco_tecladista = bateristas_bons.getMusicos().get(0).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int  preco = bateristas_bons.getMusicos().get(0).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaterista((Baterista)bateristas_bons.getMusicos().get(0));
@@ -1048,8 +1048,8 @@ public static void comprarBaterista(Gerente gerente) {
 			if(gerente.getDinheiro() > bateristas_bons.getMusicos().get(1).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = bateristas_bons.getMusicos().get(1).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = bateristas_bons.getMusicos().get(1).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaterista((Baterista)bateristas_bons.getMusicos().get(1));
@@ -1066,8 +1066,8 @@ public static void comprarBaterista(Gerente gerente) {
 			if(gerente.getDinheiro() > bateristas_bons.getMusicos().get(2).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = bateristas_bons.getMusicos().get(2).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = bateristas_bons.getMusicos().get(2).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaterista((Baterista)bateristas_bons.getMusicos().get(2));
@@ -1094,8 +1094,8 @@ public static void comprarBaterista(Gerente gerente) {
 			if(gerente.getDinheiro() > bateristas_medios.getMusicos().get(0).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = bateristas_medios.getMusicos().get(0).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = bateristas_medios.getMusicos().get(0).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaterista((Baterista)bateristas_medios.getMusicos().get(0));
@@ -1113,8 +1113,8 @@ public static void comprarBaterista(Gerente gerente) {
 			if(gerente.getDinheiro() > bateristas_medios.getMusicos().get(1).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = bateristas_medios.getMusicos().get(1).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = bateristas_medios.getMusicos().get(1).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaterista((Baterista)bateristas_medios.getMusicos().get(1));
@@ -1131,8 +1131,8 @@ public static void comprarBaterista(Gerente gerente) {
 			if(gerente.getDinheiro() > bateristas_medios.getMusicos().get(2).getPreco()) {
 				
 				int dinheiro_gerente = gerente.getDinheiro();
-				int preco_tecladista = bateristas_medios.getMusicos().get(2).getPreco();
-				int novo_saldo = dinheiro_gerente - preco_tecladista;
+				int preco = bateristas_medios.getMusicos().get(2).getPreco();
+				int novo_saldo = dinheiro_gerente - preco;
 				
 				gerente.setDinheiro(novo_saldo);
 				gerente.getBanda().setBaterista((Baterista)bateristas_medios.getMusicos().get(2));
