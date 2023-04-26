@@ -10,7 +10,7 @@ public class Show {
 	
 	public void realizarShow(Banda banda, Gerente gerente){
 		//Abaixo é especificando o total de experiência ganha, de acordo com o nível da banda e de sua nota no respectivo show
-		int dinheiro;
+		double dinheiro;
 		double experiencia = 0;
 		experiencia = banda.calcularExp();
 		System.out.println(experiencia);

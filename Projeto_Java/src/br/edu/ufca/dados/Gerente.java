@@ -3,9 +3,9 @@ package br.edu.ufca.dados;
 public class Gerente {
 	String nome;
 	Banda banda;
-	int dinheiro;
+	double dinheiro;
 	
-	public Gerente(String nome, Banda banda,int dinheiro) {
+	public Gerente(String nome, Banda banda,double dinheiro) {
 		this.nome = nome;
 		this.banda = banda;
 		this.dinheiro = dinheiro;
@@ -28,11 +28,11 @@ public class Gerente {
 		this.banda = banda;
 	}
 
-	public int getDinheiro() {
+	public double getDinheiro() {
 		return dinheiro;
 	}
 
-	public void setDinheiro(int dinheiro) {
+	public void setDinheiro(double dinheiro) {
 		this.dinheiro = dinheiro;
 	}
 	
