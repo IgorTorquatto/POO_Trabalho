@@ -30,6 +30,9 @@ public class RepositorioBanda {
 		if(bandas.contains(banda)) {
 			bandas.remove(banda);
 			}
+		else {
+			System.out.println("Banda não está contida na lista.");
+		}
 	}
 
 	public ArrayList<Banda> getBandas() {
