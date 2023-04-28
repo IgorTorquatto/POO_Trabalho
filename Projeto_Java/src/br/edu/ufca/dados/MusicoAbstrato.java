@@ -40,5 +40,9 @@ public abstract class MusicoAbstrato {
 	
 	//Métodos:
 	
+	public boolean alcancarExpMax(MusicoAbstrato musico){
+		return false;
+		
+	}
 	
 }
