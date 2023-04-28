@@ -139,7 +139,7 @@ public class Teste {
 				   sair = true;
 				   break;
 			   case 5:
-				   System.out.println("Número bandas: "+gerente.getBanda());
+				   System.out.println("Número bandas: "+bandas.qtdBandas());
 				   System.out.println("Nomes bandas: ");
 				   bandas.imprimeNomesBandas();
 				   break;
