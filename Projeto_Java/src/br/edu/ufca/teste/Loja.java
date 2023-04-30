@@ -1,6 +1,7 @@
 package br.edu.ufca.teste;
 
 import java.util.Random;
+
 import java.util.Scanner;
 
 import br.edu.ufca.dados.*;
