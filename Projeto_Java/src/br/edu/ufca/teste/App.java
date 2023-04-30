@@ -1,5 +1,5 @@
 package br.edu.ufca.teste;
-import java.util.ArrayList;
+
 import java.util.Scanner;
 import br.edu.ufca.dados.*;
 import br.edu.ufca.repositorio.*;
@@ -38,6 +38,7 @@ public class App {
       boolean sair = false;
       int escolha;
       Gerente gerente = new Gerente(nome, bandas.getBandas().get(0), 3000000);
+      Show show = new Show();
       int i;
       int indice=0;
       int excluir;
@@ -47,7 +48,7 @@ public class App {
     		  
       while(sair==false) {
     	  
-    	  System.out.println("indice"+ indice); // cuidado com os bugs que esse cara gera
+    	  System.out.println("indice"+ indice); // falta faer com que o usuario digite o indice conveniente para trocar de banda. Ex : 1,2,3,4 e nao 0,1,2,3,4..
     	  
     	  System.out.println(
 				  "\n1-Cadastrar nova banda\n"
@@ -78,6 +79,7 @@ public class App {
 				
 				//Detalhes
 				
+					System.out.println("Banda: "+gerente.getBanda().getNome());
 					System.out.println("Integrantes da banda: \n");
 					String[] nome_integrantes = gerente.getBanda().imprimirBanda();
 					for(i=0;i<5;i++) {
@@ -96,7 +98,8 @@ public class App {
 			case 4:
 				
 				//Show
-				
+				System.out.println("Relizando show");
+				show.realizarShow(gerente.getBanda(), gerente);
 				break;
 				
 			case 5:
@@ -145,6 +148,8 @@ public class App {
 				System.out.println("Opção inválida!");
 			}
 	      }
+      System.out.println("Programa finalizado com sucesso "+nome+".");
+      scanner.close();
       System.exit(0);
   
   }

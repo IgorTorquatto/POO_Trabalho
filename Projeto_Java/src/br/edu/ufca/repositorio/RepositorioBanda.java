@@ -1,12 +1,13 @@
 package br.edu.ufca.repositorio;
 import br.edu.ufca.dados.*;
+
 import java.util.ArrayList;
 
 public class RepositorioBanda {
 	
 	//Guarda todas as bandas do usuário
 	
-	ArrayList<Banda> bandas;  // new ArrayList<Banda>();
+	ArrayList<Banda> bandas; 
 	
 	//Create
 	public RepositorioBanda() {

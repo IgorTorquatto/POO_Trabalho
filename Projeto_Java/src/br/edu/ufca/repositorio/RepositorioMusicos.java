@@ -1,12 +1,12 @@
 package br.edu.ufca.repositorio;
 import java.util.ArrayList;
+
 import br.edu.ufca.dados.*;
 
 public class RepositorioMusicos {
 	
 	private ArrayList<MusicoAbstrato> musicos;
-	//CRUD:
-	
+
 	//Create
 	public RepositorioMusicos() {
 		this.musicos = new ArrayList<MusicoAbstrato>();
