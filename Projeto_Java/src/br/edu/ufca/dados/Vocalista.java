@@ -23,4 +23,12 @@ public class Vocalista extends MusicoAbstrato {
 			return false;
 	}
 	
+	@Override
+	public double receberCache(double exp){
+		double valor;
+		valor = exp * 40;
+		return valor;
+	}
+	
+	
 }

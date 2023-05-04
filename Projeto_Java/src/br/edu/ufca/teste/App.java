@@ -37,7 +37,7 @@ public class App {
       
       boolean sair = false;
       int escolha;
-      Gerente gerente = new Gerente(nome, bandas.getBandas().get(0), 3000000);
+      Gerente gerente = new Gerente(nome, bandas.getBandas().get(0), 10000);
       Show show = new Show();
       int i;
       int indice=0;
@@ -100,6 +100,7 @@ public class App {
 				//Show
 				System.out.println("Relizando show");
 				show.realizarShow(gerente.getBanda(), gerente);
+				show.pagarDespesas(gerente.getBanda(), gerente);
 				break;
 				
 			case 5:

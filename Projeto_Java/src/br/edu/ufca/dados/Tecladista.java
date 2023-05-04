@@ -23,4 +23,11 @@ public class Tecladista extends MusicoAbstrato{
 			return false;
 	}
 	
+	@Override
+	public double receberCache(double exp){
+		double valor;
+		valor = exp * 15;
+		return valor;
+	}
+	
 }
