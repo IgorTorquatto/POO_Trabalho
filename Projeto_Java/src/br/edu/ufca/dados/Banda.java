@@ -117,6 +117,21 @@ public class Banda {
 		atualizarExp(aux, exp, baixista);
 	}
 	
+		
+	public void pagarBanda(Gerente gerente) {
+		double valorPago, valorAtual;
+		valorAtual = gerente.getDinheiro();
+		valorPago = -(vocalista.receberCache(vocalista.getExp()));
+		valorPago += -(tecladista.receberCache(tecladista.getExp()));
+		valorPago += -(guitarrista.receberCache(guitarrista.getExp()));
+		valorPago += -(baterista.receberCache(baterista.getExp()));
+		valorPago += -(baixista.receberCache(baixista.getExp()));
+		valorAtual += valorPago;
+		gerente.setDinheiro(valorAtual);
+		valorPago = -(valorPago);
+		System.out.println("\nValor pago para os músicos: "+valorPago);
+	}
+	
 	public String[] imprimirBanda() {
 	
 		String[] integrantes = {

@@ -45,4 +45,8 @@ public abstract class MusicoAbstrato {
 		
 	}
 	
+	public double receberCache(double valor) {
+		return valor;
+	}
+	
 }

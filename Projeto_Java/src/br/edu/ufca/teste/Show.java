@@ -6,7 +6,7 @@ import br.edu.ufca.dados.Gerente;
 
 public class Show {
 	int notasPublico;
-	double exp;
+	double exp, despesaArtista;
 	Random notas = new Random();
 	
 	public void realizarShow(Banda banda, Gerente gerente){
@@ -14,7 +14,6 @@ public class Show {
 		double dinheiro;
 		double experiencia = 0;
 		experiencia = banda.calcularExp();
-		System.out.println(experiencia);
 		notasPublico = notas.nextInt(4-1)+1;
 		//quanto maior a expeciência de uma banda, maior será a experiência e dinheiro ganho em cada show.
 		if(experiencia <= 69) {
@@ -23,7 +22,7 @@ public class Show {
 			System.out.println("ESTÁGIO 1");
 			switch(notasPublico){
 				case 1:
-					System.out.println("Nota dada pelo público: "+notasPublico);
+					System.out.println("Nota dada pelo público: "+notasPublico+"\n");
 					dinheiro = gerente.getDinheiro();
 					dinheiro += 10000;
 					gerente.setDinheiro(dinheiro);
@@ -31,7 +30,7 @@ public class Show {
 					banda.atualizarExp(exp);
 					break;
 				case 2:
-					System.out.println("Nota dada pelo público: "+notasPublico);
+					System.out.println("Nota dada pelo público: "+notasPublico+"\n");
 					dinheiro = gerente.getDinheiro();
 					dinheiro += 15000;
 					gerente.setDinheiro(dinheiro);
@@ -39,7 +38,7 @@ public class Show {
 					banda.atualizarExp(exp);
 					break;
 				case 3:
-					System.out.println("Nota dada pelo público: "+notasPublico);
+					System.out.println("Nota dada pelo público: "+notasPublico+"\n");
 					dinheiro = gerente.getDinheiro();
 					dinheiro += 20000;
 					gerente.setDinheiro(dinheiro);
@@ -53,22 +52,25 @@ public class Show {
 			System.out.println("ESTÁGIO 2");
 			switch(notasPublico){
 				case 1:
-					System.out.println("Nota dada pelo público: "+notasPublico);
-					dinheiro = 30000;
+					System.out.println("Nota dada pelo público: "+notasPublico+"\n");
+					dinheiro = gerente.getDinheiro();
+					dinheiro += 30000;
 					gerente.setDinheiro(dinheiro);
 					exp = 0.25;
 					banda.atualizarExp(exp);
 					break;
 				case 2:
-					System.out.println("Nota dada pelo público: "+notasPublico);
-					dinheiro = 35000;
+					System.out.println("Nota dada pelo público: "+notasPublico+"\n");
+					dinheiro = gerente.getDinheiro();
+					dinheiro += 35000;
 					gerente.setDinheiro(dinheiro);
 					exp = 0.30;
 					banda.atualizarExp(exp);
 					break;
 				case 3:
-					System.out.println("Nota dada pelo público: "+notasPublico);
-					dinheiro = 40000;
+					System.out.println("Nota dada pelo público: "+notasPublico+"\n");
+					dinheiro = gerente.getDinheiro();
+					dinheiro += 40000;
 					gerente.setDinheiro(dinheiro);
 					exp = 0.35;
 					banda.atualizarExp(exp);
@@ -80,22 +82,25 @@ public class Show {
 			System.out.println("ESTÁGIO 3");
 			switch(notasPublico){
 				case 1:
-					System.out.println("Nota dada pelo público: "+notasPublico);
-					dinheiro = 50000;
+					System.out.println("Nota dada pelo público: "+notasPublico+"\n");
+					dinheiro = gerente.getDinheiro();
+					dinheiro += 50000;
 					gerente.setDinheiro(dinheiro);
 					exp = 0.40;
 					banda.atualizarExp(exp);
 					break;
 				case 2:
-					System.out.println("Nota dada pelo público: "+notasPublico);
-					dinheiro = 55000;
+					System.out.println("Nota dada pelo público: "+notasPublico+"\n");
+					dinheiro = gerente.getDinheiro();
+					dinheiro += 55000;
 					gerente.setDinheiro(dinheiro);
 					exp = 0.45;
 					banda.atualizarExp(exp);
 					break;
 				case 3:
-					System.out.println("Nota dada pelo público: "+notasPublico);
-					dinheiro = 60000;
+					System.out.println("Nota dada pelo público: "+notasPublico+"\n");
+					dinheiro = gerente.getDinheiro();
+					dinheiro += 60000;
 					gerente.setDinheiro(dinheiro);
 					exp = 0.50;
 					banda.atualizarExp(exp);
@@ -107,28 +112,35 @@ public class Show {
 			System.out.println("ESTÁGIO 4");
 			switch(notasPublico){
 				case 1:
-					System.out.println("Nota dada pelo público: "+notasPublico);
-					dinheiro = 70000;
+					System.out.println("Nota dada pelo público: "+notasPublico+"\n");
+					dinheiro = gerente.getDinheiro();
+					dinheiro += 70000;
 					gerente.setDinheiro(dinheiro);
 					exp = 0.55;
 					banda.atualizarExp(exp);
 					break;
 				case 2:
-					System.out.println("Nota dada pelo público: "+notasPublico);
-					dinheiro = 75000;
+					System.out.println("Nota dada pelo público: "+notasPublico+"\n");
+					dinheiro = gerente.getDinheiro();
+					dinheiro += 75000;
 					gerente.setDinheiro(dinheiro);
 					exp = 0.60;
 					banda.atualizarExp(exp);
 					break;
 				case 3:
-					System.out.println("Nota dada pelo público: "+notasPublico);
-					dinheiro = 80000;
+					System.out.println("Nota dada pelo público: "+notasPublico+"\n");
+					dinheiro = gerente.getDinheiro();
+					dinheiro += 80000;
 					gerente.setDinheiro(dinheiro);
 					exp = 0.65;
 					banda.atualizarExp(exp);
 					break;
 			}
 		}
+	}
+	
+	public void pagarDespesas(Banda banda, Gerente gerente) {
+		banda.pagarBanda(gerente);
 	}
 	
 }

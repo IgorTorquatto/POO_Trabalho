@@ -23,4 +23,11 @@ public class Guitarrista extends MusicoAbstrato{
 			return false;
 	}
 	
+	@Override
+	public double receberCache(double exp){
+		double valor;
+		valor = exp * 20;
+		return valor;
+	}
+	
 }
