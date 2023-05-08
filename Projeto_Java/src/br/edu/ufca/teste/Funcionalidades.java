@@ -19,19 +19,32 @@ public class Funcionalidades {
 		ArrayList<String> nome_musicos_inicial = new ArrayList<String>();
 		String[] musicos = {"vocalista","tecladista","guitarrista","baterista","baixista"};
 
-		  //Cadastrar nome dos músicos baseado na escolha de nomes passado pelo usuário/gerente:
-		  String nome_musico= "";
-		  
 		  for(i=0;i<5;i++) {
 			  
-			  System.out.println("Insira o nome do "+musicos[i]+" que você quer contratar.");
-			  nome_musico = scanner.nextLine();
-			  nome_musicos_inicial.add(nome_musico);
-			  
+			  String nome_musico= "";
+
+			  while (nome_musico.isEmpty() || !nome_musico.matches("[a-zA-Z]+")) {
+		          System.out.println("Insira o nome do "+musicos[i]+" que você quer contratar.");
+		          nome_musico = scanner.nextLine();
+		          nome_musicos_inicial.add(nome_musico);
+
+		          if (!nome_musico.matches("[a-zA-Z]+")) {
+		              System.out.println("Digite apenas letras.");
+		          }
+		      }
+			
 		  }
 		
-		  System.out.println("Qual o nome da sua nova banda? ");
-		  String nome_banda = scanner.nextLine();
+		  String nome_banda = "";
+		  
+		  while (nome_banda.isEmpty() || !nome_banda.matches("[a-zA-Z]+")) {
+	          System.out.println("Digite o nome da banda: ");
+	          nome_banda = scanner.nextLine();
+
+	          if (!nome_banda.matches("[a-zA-Z]+")) {
+	              System.out.println("Digite apenas letras.");
+	          }
+	      }
 			
 		  System.out.println("Banda criada com sucesso");
 		  Banda banda = new Banda(null,null,null,null,null,null);
@@ -51,7 +64,7 @@ public class Funcionalidades {
 			
 			   System.out.println(
 					  "1- Verificar saldo\n"
-			   		+ "2-Comprar novo músico\n"
+			   		+ "2- Comprar novo músico\n"
 			   		+ "3- Sair da loja\n");
 			   
 			   escolha = input.nextInt();
