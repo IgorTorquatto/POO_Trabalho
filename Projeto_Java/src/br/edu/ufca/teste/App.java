@@ -48,7 +48,7 @@ public class App {
     		  
       while(sair==false) {
     	  
-    	  System.out.println("indice"+ indice); // falta faer com que o usuario digite o indice conveniente para trocar de banda. Ex : 1,2,3,4 e nao 0,1,2,3,4..
+    	  System.out.println("indice"+ indice); // Mostrando para corrigir bugs, apagar depois
     	  
     	  System.out.println(
 				  "\n1-Cadastrar nova banda\n"
@@ -56,7 +56,7 @@ public class App {
 		   		+ "3-Comprar músicos com atributos especiais \n"
 		   		+ "4-Realizar show \n"
 		   		+ "5-Excluir bandas\n"
-		   		+ "6-Trocar  de banda \n"
+		   		+ "6-Trocar de banda \n"
 		   		+ "7-Encerrar programa\n"
 		   		+ "Quantidade de bandas sendo gerenciadas: " + bandas.qtdBandas()+"\n"
 		   		+ "Nome da Banda sendo gerenciada atualmente: " +gerente.getBanda().getNome() +"\n"
@@ -79,13 +79,18 @@ public class App {
 				
 				//Detalhes
 				
-					System.out.println("Banda: "+gerente.getBanda().getNome());
+				if(bandas.qtdBandas() == 0) System.out.println("Você não possui nenhuma banda cadastrada.");
+				
+				else {
+					System.out.println("\n Banda: "+gerente.getBanda().getNome());
 					System.out.println("Integrantes da banda: \n");
 					String[] nome_integrantes = gerente.getBanda().imprimirBanda();
 					for(i=0;i<5;i++) {
 						   System.out.println(nome_integrantes[i]);
 					 }
-				
+					
+				}
+			
 				break;
 				
 			case 3:
@@ -106,17 +111,33 @@ public class App {
 			case 5:
 				
 				//Excluir
-				System.out.println("Você deseja excluir banda atual? \n"
+				if(bandas.qtdBandas() == 1) {
+					System.out.println("Para continuar com o sistema de gerenciamento de bandas você não pode excluir sua única banda."); 
+					break;
+				}
+				System.out.println("Você deseja excluir a banda "+"("+gerente.getBanda().getNome()+")" +"?\n"
 				+"1-Sim\n"
 				+"2-Não\n");
 				
 				excluir = scanner.nextInt();
 				
 				if(excluir == 1) {
-					bandas.removeBanda(bandas.getBandas().get(indice));
-					gerente.setBanda(bandas.getBandas().get(0));
-					System.out.println("Banda excluída com sucesso.");
-					indice--;
+					
+					if (indice == 0) {
+						bandas.removeBanda(bandas.getBandas().get(0));
+						gerente.setBanda(bandas.getBandas().get(0));
+						System.out.println("Banda excluída com sucesso.");
+					}
+					
+					else if (indice > 0 ) {
+						
+						bandas.removeBanda(bandas.getBandas().get(indice - 1));
+						gerente.setBanda(bandas.getBandas().get(0));
+						System.out.println("Banda excluída com sucesso.");
+						indice--;
+						
+					}
+					
 				}
 				
 				else {
@@ -129,14 +150,23 @@ public class App {
 				
 				//Troca a banda do usuário
 				
-				System.out.println("Selecione o número da banda que você quer gerenciar agora :  [0/1/2/3/...]");
-				indice = scanner.nextInt();
-				
-				if(indice > 0 && indice <= bandas.qtdBandas()) {
-					gerente.setBanda(bandas.getBandas().get(indice));
+				if(bandas.qtdBandas() == 1 ) {
+					System.out.println("Você possui apenas uma banda cadastrada. Preocedimento inválido.");
+					break;
 				}
-				else {
-					System.out.println("Opção inválida!");
+				
+				else if (bandas.qtdBandas() > 1){
+					System.out.println("Selecione o número da banda que você quer gerenciar agora :  [1/2/3/4/...]");
+					indice = scanner.nextInt();
+					
+					if(indice > 0 && indice <= bandas.qtdBandas()) {
+						gerente.setBanda(bandas.getBandas().get(indice - 1));
+					}
+					else {
+						System.out.println("Opção inválida!");
+						indice = 0;
+					}
+					
 				}
 				
 				break;
