@@ -1,6 +1,6 @@
 package br.edu.ufca.dados;
 
-public abstract class MusicoAbstrato {
+public abstract class MusicoAbstrato implements IMusico {
 	private String nome;
 	private double exp;
 	private int preco;
@@ -38,15 +38,5 @@ public abstract class MusicoAbstrato {
 		this.preco = preco;
 	}
 	
-	//Métodos:
-	
-	public boolean alcancarExpMax(MusicoAbstrato musico){
-		return false;
-		
-	}
-	
-	public double receberCache(double valor) {
-		return valor;
-	}
 	
 }

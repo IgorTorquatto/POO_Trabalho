@@ -82,7 +82,7 @@ public class App {
 				if(bandas.qtdBandas() == 0) System.out.println("Você não possui nenhuma banda cadastrada.");
 				
 				else {
-					System.out.println("\n Banda: "+gerente.getBanda().getNome());
+					System.out.println("\nBanda: "+gerente.getBanda().getNome());
 					System.out.println("Integrantes da banda: \n");
 					String[] nome_integrantes = gerente.getBanda().imprimirBanda();
 					for(i=0;i<5;i++) {

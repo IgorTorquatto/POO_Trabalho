@@ -1,6 +1,6 @@
 package br.edu.ufca.dados;
 
-public class Baixista extends MusicoAbstrato {
+public class Baixista extends MusicoAbstrato implements IMusico {
 	
 	private double expMax = 99.30;
 
