@@ -134,12 +134,14 @@ public class Banda {
 	
 	public String[] imprimirBanda() {
 	
+		DecimalFormat df = new DecimalFormat("#.00");
+		
 		String[] integrantes = {
-				"Vocalista: "+getVocalista().getNome()+" exp("+getVocalista().getExp()+")",
-				"Tecladista: "+getTecladista().getNome()+ " exp("+getTecladista().getExp()+")",
-				"Guitarrista: "+getGuitarrista().getNome()+" exp("+getGuitarrista().getExp()+")",
-				"Baterista: "+getBaterista().getNome()+" exp("+getBaterista().getExp()+")",
-				"Baixista: "+getBaixista().getNome()+" exp("+getBaixista().getExp()+")",
+				"Vocalista: "+getVocalista().getNome()+" exp("+df.format(getVocalista().getExp())+")",
+				"Tecladista: "+getTecladista().getNome()+ " exp("+df.format(getTecladista().getExp())+")",
+				"Guitarrista: "+getGuitarrista().getNome()+" exp("+df.format(getGuitarrista().getExp())+")",
+				"Baterista: "+getBaterista().getNome()+" exp("+df.format(getBaterista().getExp())+")",
+				"Baixista: "+getBaixista().getNome()+" exp("+df.format(getBaixista().getExp())+")",
 		};
 		return integrantes;
 	}
