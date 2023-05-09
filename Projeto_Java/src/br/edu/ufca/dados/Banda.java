@@ -129,7 +129,7 @@ public class Banda {
 		valorAtual += valorPago;
 		gerente.setDinheiro(valorAtual);
 		valorPago = -(valorPago);
-		System.out.println("\nValor pago para os músicos: "+valorPago);
+		System.out.println("\nValor pago para os músicos: "+valorPago+" R$");
 	}
 	
 	public String[] imprimirBanda() {
