@@ -52,7 +52,7 @@ public class Loja {
 			
 			if(posicao == 1) {
 				
-				if(gerente.getDinheiro() > vocalistas_lendarios.getMusicos().get(0).getPreco()) {
+				if(gerente.getDinheiro() >= vocalistas_lendarios.getMusicos().get(0).getPreco()) {
 					
 					double dinheiro_gerente = gerente.getDinheiro();
 					int preco = vocalistas_lendarios.getMusicos().get(0).getPreco();
@@ -71,7 +71,7 @@ public class Loja {
 			
 			if(posicao == 2) {
 				
-				if(gerente.getDinheiro() > vocalistas_lendarios.getMusicos().get(1).getPreco()) {
+				if(gerente.getDinheiro() >= vocalistas_lendarios.getMusicos().get(1).getPreco()) {
 					
 					double dinheiro_gerente = gerente.getDinheiro();
 					int preco = vocalistas_lendarios.getMusicos().get(1).getPreco();
@@ -89,7 +89,7 @@ public class Loja {
 			
 			if(posicao == 3) {
 				
-				if(gerente.getDinheiro() > vocalistas_lendarios.getMusicos().get(2).getPreco()) {
+				if(gerente.getDinheiro() >= vocalistas_lendarios.getMusicos().get(2).getPreco()) {
 					
 					double dinheiro_gerente = gerente.getDinheiro();
 					int preco = vocalistas_lendarios.getMusicos().get(2).getPreco();
@@ -117,7 +117,7 @@ public class Loja {
 			
 			if(posicao == 1) {
 				
-				if(gerente.getDinheiro() > vocalistas_bons.getMusicos().get(0).getPreco()) {
+				if(gerente.getDinheiro() >= vocalistas_bons.getMusicos().get(0).getPreco()) {
 					
 					double dinheiro_gerente = gerente.getDinheiro();
 					int preco = vocalistas_bons.getMusicos().get(0).getPreco();
@@ -136,7 +136,7 @@ public class Loja {
 			
 			if(posicao == 2) {
 				
-				if(gerente.getDinheiro() > vocalistas_bons.getMusicos().get(1).getPreco()) {
+				if(gerente.getDinheiro() >= vocalistas_bons.getMusicos().get(1).getPreco()) {
 					
 					double dinheiro_gerente = gerente.getDinheiro();
 					int preco = vocalistas_bons.getMusicos().get(1).getPreco();
@@ -154,7 +154,7 @@ public class Loja {
 			
 			if(posicao == 3) {
 				
-				if(gerente.getDinheiro() > vocalistas_bons.getMusicos().get(2).getPreco()) {
+				if(gerente.getDinheiro() >= vocalistas_bons.getMusicos().get(2).getPreco()) {
 					
 					double dinheiro_gerente = gerente.getDinheiro();
 					int preco = vocalistas_bons.getMusicos().get(2).getPreco();
@@ -182,7 +182,7 @@ public class Loja {
 			
 			if(posicao == 1) {
 				
-				if(gerente.getDinheiro() > vocalistas_medios.getMusicos().get(0).getPreco()) {
+				if(gerente.getDinheiro() >= vocalistas_medios.getMusicos().get(0).getPreco()) {
 					
 					double dinheiro_gerente = gerente.getDinheiro();
 					int preco = vocalistas_medios.getMusicos().get(0).getPreco();
@@ -201,7 +201,7 @@ public class Loja {
 			
 			if(posicao == 2) {
 				
-				if(gerente.getDinheiro() > vocalistas_medios.getMusicos().get(1).getPreco()) {
+				if(gerente.getDinheiro() >= vocalistas_medios.getMusicos().get(1).getPreco()) {
 					
 					double dinheiro_gerente = gerente.getDinheiro();
 					int preco = vocalistas_medios.getMusicos().get(1).getPreco();
@@ -219,7 +219,7 @@ public class Loja {
 			
 			if(posicao == 3) {
 				
-				if(gerente.getDinheiro() > vocalistas_medios.getMusicos().get(2).getPreco()) {
+				if(gerente.getDinheiro() >= vocalistas_medios.getMusicos().get(2).getPreco()) {
 					
 					double dinheiro_gerente = gerente.getDinheiro();
 					int preco = vocalistas_medios.getMusicos().get(2).getPreco();
@@ -279,7 +279,7 @@ public static void comprarTecladista(Gerente gerente) {
 			
 			if(posicao == 1) {
 				
-				if(gerente.getDinheiro() > tecladistas_lendarios.getMusicos().get(0).getPreco()) {
+				if(gerente.getDinheiro() >= tecladistas_lendarios.getMusicos().get(0).getPreco()) {
 					
 					double dinheiro_gerente = gerente.getDinheiro();
 					int preco = tecladistas_lendarios.getMusicos().get(0).getPreco();
@@ -298,7 +298,7 @@ public static void comprarTecladista(Gerente gerente) {
 			
 			if(posicao == 2) {
 				
-				if(gerente.getDinheiro() > tecladistas_lendarios.getMusicos().get(1).getPreco()) {
+				if(gerente.getDinheiro() >= tecladistas_lendarios.getMusicos().get(1).getPreco()) {
 					
 					double dinheiro_gerente = gerente.getDinheiro();
 					int preco = tecladistas_lendarios.getMusicos().get(1).getPreco();
@@ -316,7 +316,7 @@ public static void comprarTecladista(Gerente gerente) {
 			
 			if(posicao == 3) {
 				
-				if(gerente.getDinheiro() > tecladistas_lendarios.getMusicos().get(2).getPreco()) {
+				if(gerente.getDinheiro() >= tecladistas_lendarios.getMusicos().get(2).getPreco()) {
 					
 					double dinheiro_gerente = gerente.getDinheiro();
 					int preco = tecladistas_lendarios.getMusicos().get(2).getPreco();
@@ -344,7 +344,7 @@ public static void comprarTecladista(Gerente gerente) {
 			
 			if(posicao == 1) {
 				
-				if(gerente.getDinheiro() > tecladistas_bons.getMusicos().get(0).getPreco()) {
+				if(gerente.getDinheiro() >= tecladistas_bons.getMusicos().get(0).getPreco()) {
 					
 					double dinheiro_gerente = gerente.getDinheiro();
 					int  preco = tecladistas_bons.getMusicos().get(0).getPreco();
@@ -363,7 +363,7 @@ public static void comprarTecladista(Gerente gerente) {
 			
 			if(posicao == 2) {
 				
-				if(gerente.getDinheiro() > tecladistas_bons.getMusicos().get(1).getPreco()) {
+				if(gerente.getDinheiro() >= tecladistas_bons.getMusicos().get(1).getPreco()) {
 					
 					double dinheiro_gerente = gerente.getDinheiro();
 					int preco = tecladistas_bons.getMusicos().get(1).getPreco();
@@ -381,7 +381,7 @@ public static void comprarTecladista(Gerente gerente) {
 			
 			if(posicao == 3) {
 				
-				if(gerente.getDinheiro() > tecladistas_bons.getMusicos().get(2).getPreco()) {
+				if(gerente.getDinheiro() >= tecladistas_bons.getMusicos().get(2).getPreco()) {
 					
 					double dinheiro_gerente = gerente.getDinheiro();
 					int preco = tecladistas_bons.getMusicos().get(2).getPreco();
@@ -409,7 +409,7 @@ public static void comprarTecladista(Gerente gerente) {
 			
 			if(posicao == 1) {
 				
-				if(gerente.getDinheiro() > tecladistas_medios.getMusicos().get(0).getPreco()) {
+				if(gerente.getDinheiro() >= tecladistas_medios.getMusicos().get(0).getPreco()) {
 					
 					double dinheiro_gerente = gerente.getDinheiro();
 					int preco = tecladistas_medios.getMusicos().get(0).getPreco();
@@ -428,7 +428,7 @@ public static void comprarTecladista(Gerente gerente) {
 			
 			if(posicao == 2) {
 				
-				if(gerente.getDinheiro() > tecladistas_medios.getMusicos().get(1).getPreco()) {
+				if(gerente.getDinheiro() >= tecladistas_medios.getMusicos().get(1).getPreco()) {
 					
 					double dinheiro_gerente = gerente.getDinheiro();
 					int preco = tecladistas_medios.getMusicos().get(1).getPreco();
@@ -446,7 +446,7 @@ public static void comprarTecladista(Gerente gerente) {
 			
 			if(posicao == 3) {
 				
-				if(gerente.getDinheiro() > tecladistas_medios.getMusicos().get(2).getPreco()) {
+				if(gerente.getDinheiro() >= tecladistas_medios.getMusicos().get(2).getPreco()) {
 					
 					double dinheiro_gerente = gerente.getDinheiro();
 					int preco = tecladistas_medios.getMusicos().get(2).getPreco();
@@ -506,7 +506,7 @@ public static void comprarGuitarrista(Gerente gerente) {
 		
 		if(posicao == 1) {
 			
-			if(gerente.getDinheiro() > guitarristas_lendarios.getMusicos().get(0).getPreco()) {
+			if(gerente.getDinheiro() >= guitarristas_lendarios.getMusicos().get(0).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = guitarristas_lendarios.getMusicos().get(0).getPreco();
@@ -525,7 +525,7 @@ public static void comprarGuitarrista(Gerente gerente) {
 		
 		if(posicao == 2) {
 			
-			if(gerente.getDinheiro() > guitarristas_lendarios.getMusicos().get(1).getPreco()) {
+			if(gerente.getDinheiro() >= guitarristas_lendarios.getMusicos().get(1).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = guitarristas_lendarios.getMusicos().get(1).getPreco();
@@ -543,7 +543,7 @@ public static void comprarGuitarrista(Gerente gerente) {
 		
 		if(posicao == 3) {
 			
-			if(gerente.getDinheiro() > guitarristas_lendarios.getMusicos().get(2).getPreco()) {
+			if(gerente.getDinheiro() >= guitarristas_lendarios.getMusicos().get(2).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = guitarristas_lendarios.getMusicos().get(2).getPreco();
@@ -571,7 +571,7 @@ public static void comprarGuitarrista(Gerente gerente) {
 		
 		if(posicao == 1) {
 			
-			if(gerente.getDinheiro() > guitarristas_bons.getMusicos().get(0).getPreco()) {
+			if(gerente.getDinheiro() >= guitarristas_bons.getMusicos().get(0).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int  preco = guitarristas_bons.getMusicos().get(0).getPreco();
@@ -590,7 +590,7 @@ public static void comprarGuitarrista(Gerente gerente) {
 		
 		if(posicao == 2) {
 			
-			if(gerente.getDinheiro() > guitarristas_bons.getMusicos().get(1).getPreco()) {
+			if(gerente.getDinheiro() >= guitarristas_bons.getMusicos().get(1).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = guitarristas_bons.getMusicos().get(1).getPreco();
@@ -608,7 +608,7 @@ public static void comprarGuitarrista(Gerente gerente) {
 		
 		if(posicao == 3) {
 			
-			if(gerente.getDinheiro() > guitarristas_bons.getMusicos().get(2).getPreco()) {
+			if(gerente.getDinheiro() >= guitarristas_bons.getMusicos().get(2).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = guitarristas_bons.getMusicos().get(2).getPreco();
@@ -636,7 +636,7 @@ public static void comprarGuitarrista(Gerente gerente) {
 		
 		if(posicao == 1) {
 			
-			if(gerente.getDinheiro() > guitarristas_medios.getMusicos().get(0).getPreco()) {
+			if(gerente.getDinheiro() >= guitarristas_medios.getMusicos().get(0).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = guitarristas_medios.getMusicos().get(0).getPreco();
@@ -655,7 +655,7 @@ public static void comprarGuitarrista(Gerente gerente) {
 		
 		if(posicao == 2) {
 			
-			if(gerente.getDinheiro() > guitarristas_medios.getMusicos().get(1).getPreco()) {
+			if(gerente.getDinheiro() >= guitarristas_medios.getMusicos().get(1).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = guitarristas_medios.getMusicos().get(1).getPreco();
@@ -673,7 +673,7 @@ public static void comprarGuitarrista(Gerente gerente) {
 		
 		if(posicao == 3) {
 			
-			if(gerente.getDinheiro() > guitarristas_medios.getMusicos().get(2).getPreco()) {
+			if(gerente.getDinheiro() >= guitarristas_medios.getMusicos().get(2).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = guitarristas_medios.getMusicos().get(2).getPreco();
@@ -733,7 +733,7 @@ public static void comprarBaixista(Gerente gerente) {
 		
 		if(posicao == 1) {
 			
-			if(gerente.getDinheiro() > baixistas_lendarios.getMusicos().get(0).getPreco()) {
+			if(gerente.getDinheiro() >= baixistas_lendarios.getMusicos().get(0).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = baixistas_lendarios.getMusicos().get(0).getPreco();
@@ -752,7 +752,7 @@ public static void comprarBaixista(Gerente gerente) {
 		
 		if(posicao == 2) {
 			
-			if(gerente.getDinheiro() > baixistas_lendarios.getMusicos().get(1).getPreco()) {
+			if(gerente.getDinheiro() >= baixistas_lendarios.getMusicos().get(1).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = baixistas_lendarios.getMusicos().get(1).getPreco();
@@ -770,7 +770,7 @@ public static void comprarBaixista(Gerente gerente) {
 		
 		if(posicao == 3) {
 			
-			if(gerente.getDinheiro() > baixistas_lendarios.getMusicos().get(2).getPreco()) {
+			if(gerente.getDinheiro() >= baixistas_lendarios.getMusicos().get(2).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = baixistas_lendarios.getMusicos().get(2).getPreco();
@@ -798,7 +798,7 @@ public static void comprarBaixista(Gerente gerente) {
 		
 		if(posicao == 1) {
 			
-			if(gerente.getDinheiro() > baixistas_bons.getMusicos().get(0).getPreco()) {
+			if(gerente.getDinheiro() >= baixistas_bons.getMusicos().get(0).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int  preco = baixistas_bons.getMusicos().get(0).getPreco();
@@ -817,7 +817,7 @@ public static void comprarBaixista(Gerente gerente) {
 		
 		if(posicao == 2) {
 			
-			if(gerente.getDinheiro() > baixistas_bons.getMusicos().get(1).getPreco()) {
+			if(gerente.getDinheiro() >= baixistas_bons.getMusicos().get(1).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = baixistas_bons.getMusicos().get(1).getPreco();
@@ -835,7 +835,7 @@ public static void comprarBaixista(Gerente gerente) {
 		
 		if(posicao == 3) {
 			
-			if(gerente.getDinheiro() > baixistas_bons.getMusicos().get(2).getPreco()) {
+			if(gerente.getDinheiro() >= baixistas_bons.getMusicos().get(2).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = baixistas_bons.getMusicos().get(2).getPreco();
@@ -863,7 +863,7 @@ public static void comprarBaixista(Gerente gerente) {
 		
 		if(posicao == 1) {
 			
-			if(gerente.getDinheiro() > baixistas_medios.getMusicos().get(0).getPreco()) {
+			if(gerente.getDinheiro() >= baixistas_medios.getMusicos().get(0).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = baixistas_medios.getMusicos().get(0).getPreco();
@@ -882,7 +882,7 @@ public static void comprarBaixista(Gerente gerente) {
 		
 		if(posicao == 2) {
 			
-			if(gerente.getDinheiro() > baixistas_medios.getMusicos().get(1).getPreco()) {
+			if(gerente.getDinheiro() >= baixistas_medios.getMusicos().get(1).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = baixistas_medios.getMusicos().get(1).getPreco();
@@ -900,7 +900,7 @@ public static void comprarBaixista(Gerente gerente) {
 		
 		if(posicao == 3) {
 			
-			if(gerente.getDinheiro() > baixistas_medios.getMusicos().get(2).getPreco()) {
+			if(gerente.getDinheiro() >= baixistas_medios.getMusicos().get(2).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = baixistas_medios.getMusicos().get(2).getPreco();
@@ -960,7 +960,7 @@ public static void comprarBaterista(Gerente gerente) {
 		
 		if(posicao == 1) {
 			
-			if(gerente.getDinheiro() > bateristas_lendarios.getMusicos().get(0).getPreco()) {
+			if(gerente.getDinheiro() >= bateristas_lendarios.getMusicos().get(0).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = bateristas_lendarios.getMusicos().get(0).getPreco();
@@ -979,7 +979,7 @@ public static void comprarBaterista(Gerente gerente) {
 		
 		if(posicao == 2) {
 			
-			if(gerente.getDinheiro() > bateristas_lendarios.getMusicos().get(1).getPreco()) {
+			if(gerente.getDinheiro() >= bateristas_lendarios.getMusicos().get(1).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = bateristas_lendarios.getMusicos().get(1).getPreco();
@@ -997,7 +997,7 @@ public static void comprarBaterista(Gerente gerente) {
 		
 		if(posicao == 3) {
 			
-			if(gerente.getDinheiro() > bateristas_lendarios.getMusicos().get(2).getPreco()) {
+			if(gerente.getDinheiro() >= bateristas_lendarios.getMusicos().get(2).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = bateristas_lendarios.getMusicos().get(2).getPreco();
@@ -1025,7 +1025,7 @@ public static void comprarBaterista(Gerente gerente) {
 		
 		if(posicao == 1) {
 			
-			if(gerente.getDinheiro() > bateristas_bons.getMusicos().get(0).getPreco()) {
+			if(gerente.getDinheiro() >= bateristas_bons.getMusicos().get(0).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int  preco = bateristas_bons.getMusicos().get(0).getPreco();
@@ -1044,7 +1044,7 @@ public static void comprarBaterista(Gerente gerente) {
 		
 		if(posicao == 2) {
 			
-			if(gerente.getDinheiro() > bateristas_bons.getMusicos().get(1).getPreco()) {
+			if(gerente.getDinheiro() >= bateristas_bons.getMusicos().get(1).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = bateristas_bons.getMusicos().get(1).getPreco();
@@ -1062,7 +1062,7 @@ public static void comprarBaterista(Gerente gerente) {
 		
 		if(posicao == 3) {
 			
-			if(gerente.getDinheiro() > bateristas_bons.getMusicos().get(2).getPreco()) {
+			if(gerente.getDinheiro() >= bateristas_bons.getMusicos().get(2).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = bateristas_bons.getMusicos().get(2).getPreco();
@@ -1090,7 +1090,7 @@ public static void comprarBaterista(Gerente gerente) {
 		
 		if(posicao == 1) {
 			
-			if(gerente.getDinheiro() > bateristas_medios.getMusicos().get(0).getPreco()) {
+			if(gerente.getDinheiro() >= bateristas_medios.getMusicos().get(0).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = bateristas_medios.getMusicos().get(0).getPreco();
@@ -1109,7 +1109,7 @@ public static void comprarBaterista(Gerente gerente) {
 		
 		if(posicao == 2) {
 			
-			if(gerente.getDinheiro() > bateristas_medios.getMusicos().get(1).getPreco()) {
+			if(gerente.getDinheiro() >= bateristas_medios.getMusicos().get(1).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = bateristas_medios.getMusicos().get(1).getPreco();
@@ -1127,7 +1127,7 @@ public static void comprarBaterista(Gerente gerente) {
 		
 		if(posicao == 3) {
 			
-			if(gerente.getDinheiro() > bateristas_medios.getMusicos().get(2).getPreco()) {
+			if(gerente.getDinheiro() >= bateristas_medios.getMusicos().get(2).getPreco()) {
 				
 				double dinheiro_gerente = gerente.getDinheiro();
 				int preco = bateristas_medios.getMusicos().get(2).getPreco();

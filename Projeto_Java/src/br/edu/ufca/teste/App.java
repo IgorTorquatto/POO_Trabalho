@@ -151,7 +151,7 @@ public class App {
 				//Troca a banda do usuário
 				
 				if(bandas.qtdBandas() == 1 ) {
-					System.out.println("Você possui apenas uma banda cadastrada. Preocedimento inválido.");
+					System.out.println("Você possui apenas uma banda cadastrada. Procedimento inválido.");
 					break;
 				}
 				
