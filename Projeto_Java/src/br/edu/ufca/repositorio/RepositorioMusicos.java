@@ -20,9 +20,16 @@ public class RepositorioMusicos {
 	}
 	
 	//Update
-	public void adicionaMusico(MusicoAbstrato musico) {
-		this.musicos.add(musico);
+
+	public void atualizaMusico(MusicoAbstrato musicoExistente, MusicoAbstrato novoMusico) {
+	    int index = musicos.indexOf(musicoExistente);
+	    if (index != -1) { // verifica se o musico existente está na lista
+	        musicos.set(index, novoMusico); // substitui o musico existente pelo novo musico
+	    } else {
+	        System.out.println("Músico não encontrado na lista.");
+	    }
 	}
+	
 	//Delete
 	public void removeMusico(MusicoAbstrato musico) {
 		if(musicos.contains(musico)) {
@@ -41,6 +48,10 @@ public class RepositorioMusicos {
 	}
 	
 	//Outros métodos:
+	
+	public void adicionaMusico(MusicoAbstrato musico) {
+		this.musicos.add(musico);
+	}
 	
 	public void imprimirMusicos() {
 		for(int i = 0; i < 3 ; i++) {

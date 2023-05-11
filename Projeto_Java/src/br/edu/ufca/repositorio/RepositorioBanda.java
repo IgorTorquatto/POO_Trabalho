@@ -22,10 +22,15 @@ public class RepositorioBanda {
 	}
 		
 	//Update
-	public void adicionaBanda(Banda banda) {
-			this.bandas.add(banda);
+	public void atualizaBanda(Banda bandaExistente, Banda novaBanda) {
+	    int index = bandas.indexOf(bandaExistente);
+	    if (index != -1) { // verifica se a banda existente está na lista
+	        bandas.set(index, novaBanda); // substitui a banda existente pela nova banda
+	    } else {
+	        System.out.println("Banda não encontrada na lista.");
+	    }
 	}
-	
+
 	//Delete
 	public void removeBanda(Banda banda) {
 		if(bandas.contains(banda)) {
@@ -45,6 +50,10 @@ public class RepositorioBanda {
 	}
 		
 	//Outros métodos:
+	
+	public void adicionaBanda(Banda banda) {
+		this.bandas.add(banda);
+	}
 	
 	public int qtdBandas() {
 		int qtd = bandas.size();
