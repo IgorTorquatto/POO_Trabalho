@@ -120,6 +120,7 @@ public class Banda {
 		
 	public void pagarBanda(Gerente gerente) {
 		double valorPago, valorAtual;
+		DecimalFormat dp = new DecimalFormat("#.000");
 		valorAtual = gerente.getDinheiro();
 		valorPago = -(vocalista.receberCache(vocalista.getExp()));
 		valorPago += -(tecladista.receberCache(tecladista.getExp()));
@@ -129,7 +130,7 @@ public class Banda {
 		valorAtual += valorPago;
 		gerente.setDinheiro(valorAtual);
 		valorPago = -(valorPago);
-		System.out.println("\nValor pago para os músicos: "+valorPago+" R$");
+		System.out.println("\nValor pago para os músicos: "+dp.format(valorPago)+" R$");
 	}
 	
 	public String[] imprimirBanda() {
