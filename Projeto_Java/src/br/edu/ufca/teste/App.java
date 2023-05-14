@@ -48,7 +48,6 @@ public class App {
     		  
       while(sair==false) {
     	  
-    	  System.out.println("indice"+ indice); // Mostrando para corrigir bugs, apagar depois
     	  
     	  System.out.println(
 				  "\n1-Cadastrar nova banda\n"
