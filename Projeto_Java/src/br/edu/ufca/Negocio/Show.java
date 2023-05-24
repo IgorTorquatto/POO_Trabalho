@@ -1,8 +1,5 @@
-package br.edu.ufca.teste;
+package br.edu.ufca.Negocio;
 import java.util.Random;
-
-import br.edu.ufca.dados.Banda;
-import br.edu.ufca.dados.Gerente;
 
 public class Show {
 	int notasPublico;

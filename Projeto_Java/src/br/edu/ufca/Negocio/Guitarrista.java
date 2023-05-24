@@ -1,4 +1,4 @@
-package br.edu.ufca.dados;
+package br.edu.ufca.Negocio;
 
 public class Guitarrista extends MusicoAbstrato implements IMusico{
 	

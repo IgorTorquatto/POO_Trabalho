@@ -1,11 +1,15 @@
-package br.edu.ufca.repositorio;
-import br.edu.ufca.dados.*;
-
+package br.edu.ufca.Dados;
 import java.util.ArrayList;
 
-public class RepositorioBanda {
+import br.edu.ufca.Negocio.*;
+
+public class RepositorioBanda implements IRepositorio <Banda>{
 	
-	//Guarda todas as bandas do usuário
+	/*
+	 Só deve conter código de acesso a dados
+	 não lança exceções
+	 não imprime mensagens
+	*/
 	
 	ArrayList<Banda> bandas; 
 	
@@ -15,24 +19,27 @@ public class RepositorioBanda {
 	}
 
 	//Read
-	public void consultaBanda(Banda banda) {
+	@Override
+	public void consulta(Banda banda) {
 		if(bandas.contains(banda)) {
 				System.out.println(bandas.indexOf(banda)); 
 			}
 	}
 		
 	//Update
-	public void atualizaBanda(Banda bandaExistente, Banda novaBanda) {
+	@Override
+	public void atualiza(Banda bandaExistente, Banda novaBanda) {
 	    int index = bandas.indexOf(bandaExistente);
-	    if (index != -1) { // verifica se a banda existente está na lista
-	        bandas.set(index, novaBanda); // substitui a banda existente pela nova banda
+	    if (index != -1) { 
+	        bandas.set(index, novaBanda); 
 	    } else {
 	        System.out.println("Banda não encontrada na lista.");
 	    }
 	}
 
 	//Delete
-	public void removeBanda(Banda banda) {
+	@Override
+	public void remove(Banda banda) {
 		if(bandas.contains(banda)) {
 			bandas.remove(banda);
 			}

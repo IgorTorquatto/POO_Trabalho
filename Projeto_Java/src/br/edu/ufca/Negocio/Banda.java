@@ -1,4 +1,4 @@
-package br.edu.ufca.dados;
+package br.edu.ufca.Negocio;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;

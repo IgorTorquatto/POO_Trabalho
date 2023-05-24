@@ -1,9 +1,15 @@
-package br.edu.ufca.repositorio;
+package br.edu.ufca.Dados;
 import java.util.ArrayList;
 
-import br.edu.ufca.dados.*;
+import br.edu.ufca.Negocio.*;
 
-public class RepositorioMusicos {
+public class RepositorioMusicos implements IRepositorio<MusicoAbstrato> {
+	
+	/*
+	 Só deve conter código de acesso a dados
+	 não lança exceções
+	 não imprime mensagens
+	*/
 	
 	private ArrayList<MusicoAbstrato> musicos;
 
@@ -13,25 +19,27 @@ public class RepositorioMusicos {
 	}
 
 	//Read
-	public void consultaMusico(MusicoAbstrato musico) {
+	@Override
+	public void consulta(MusicoAbstrato musico) {
 		if(musicos.contains(musico)) {
 			System.out.println(musicos.indexOf(musico)); 
 		}
 	}
 	
 	//Update
-
-	public void atualizaMusico(MusicoAbstrato musicoExistente, MusicoAbstrato novoMusico) {
+	@Override
+	public void atualiza(MusicoAbstrato musicoExistente, MusicoAbstrato novoMusico) {
 	    int index = musicos.indexOf(musicoExistente);
-	    if (index != -1) { // verifica se o musico existente está na lista
-	        musicos.set(index, novoMusico); // substitui o musico existente pelo novo musico
+	    if (index != -1) { 
+	        musicos.set(index, novoMusico); 
 	    } else {
 	        System.out.println("Músico não encontrado na lista.");
 	    }
 	}
 	
 	//Delete
-	public void removeMusico(MusicoAbstrato musico) {
+	@Override
+	public void remove(MusicoAbstrato musico) {
 		if(musicos.contains(musico)) {
 			musicos.remove(musico);
 		}

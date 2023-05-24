@@ -1,11 +1,14 @@
-package br.edu.ufca.teste;
+package br.edu.ufca.IU;
 
 import java.util.Scanner;
-import br.edu.ufca.dados.*;
-import br.edu.ufca.repositorio.*;
+
+import br.edu.ufca.Dados.*;
+import br.edu.ufca.Negocio.*;
 
 public class App {
-	
+	/*
+	 Aqui deve ficar a main
+	*/
   public static void main(String[] args) {
 	  
 	  //A intenção é deixar similar a um sistema de gerenciamento

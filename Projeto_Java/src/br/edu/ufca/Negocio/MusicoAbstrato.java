@@ -1,4 +1,4 @@
-package br.edu.ufca.dados;
+package br.edu.ufca.Negocio;
 
 public abstract class MusicoAbstrato implements IMusico {
 	private String nome;

@@ -1,12 +1,12 @@
-package br.edu.ufca.teste;
+package br.edu.ufca.Negocio;
 
 import java.util.ArrayList;
 
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Random;
-import br.edu.ufca.dados.*;
-import br.edu.ufca.repositorio.*;
+
+import br.edu.ufca.Dados.*;
 
 public class Funcionalidades {
 	

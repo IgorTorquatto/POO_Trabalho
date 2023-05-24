@@ -1,11 +1,10 @@
-package br.edu.ufca.teste;
+package br.edu.ufca.Negocio;
 
 import java.util.Random;
 
 import java.util.Scanner;
 
-import br.edu.ufca.dados.*;
-import br.edu.ufca.repositorio.*;
+import br.edu.ufca.Dados.*;
 
 public class Loja {
 	
