@@ -29,18 +29,12 @@ public class RepositorioBanda implements IRepositorio <Banda>{
 	public void atualiza(Banda bandaExistente, Banda novaBanda) {
 	    int index = bandas.indexOf(bandaExistente);
 	    bandas.set(index, novaBanda); 
-	   /*else {
-	        System.out.println("Banda não encontrada na lista.");  isso vai para a IU
-	    }*/
 	}
 
 	//Delete
 	@Override
 	public void remove(Banda banda) {
 		bandas.remove(banda);
-		/*else {
-			System.out.println("Banda não está contida na lista.");
-		}  isso vai para a IU*/ 
 	}
 	
 	@Override

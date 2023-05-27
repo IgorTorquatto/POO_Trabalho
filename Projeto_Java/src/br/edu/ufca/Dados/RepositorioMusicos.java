@@ -20,29 +20,21 @@ public class RepositorioMusicos implements IRepositorio<MusicoAbstrato> {
 
 	//Read
 	@Override
-	public void consulta(MusicoAbstrato musico) {
-		if(musicos.contains(musico)) {
-			System.out.println(musicos.indexOf(musico)); 
-		}
+	public int consulta(MusicoAbstrato musico) {
+		return musicos.indexOf(musico); 
 	}
 	
 	//Update
 	@Override
 	public void atualiza(MusicoAbstrato musicoExistente, MusicoAbstrato novoMusico) {
-	    int index = musicos.indexOf(musicoExistente);
-	    if (index != -1) { 
-	        musicos.set(index, novoMusico); 
-	    } else {
-	        System.out.println("Músico não encontrado na lista.");
-	    }
+		int index = musicos.indexOf(musicoExistente);
+	    musicos.set(index, novoMusico); 
 	}
 	
 	//Delete
 	@Override
 	public void remove(MusicoAbstrato musico) {
-		if(musicos.contains(musico)) {
-			musicos.remove(musico);
-		}
+		musicos.remove(musico);
 	}
 	
 	//Get & Set:
@@ -57,7 +49,8 @@ public class RepositorioMusicos implements IRepositorio<MusicoAbstrato> {
 	
 	//Outros métodos:
 	
-	public void adicionaMusico(MusicoAbstrato musico) {
+	@Override
+	public void adiciona(MusicoAbstrato musico) {
 		this.musicos.add(musico);
 	}
 	
@@ -66,5 +59,33 @@ public class RepositorioMusicos implements IRepositorio<MusicoAbstrato> {
 			System.out.println(musicos.get(i).getNome()+" "+musicos.get(i).getPreco()+" R$");
 		}
 	}
+
+	@Override
+	public boolean existe(MusicoAbstrato musico) {
+		int index = musicos.indexOf(musico);
+		if(index != -1) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	@Override
+	public int qtd() {
+		int qtd = musicos.size();
+		return qtd;
+	}
+
+	@Override
+	public boolean vazio() {
+		if(musicos.size() > 0) {
+			return false;
+		}else {
+			return true;
+		}
+	}
+
+
 	
 }
