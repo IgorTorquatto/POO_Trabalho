@@ -13,6 +13,8 @@ public class Fachada {
 	
 	public Fachada() {
 		this.bandas = new NegocioBanda(new RepositorioBanda());
-		this.gerente = new NegocioGerente(new Gerente(null, null, 5000));
+		//this.gerente = new NegocioGerente(new Gerente(null, null, 5000));
 	}
+	
+	
 }

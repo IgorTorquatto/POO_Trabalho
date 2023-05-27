@@ -28,7 +28,7 @@ public class TelaPrincipal {
 	            System.out.println("Digite apenas letras.");
 	        }
 	    }
-
+	    
 	    System.out.println("Olá, " + nome + "!");
 		
 		while(sair == false){
