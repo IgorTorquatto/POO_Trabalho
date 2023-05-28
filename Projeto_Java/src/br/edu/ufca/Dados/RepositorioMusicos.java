@@ -86,6 +86,12 @@ public class RepositorioMusicos implements IRepositorio<MusicoAbstrato> {
 		}
 	}
 
+	@Override
+	public Banda geraBanda(ArrayList<String> nomes, String nome_banda) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 	
 }

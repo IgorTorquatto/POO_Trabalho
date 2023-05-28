@@ -8,26 +8,21 @@ public class TelaPrincipal {
 	private Scanner scanner;
 	private TelaLoja telaloja;
 	private TelaShow telashow;
+	private TelaCadastro telacadastro;
 	
 	public TelaPrincipal(Fachada fachada) {
 		scanner = new Scanner(System.in);
 		telaloja = new TelaLoja(fachada);
 		telashow = new TelaShow(fachada);
+		telacadastro = new TelaCadastro(fachada);
 	}
 	
 	public void iniciar(){
 		
 	    boolean sair = false;
-	    String nome = "";
-
-	    while (nome.isEmpty() || !nome.matches("[a-zA-Z]+")) {
-	        System.out.println("Digite seu nome: ");
-	        nome = scanner.nextLine();
-
-	        if (!nome.matches("[a-zA-Z]+")) {
-	            System.out.println("Digite apenas letras.");
-	        }
-	    }
+	    String nome;
+	    
+	    nome =telacadastro.cadastroIncial();
 	    
 	    System.out.println("Olá, " + nome + "!");
 		
@@ -47,6 +42,7 @@ public class TelaPrincipal {
 		String operacao = scanner.nextLine();
 		switch(operacao){
 		case 1: 
+			telacadastro.cadastroBanda();
 			break;
 		case 2:  
 			break;

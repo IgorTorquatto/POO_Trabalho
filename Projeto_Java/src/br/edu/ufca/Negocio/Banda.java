@@ -74,9 +74,9 @@ public class Banda {
 	}
 
 	//Métodos:
-	public void gerarBanda(ArrayList<String> nomes,String nome_banda) {
+	public Banda gerarBanda(ArrayList<String> nomes,String nome_banda) {
 		Random random = new Random();
-		
+		Banda banda;
 		//Para gerar na range certa (max-min)+min
 		vocalista = new Vocalista(nomes.get(0),random.nextInt(69-60)+60,0);
 		tecladista = new Tecladista(nomes.get(1),random.nextInt(69-60)+60,0);
@@ -85,6 +85,8 @@ public class Banda {
 		baixista = new Baixista(nomes.get(4),random.nextInt(69-60)+60,0);
 		nome = nome_banda;
 		
+		banda = new Banda(vocalista, tecladista, guitarrista, baterista, baixista, nome_banda);
+		return banda;
 	}
 	
 	public double calcularExp() {

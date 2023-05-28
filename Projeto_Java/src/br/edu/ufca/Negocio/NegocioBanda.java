@@ -1,5 +1,7 @@
 package br.edu.ufca.Negocio;
 
+import java.util.ArrayList;
+
 import br.edu.ufca.Dados.IRepositorio;
 import br.edu.ufca.Dados.RepositorioBanda;
 
@@ -67,6 +69,9 @@ public class NegocioBanda {
 		
 	}
 	
+	public Banda geraBanda(ArrayList<String> nomes,String nome_banda) {
+		 return repositorio.geraBanda(nomes,nome_banda);
+	}
 	
 	
 }

@@ -1,5 +1,7 @@
 package br.edu.ufca.Dados;
 
+import java.util.ArrayList;
+
 import br.edu.ufca.Negocio.Banda;
 
 public interface IRepositorio<T>{
@@ -14,5 +16,6 @@ public interface IRepositorio<T>{
 	public void adiciona(T parametro);
 	public int qtd();
 	public boolean vazio();
+	public Banda geraBanda(ArrayList<String> nomes,String nome_banda);
 	
 }
