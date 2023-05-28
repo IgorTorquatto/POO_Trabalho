@@ -77,4 +77,10 @@ public class RepositorioBanda implements IRepositorio <Banda>{
 			return true;
 		}
 	}
+	
+	public Banda geraBanda(ArrayList<String> nomes,String nome_banda) {
+		Banda b = new Banda(null, null, null, null, null, nome_banda);
+		b.gerarBanda(nomes, nome_banda);
+		return b;
+	}
 }

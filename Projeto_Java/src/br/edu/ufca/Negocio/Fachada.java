@@ -1,5 +1,7 @@
 package br.edu.ufca.Negocio;
 
+import java.util.ArrayList;
+
 import br.edu.ufca.Dados.RepositorioBanda;
 import br.edu.ufca.Dados.RepositorioMusicos;
 
@@ -42,6 +44,11 @@ public class Fachada {
 	
 	public int checarQuantidadeBanda() {  //throws repositoriovazioException
 		return bandas.qtdBandas();
+	}
+	
+	public Banda gerarBanda(ArrayList<String> nomes,String nome_banda) {
+		 return bandas.geraBanda(nomes, nome_banda);
+		
 	}
 	
 	//Musico:
@@ -88,7 +95,13 @@ public class Fachada {
 	}
 	
 	//Gerente:
-	public int checarSaldo(Gerente gerente) {
-		
+	
+	public void adicionarGerente(String nome,double dinheiro,Banda banda) {
+		 gerente.adicionaGerente(nome, dinheiro, banda);
 	}
+	
+	public double checarSaldo() {
+		return this.gerente.saldo();
+	}
+	
 }
