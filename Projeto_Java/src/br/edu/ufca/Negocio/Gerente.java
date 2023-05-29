@@ -37,14 +37,5 @@ public class Gerente {
 	}
 	
 	
-	//Métodos:
-	public void comprarArtista() {
-		
-	}
-	
-	public void realizarShow() {
-		
-	}
-	
 	
 }

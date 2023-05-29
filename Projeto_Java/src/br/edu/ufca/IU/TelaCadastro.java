@@ -18,7 +18,7 @@ public class TelaCadastro {
 	}
 	
 	//cadastrar gerente
-	public String cadastroIncial() {
+	public Gerente cadastroIncial() {
 		
 		String nome = "";
 		Gerente gerente ;
@@ -32,8 +32,8 @@ public class TelaCadastro {
 	        }
 	    }
 	    
-	   fachada.adicionarGerente(nome, 5000, cadastroBanda());
-	   return nome;
+	   gerente = fachada.adicionarGerente(nome, 5000, cadastroBanda());
+	   return gerente;
 	}
 	
 	public Banda cadastroBanda() {

@@ -26,15 +26,15 @@ public class Loja {
 		Random random = new Random();
 		
 		for(int i = 0 ; i < 3 ; i++) {
-			vocalistas_lendarios.adicionaMusico(new Vocalista(nomes_lendarios[i],random.nextInt(99-90)+90, 5000));
+			vocalistas_lendarios.adiciona(new Vocalista(nomes_lendarios[i],random.nextInt(99-90)+90, 5000));
 		}
 		
 		for(int i = 0 ; i < 3 ; i++) {
-			vocalistas_bons.adicionaMusico(new Vocalista(nomes_bons[i],random.nextInt(89-80)+80, 3000));
+			vocalistas_bons.adiciona(new Vocalista(nomes_bons[i],random.nextInt(89-80)+80, 3000));
 		}
 		
 		for(int i = 0 ; i < 3 ; i++) {
-			vocalistas_medios.adicionaMusico(new Vocalista(nomes_medios[i],random.nextInt(79-70)+70, 2000));
+			vocalistas_medios.adiciona(new Vocalista(nomes_medios[i],random.nextInt(79-70)+70, 2000));
 		}
 		
 		System.out.println("Selecione a categoria de vocalistas: ");
@@ -253,15 +253,15 @@ public static void comprarTecladista(Gerente gerente) {
 		Random random = new Random();
 		
 		for(int i = 0 ; i < 3 ; i++) {
-			tecladistas_lendarios.adicionaMusico(new Tecladista(nomes_lendarios[i],random.nextInt(99-90)+90, 5000));
+			tecladistas_lendarios.adiciona(new Tecladista(nomes_lendarios[i],random.nextInt(99-90)+90, 5000));
 		}
 		
 		for(int i = 0 ; i < 3 ; i++) {
-			tecladistas_bons.adicionaMusico(new Tecladista(nomes_bons[i],random.nextInt(89-80)+80, 3000));
+			tecladistas_bons.adiciona(new Tecladista(nomes_bons[i],random.nextInt(89-80)+80, 3000));
 		}
 		
 		for(int i = 0 ; i < 3 ; i++) {
-			tecladistas_medios.adicionaMusico(new Tecladista(nomes_medios[i],random.nextInt(79-70)+70, 2000));
+			tecladistas_medios.adiciona(new Tecladista(nomes_medios[i],random.nextInt(79-70)+70, 2000));
 		}
 		
 		System.out.println("Selecione a categoria de tecladistas: ");
@@ -480,15 +480,15 @@ public static void comprarGuitarrista(Gerente gerente) {
 	Random random = new Random();
 	
 	for(int i = 0 ; i < 3 ; i++) {
-		guitarristas_lendarios.adicionaMusico(new Guitarrista(nomes_lendarios[i],random.nextInt(99-90)+90, 5000));
+		guitarristas_lendarios.adiciona(new Guitarrista(nomes_lendarios[i],random.nextInt(99-90)+90, 5000));
 	}
 	
 	for(int i = 0 ; i < 3 ; i++) {
-		guitarristas_bons.adicionaMusico(new Guitarrista(nomes_bons[i],random.nextInt(89-80)+80, 3000));
+		guitarristas_bons.adiciona(new Guitarrista(nomes_bons[i],random.nextInt(89-80)+80, 3000));
 	}
 	
 	for(int i = 0 ; i < 3 ; i++) {
-		guitarristas_medios.adicionaMusico(new Guitarrista(nomes_medios[i],random.nextInt(79-70)+70, 2000));
+		guitarristas_medios.adiciona(new Guitarrista(nomes_medios[i],random.nextInt(79-70)+70, 2000));
 	}
 	
 	System.out.println("Selecione a categoria de guitarristas: ");
@@ -707,15 +707,15 @@ public static void comprarBaixista(Gerente gerente) {
 	Random random = new Random();
 	
 	for(int i = 0 ; i < 3 ; i++) {
-		baixistas_lendarios.adicionaMusico(new Baixista(nomes_lendarios[i],random.nextInt(99-90)+90, 5000));
+		baixistas_lendarios.adiciona(new Baixista(nomes_lendarios[i],random.nextInt(99-90)+90, 5000));
 	}
 	
 	for(int i = 0 ; i < 3 ; i++) {
-		baixistas_bons.adicionaMusico(new Baixista(nomes_bons[i],random.nextInt(89-80)+80, 3000));
+		baixistas_bons.adiciona(new Baixista(nomes_bons[i],random.nextInt(89-80)+80, 3000));
 	}
 	
 	for(int i = 0 ; i < 3 ; i++) {
-		baixistas_medios.adicionaMusico(new Baixista(nomes_medios[i],random.nextInt(79-70)+70, 2000));
+		baixistas_medios.adiciona(new Baixista(nomes_medios[i],random.nextInt(79-70)+70, 2000));
 	}
 	
 	System.out.println("Selecione a categoria de baixistas: ");
@@ -934,15 +934,15 @@ public static void comprarBaterista(Gerente gerente) {
 	Random random = new Random();
 	
 	for(int i = 0 ; i < 3 ; i++) {
-		bateristas_lendarios.adicionaMusico(new Baterista(nomes_lendarios[i],random.nextInt(99-90)+90, 5000));
+		bateristas_lendarios.adiciona(new Baterista(nomes_lendarios[i],random.nextInt(99-90)+90, 5000));
 	}
 	
 	for(int i = 0 ; i < 3 ; i++) {
-		bateristas_bons.adicionaMusico(new Baterista(nomes_bons[i],random.nextInt(89-80)+80, 3000));
+		bateristas_bons.adiciona(new Baterista(nomes_bons[i],random.nextInt(89-80)+80, 3000));
 	}
 	
 	for(int i = 0 ; i < 3 ; i++) {
-		bateristas_medios.adicionaMusico(new Baterista(nomes_medios[i],random.nextInt(79-70)+70, 2000));
+		bateristas_medios.adiciona(new Baterista(nomes_medios[i],random.nextInt(79-70)+70, 2000));
 	}
 	
 	System.out.println("Selecione a categoria de bateristas: ");

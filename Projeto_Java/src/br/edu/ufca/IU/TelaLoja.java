@@ -1,6 +1,8 @@
 package br.edu.ufca.IU;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
+
 
 import br.edu.ufca.Negocio.*;
 
@@ -14,12 +16,13 @@ public class TelaLoja {
 	}
 
 	
-	public void iniciar() {
+	public void iniciar(Gerente gerente) {
 		
 		System.out.println("Loja: ");
 		
 		boolean sair_loja = false;
 		int escolha;
+		DecimalFormat dp = new DecimalFormat("#.000");
 		
 		while(sair_loja == false) {
 			
@@ -30,7 +33,7 @@ public class TelaLoja {
 			   
 			   escolha = scanner.nextInt();
 			   
-			   if(escolha==1) Loja.imprimirSaldo(gerente);
+			   if(escolha==1) System.out.println("Saldo " +dp.format(fachada.checarSaldoGerente())+" R$.");   
 			   
 			   if(escolha==2) {
 				   System.out.println("Qual integrante você deseja comprar? ");
@@ -46,19 +49,19 @@ public class TelaLoja {
 				   switch(escolh) {
 				   
 				   case 1:
-					   Loja.comprarVocalista(gerente);
+					   fachada.comprarVocalistaGerente(gerente);
 					   break;
 				   case 2:
-					   Loja.comprarTecladista(gerente);
+					   fachada.comprarTecladistaGerente(gerente);
 					   break;
 				   case 3:
-					  Loja.comprarGuitarrista(gerente);
+					   fachada.comprarGuitarristaGerente(gerente);
 					   break;
 				   case 4:
-					   Loja.comprarBaterista(gerente);
+					   fachada.comprarBateristaGerente(gerente);
 					   break;
 				   case 5:
-					   Loja.comprarBaixista(gerente);
+					   fachada.comprarBaixistaGerente(gerente);
 					   break;
 					
 					default:

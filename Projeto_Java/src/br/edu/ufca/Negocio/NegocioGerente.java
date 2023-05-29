@@ -23,16 +23,50 @@ public class NegocioGerente {
 		}
 	}
 	
-	public void adicionaGerente(String nome,double dinheiro,Banda banda) {
+	public Gerente adicionaGerente(String nome,double dinheiro,Banda banda) {
+		Gerente g = null;
 		if(nome != null && dinheiro!= 0 && banda != null) {
-			gerente.setNome(nome);
-			gerente.setDinheiro(dinheiro);
-			gerente.setBanda(banda);
+			g = new Gerente(nome, banda, dinheiro);
 		}else {
 			//exceção
 
 		}
+		return g;
 		
 	}
+	
+	public void compraVocalista(Gerente gerente) {
+		Loja.comprarVocalista(gerente);
+		
+	}
+	
+	public void compraGuitarrista(Gerente gerente) {
+		Loja.comprarGuitarrista(gerente);
+		
+	}
+	
+	public void compraTecladista(Gerente gerente) {
+		Loja.comprarTecladista(gerente);
+		
+	}
+	
+	public void compraBaixista(Gerente gerente) {
+		Loja.comprarBaixista(gerente);
+		
+	}
+	
+	public void compraBaterista(Gerente gerente) {
+		Loja.comprarBaterista(gerente);
+		
+	}
+	
+	public String consultaNomeGerente(Gerente gerente) {
+		if(gerente != null) {
+			return gerente.getNome();
+		}else {
+			return gerente.getNome(); //excecao
+		}
+	}
+	
 
 }
