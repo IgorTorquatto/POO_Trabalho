@@ -96,12 +96,38 @@ public class Fachada {
 	
 	//Gerente:
 	
-	public void adicionarGerente(String nome,double dinheiro,Banda banda) {
-		 gerente.adicionaGerente(nome, dinheiro, banda);
+	public Gerente adicionarGerente(String nome,double dinheiro,Banda banda) {
+		Gerente g = null;
+		g= gerente.adicionaGerente(nome, dinheiro, banda);
+		return g;
 	}
 	
-	public double checarSaldo() {
-		return this.gerente.saldo();
+	public double checarSaldoGerente() {
+		return gerente.saldo();
 	}
 	
+	public String consultarNomeGerente(Gerente gerente) {
+		return this.gerente.consultaNomeGerente(gerente);
+	}
+	
+	
+	public void comprarVocalistaGerente(Gerente gerente) {
+		this.gerente.compraVocalista(gerente);
+	}
+	
+	public void comprarTecladistaGerente(Gerente gerente) {
+		this.gerente.compraTecladista(gerente);
+	}
+	
+	public void comprarGuitarristaGerente(Gerente gerente) {
+		this.gerente.compraGuitarrista(gerente);
+	}
+	
+	public void comprarBaixistaGerente(Gerente gerente) {
+		this.gerente.compraBaixista(gerente);
+	}
+	
+	public void comprarBateristaGerente(Gerente gerente) {
+		this.gerente.compraBaterista(gerente);
+	}
 }

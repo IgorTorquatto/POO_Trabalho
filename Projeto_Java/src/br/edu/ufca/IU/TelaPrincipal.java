@@ -9,6 +9,7 @@ public class TelaPrincipal {
 	private TelaLoja telaloja;
 	private TelaShow telashow;
 	private TelaCadastro telacadastro;
+	private Fachada fachada;
 	
 	public TelaPrincipal(Fachada fachada) {
 		scanner = new Scanner(System.in);
@@ -20,11 +21,11 @@ public class TelaPrincipal {
 	public void iniciar(){
 		
 	    boolean sair = false;
-	    String nome;
+	    Gerente gerente;
 	    
-	    nome =telacadastro.cadastroIncial();
+	    gerente = telacadastro.cadastroIncial();
 	    
-	    System.out.println("Olá, " + nome + "!");
+	    System.out.println("Olá, "+ fachada.consultarNomeGerente(gerente)+ "!");
 		
 		while(sair == false){
 		System.out.println(
@@ -36,10 +37,10 @@ public class TelaPrincipal {
 		   		+ "5-Excluir bandas\n"
 		   		+ "6-Trocar de banda \n"
 		   		+ "7-Encerrar programa\n"
-		   		+ "Quantidade de bandas sendo gerenciadas: ? \n"
+		   		+ "Quantidade de bandas sendo gerenciadas:"+fachada.checarQuantidadeBanda()+"\n"
 		   		+ "Nome da Banda sendo gerenciada atualmente: ? \n"
 		   		);
-		String operacao = scanner.nextLine();
+		int operacao = scanner.nextInt();
 		switch(operacao){
 		case 1: 
 			telacadastro.cadastroBanda();
@@ -47,7 +48,7 @@ public class TelaPrincipal {
 		case 2:  
 			break;
 		case 3:
-			//telaloja.iniciar();
+			telaloja.iniciar(gerente);
 			break;
 		case 4:
 			//telashow.iniciar();
@@ -63,6 +64,6 @@ public class TelaPrincipal {
 			System.out.println("Opção inválida!");
 		}
 		}
-	 System.out.println("Programa finalizado com sucesso "+nome+".");
+	 System.out.println("Programa finalizado com sucesso "+fachada.consultarNomeGerente(gerente)+".");
 	}
 }
