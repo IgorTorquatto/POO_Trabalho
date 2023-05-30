@@ -35,7 +35,7 @@ public class Gerente {
 	public void setDinheiro(double dinheiro) {
 		this.dinheiro = dinheiro;
 	}
-	
+
 	
 	
 }

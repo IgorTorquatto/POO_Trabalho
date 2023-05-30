@@ -20,7 +20,7 @@ public class Fachada {
 	public Fachada() {
 		this.bandas = new NegocioBanda(new RepositorioBanda());
 		this.musicos = new NegocioMusico(new RepositorioMusicos());
-		this.gerente = new NegocioGerente(new Gerente(null, null, 0) );
+		this.gerente = new NegocioGerente(new Gerente(null, null, 0));
 	}
 	
 	//Banda:
@@ -42,13 +42,13 @@ public class Fachada {
 		bandas.removeBanda(banda);
 	}
 	
-	public int checarQuantidadeBanda() {  //throws repositoriovazioException
-		return bandas.qtdBandas();
-	}
-	
 	public Banda gerarBanda(ArrayList<String> nomes,String nome_banda) {
 		 return bandas.geraBanda(nomes, nome_banda);
 		
+	}
+	
+	public int checarQuantidadeBanda() {  //throws repositoriovazioException
+		return bandas.qtdBandas();
 	}
 	
 	//Musico:
@@ -102,32 +102,37 @@ public class Fachada {
 		return g;
 	}
 	
-	public double checarSaldoGerente() {
-		return gerente.saldo();
+	public double checarSaldoGerente(Gerente g) {
+		return gerente.saldo(g);
 	}
 	
-	public String consultarNomeGerente(Gerente gerente) {
-		return this.gerente.consultaNomeGerente(gerente);
+	public String consultarNomeGerente(Gerente g) {
+		return gerente.consultaNomeGerente(g);
 	}
 	
 	
-	public void comprarVocalistaGerente(Gerente gerente) {
-		this.gerente.compraVocalista(gerente);
+	public void comprarVocalistaGerente(Gerente g) {
+		gerente.compraVocalista(g);
 	}
 	
-	public void comprarTecladistaGerente(Gerente gerente) {
-		this.gerente.compraTecladista(gerente);
+	public void comprarTecladistaGerente(Gerente g) {
+		gerente.compraTecladista(g);
 	}
 	
-	public void comprarGuitarristaGerente(Gerente gerente) {
-		this.gerente.compraGuitarrista(gerente);
+	public void comprarGuitarristaGerente(Gerente g) {
+		gerente.compraGuitarrista(g);
 	}
 	
-	public void comprarBaixistaGerente(Gerente gerente) {
-		this.gerente.compraBaixista(gerente);
+	public void comprarBaixistaGerente(Gerente g) {
+		gerente.compraBaixista(g);
 	}
 	
-	public void comprarBateristaGerente(Gerente gerente) {
-		this.gerente.compraBaterista(gerente);
+	public void comprarBateristaGerente(Gerente g) {
+		gerente.compraBaterista(g);
 	}
+
+	public String checarNomeBanda(Gerente g) {
+		return gerente.checaNomeBanda(g);
+	}
+	
 }

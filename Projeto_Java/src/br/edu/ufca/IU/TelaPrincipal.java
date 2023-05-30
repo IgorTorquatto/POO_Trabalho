@@ -1,6 +1,8 @@
 package br.edu.ufca.IU;
 
 import java.util.Scanner;
+
+import br.edu.ufca.Dados.IRepositorio;
 import br.edu.ufca.Negocio.*;
 
 public class TelaPrincipal {
@@ -16,6 +18,7 @@ public class TelaPrincipal {
 		telaloja = new TelaLoja(fachada);
 		telashow = new TelaShow(fachada);
 		telacadastro = new TelaCadastro(fachada);
+		this.fachada = fachada;
 	}
 	
 	public void iniciar(){
@@ -24,7 +27,7 @@ public class TelaPrincipal {
 	    Gerente gerente;
 	    
 	    gerente = telacadastro.cadastroIncial();
-	    
+	   
 	    System.out.println("Olá, "+ fachada.consultarNomeGerente(gerente)+ "!");
 		
 		while(sair == false){
@@ -38,7 +41,7 @@ public class TelaPrincipal {
 		   		+ "6-Trocar de banda \n"
 		   		+ "7-Encerrar programa\n"
 		   		+ "Quantidade de bandas sendo gerenciadas:"+fachada.checarQuantidadeBanda()+"\n"
-		   		+ "Nome da Banda sendo gerenciada atualmente: ? \n"
+		   		+ "Nome da Banda sendo gerenciada atualmente:"+fachada.checarNomeBanda(gerente)+"\n"
 		   		);
 		int operacao = scanner.nextInt();
 		switch(operacao){
