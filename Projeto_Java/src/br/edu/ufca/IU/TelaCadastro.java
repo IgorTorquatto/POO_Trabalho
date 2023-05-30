@@ -39,6 +39,7 @@ public class TelaCadastro {
 	public Banda cadastroBanda() {
 		
 		String nome_banda = "";
+		Banda banda;
 		int i;
 		  
 		  while (nome_banda.isEmpty() || !nome_banda.matches("[a-zA-Z]+")) {
@@ -69,8 +70,10 @@ public class TelaCadastro {
 			    }
 				
 			  }
-		
-		 return  fachada.gerarBanda(nome_musicos_inicial, nome_banda);
+		 
+		 banda = fachada.gerarBanda(nome_musicos_inicial, nome_banda);
+		 fachada.adicionarBanda(banda, nome_banda);
+		 return  banda;
 		   
 	}
 	

@@ -33,7 +33,7 @@ public class TelaLoja {
 			   
 			   escolha = scanner.nextInt();
 			   
-			   if(escolha==1) System.out.println("Saldo " +dp.format(fachada.checarSaldoGerente())+" R$.");   
+			   if(escolha==1) System.out.println("Saldo " +dp.format(fachada.checarSaldoGerente(gerente))+" R$.");   
 			   
 			   if(escolha==2) {
 				   System.out.println("Qual integrante você deseja comprar? ");

@@ -10,13 +10,13 @@ public class NegocioGerente {
 	
 	private Gerente gerente;
 	
-	public NegocioGerente(Gerente gerente) {
+	public NegocioGerente(Gerente gerente ) {
 		this.gerente = gerente;
 	}
 	
-	public double saldo() {
+	public double saldo(Gerente g) {
 		if(gerente != null) {
-			return gerente.getDinheiro();
+			return g.getDinheiro();
 		}else {
 			//exceção
 			return 0;
@@ -67,6 +67,11 @@ public class NegocioGerente {
 			return gerente.getNome(); //excecao
 		}
 	}
-	
+
+	public String checaNomeBanda(Gerente g) {
+		return g.getBanda().getNome();
+	}
+
+
 
 }
