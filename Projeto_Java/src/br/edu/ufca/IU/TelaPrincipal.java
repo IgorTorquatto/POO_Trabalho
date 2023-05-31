@@ -11,6 +11,7 @@ public class TelaPrincipal {
 	private TelaLoja telaloja;
 	private TelaShow telashow;
 	private TelaCadastro telacadastro;
+	private TelaBanda telabanda;
 	private Fachada fachada;
 	
 	public TelaPrincipal(Fachada fachada) {
@@ -18,6 +19,7 @@ public class TelaPrincipal {
 		telaloja = new TelaLoja(fachada);
 		telashow = new TelaShow(fachada);
 		telacadastro = new TelaCadastro(fachada);
+		telabanda = new TelaBanda(fachada);
 		this.fachada = fachada;
 	}
 	
@@ -49,6 +51,7 @@ public class TelaPrincipal {
 			telacadastro.cadastroBanda();
 			break;
 		case 2:  
+			telabanda.detalhesBanda(gerente);
 			break;
 		case 3:
 			telaloja.iniciar(gerente);
@@ -59,10 +62,19 @@ public class TelaPrincipal {
 		case 5:
 			break;
 		case 6:
+			//telabanda.trocaBanda(gerente,fachada);
 			break;
 		case 7: 
-			sair = true; 
-			break;
+			System.out.println("Você realmente deseja encerrar o programa? [s / n]");
+		    String resposta = scanner.next();
+		    if (resposta.equalsIgnoreCase("s")) {
+		        sair = true;
+		    } else if (resposta.equalsIgnoreCase("n")) {
+		        sair = false;
+		    } else {
+		        System.out.println("Opção inválida! Continuando o programa.");
+		    }
+		    break;
 		default: 
 			System.out.println("Opção inválida!");
 		}
