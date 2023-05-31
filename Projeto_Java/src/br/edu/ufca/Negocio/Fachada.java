@@ -135,4 +135,35 @@ public class Fachada {
 		return gerente.checaNomeBanda(g);
 	}
 	
+	public String [] checarDetalhesBanda(Gerente g) {
+		return gerente.checaDetalhesBanda(g);
+	}
+	
+	//Get & Set
+	
+	public NegocioBanda getBandas() {
+		return bandas;
+	}
+
+	public void setBandas(NegocioBanda bandas) {
+		this.bandas = bandas;
+	}
+
+	public NegocioMusico getMusicos() {
+		return musicos;
+	}
+
+	public void setMusicos(NegocioMusico musicos) {
+		this.musicos = musicos;
+	}
+
+	public NegocioGerente getGerente() {
+		return gerente;
+	}
+
+	public void setGerente(NegocioGerente gerente) {
+		this.gerente = gerente;
+	}
+	
+	
 }

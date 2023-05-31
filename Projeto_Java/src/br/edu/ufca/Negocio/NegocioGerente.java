@@ -72,6 +72,10 @@ public class NegocioGerente {
 		return g.getBanda().getNome();
 	}
 
+	public String[] checaDetalhesBanda(Gerente g) {
+		return g.getBanda().imprimirBanda();
+	}
+
 
 
 }
