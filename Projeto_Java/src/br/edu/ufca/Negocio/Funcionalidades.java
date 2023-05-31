@@ -49,6 +49,7 @@ public class Funcionalidades {
 		  System.out.println("Banda criada com sucesso");
 		  Banda banda = new Banda(null,null,null,null,null,null);
 		  banda.gerarBanda(nome_musicos_inicial,nome_banda);
+		  scanner.close();
 		  return banda;
 	}
 	
@@ -106,6 +107,6 @@ public class Funcionalidades {
 			   }
 			   if(escolha==3) sair_loja= true;
 		   }
-		  
+		  input.close();
 	}
 }

@@ -126,14 +126,14 @@ public class App {
 				if(excluir == 1) {
 					
 					if (indice == 0) {
-						bandas.removeBanda(bandas.getBandas().get(0));
+						bandas.remove(bandas.getBandas().get(0));
 						gerente.setBanda(bandas.getBandas().get(0));
 						System.out.println("Banda excluída com sucesso.");
 					}
 					
 					else if (indice > 0 ) {
 						
-						bandas.removeBanda(bandas.getBandas().get(indice - 1));
+						bandas.remove(bandas.getBandas().get(indice - 1));
 						gerente.setBanda(bandas.getBandas().get(0));
 						System.out.println("Banda excluída com sucesso.");
 						indice--;

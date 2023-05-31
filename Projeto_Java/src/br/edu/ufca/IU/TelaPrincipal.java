@@ -44,9 +44,9 @@ public class TelaPrincipal {
 		   		+ "Quantidade de bandas sendo gerenciadas: ? \n"
 		   		+ "Nome da Banda sendo gerenciada atualmente: ? \n"
 		   		);
-		String operacao = scanner.nextLine();
+		int operacao = scanner.nextInt();
 		switch(operacao){
-		case 1: 
+		case 1:
 			break;
 		case 2:  
 			break;

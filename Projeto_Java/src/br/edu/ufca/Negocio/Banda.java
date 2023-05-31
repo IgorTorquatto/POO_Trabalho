@@ -108,7 +108,7 @@ public class Banda {
 	}
 	
 	//no show passo somente esse método, pois fica menos parâmetro para o usuário
-	public void atualizarExp(double exp) {
+	public void atualizarExp(double exp) throws Exception{
 		double aux = 0;
 		atualizarExp(aux, exp, vocalista);
 		atualizarExp(aux, exp, tecladista);
