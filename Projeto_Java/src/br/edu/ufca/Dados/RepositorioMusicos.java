@@ -92,6 +92,17 @@ public class RepositorioMusicos implements IRepositorio<MusicoAbstrato> {
 		return null;
 	}
 
+	@Override
+	public String consultaNome(int indice) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-	
+	@Override
+	public Banda pegarBanda(int indice) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 }

@@ -17,5 +17,6 @@ public interface IRepositorio<T>{
 	public int qtd();
 	public boolean vazio();
 	public Banda geraBanda(ArrayList<String> nomes,String nome_banda);
-	
+	public String consultaNome(int indice);
+	public Banda pegarBanda(int indice);
 }

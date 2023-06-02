@@ -30,8 +30,8 @@ public class Fachada {
 		bandas.adicionaBanda(b);
 	}
 	
-	public void consultarBanda(Banda banda) {   //throws bandainexistenteException
-		bandas.consultaBanda(banda);
+	public int consultarBanda(Banda banda) {   //throws bandainexistenteException
+		return bandas.consultaBanda(banda);
 	}
 	
 	public void atualizarBanda(Banda bandaExistente, Banda novaBanda) {  //throws bandainexistente Exception
@@ -49,6 +49,10 @@ public class Fachada {
 	
 	public int checarQuantidadeBanda() {  //throws repositoriovazioException
 		return bandas.qtdBandas();
+	}
+	
+	public String consultarNomeBanda(int indice) {
+		return bandas.consultaNome(indice);
 	}
 	
 	//Musico:
@@ -139,6 +143,10 @@ public class Fachada {
 		return gerente.checaDetalhesBanda(g);
 	}
 	
+	public void trocarBanda(Gerente gerente2, NegocioBanda bandas2, int escolha) {
+		gerente.trocaBanda(gerente2,escolha,bandas2);	
+	}
+	
 	//Get & Set
 	
 	public NegocioBanda getBandas() {
@@ -164,6 +172,5 @@ public class Fachada {
 	public void setGerente(NegocioGerente gerente) {
 		this.gerente = gerente;
 	}
-	
-	
+
 }

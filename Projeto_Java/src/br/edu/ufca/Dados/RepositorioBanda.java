@@ -83,4 +83,14 @@ public class RepositorioBanda implements IRepositorio <Banda>{
 		b.gerarBanda(nomes, nome_banda);
 		return b;
 	}
+	
+	public String consultaNome(int indice) {
+		return bandas.get(indice).getNome();
+	}
+
+	@Override
+	public Banda pegarBanda(int indice) {
+		return bandas.get(indice);
+	}
+
 }
