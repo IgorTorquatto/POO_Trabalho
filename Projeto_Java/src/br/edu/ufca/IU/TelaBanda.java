@@ -42,31 +42,21 @@ public class TelaBanda {
 	
 	}
 
-	public void trocaBanda(Gerente gerente, Fachada fachada) {
+	public void trocaBanda(Fachada fachada2, Gerente gerente,NegocioBanda bandas) {
 		
-		int indice;
+		int escolha;
 		
-		if(fachada.checarQuantidadeBanda() == 1 ) {
-			System.out.println("Você possui apenas uma banda cadastrada. Procedimento inválido.");
-			return;
+		System.out.println("Selecione a banda que você deseja gerenciar:");
+		System.out.println("Quantidade de bandas ("+fachada2.checarQuantidadeBanda()+")");
+	
+		for(int i = 0; i < fachada2.checarQuantidadeBanda();i++) {
+			System.out.println(i+")"+fachada.consultarNomeBanda(i));
 		}
 		
-		else if (fachada.checarQuantidadeBanda() > 1){
-			System.out.println("Selecione o número da banda que você quer gerenciar agora :  [1/2/3/4/...]");
-			indice = scanner.nextInt();
-			
-			if(indice > 0 && indice <= fachada.checarQuantidadeBanda()) {
-				//gerente.setBanda(bandas.getBandas().get(indice - 1));
-				fachada.getBandas().atualizaBanda(null, null);
-				
-			}
-			else {
-				System.out.println("Opção inválida!");
-				indice = 0;
-			}
-			
-		}
+		escolha = scanner.nextInt();
+		
+		fachada.trocarBanda(gerente,bandas,escolha);
+		
 	}
-	
-	
+
 }

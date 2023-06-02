@@ -27,7 +27,7 @@ public class TelaPrincipal {
 		
 	    boolean sair = false;
 	    Gerente gerente;
-	    
+	 
 	    gerente = telacadastro.cadastroIncial();
 	   
 	    System.out.println("Olá, "+ fachada.consultarNomeGerente(gerente)+ "!");
@@ -62,7 +62,7 @@ public class TelaPrincipal {
 		case 5:
 			break;
 		case 6:
-			//telabanda.trocaBanda(gerente,fachada);
+			telabanda.trocaBanda(fachada,gerente,fachada.getBandas());
 			break;
 		case 7: 
 			System.out.println("Você realmente deseja encerrar o programa? [s / n]");

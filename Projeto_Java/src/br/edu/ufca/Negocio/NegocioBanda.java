@@ -19,12 +19,13 @@ public class NegocioBanda {
 		this.repositorio = repositorio;
 	}
 	
-	public void consultaBanda(Banda banda) {
+	public int consultaBanda(Banda banda) {
 		boolean existe = repositorio.existe(banda);
 		if (existe == true) {
-			repositorio.consulta(banda);
+			return repositorio.consulta(banda);
 		}else{
 			//Lança exceção
+			return repositorio.consulta(banda);
 		}
 	}
 	
@@ -42,7 +43,7 @@ public class NegocioBanda {
 		if(existe == true) {
 			repositorio.remove(banda);
 		}else {
-			//Lança a exceção
+			//Lança a exceção 
 		}
 	}
 	
@@ -72,6 +73,21 @@ public class NegocioBanda {
 	public Banda geraBanda(ArrayList<String> nomes,String nome_banda) {
 		 return repositorio.geraBanda(nomes,nome_banda);
 	}
+	
+	public String consultaNome(int indice) {
+		return repositorio.consultaNome(indice);
+	}
+
+	//Get & Set:
+	
+	public IRepositorio getRepositorio() {
+		return repositorio;
+	}
+
+	public void setRepositorio(IRepositorio repositorio) {
+		this.repositorio = repositorio;
+	}
+
 	
 	
 }

@@ -76,6 +76,10 @@ public class NegocioGerente {
 		return g.getBanda().imprimirBanda();
 	}
 
+	public void trocaBanda(Gerente gerente2,int escolha, NegocioBanda bandas2) {
+		gerente2.setBanda(bandas2.getRepositorio().pegarBanda(escolha));
+		
+	}
 
 
 }
