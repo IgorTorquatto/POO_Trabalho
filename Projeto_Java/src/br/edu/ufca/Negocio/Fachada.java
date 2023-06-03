@@ -19,12 +19,7 @@ public class Fachada {
 	
 	public Fachada() {
 		this.bandas = new NegocioBanda(new RepositorioBanda());
-<<<<<<< HEAD
 		//this.gerente = new NegocioGerente(new Gerente(null, null, 5000));
-=======
-		this.musicos = new NegocioMusico(new RepositorioMusicos());
-		this.gerente = new NegocioGerente(new Gerente(null, null, 0));
->>>>>>> 9ecafd2b069e783821104a7f15a482a66090f52d
 	}
 	
 	//Banda:

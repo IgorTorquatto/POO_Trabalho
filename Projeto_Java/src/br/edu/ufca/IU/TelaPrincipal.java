@@ -47,12 +47,7 @@ public class TelaPrincipal {
 		   		);
 		int operacao = scanner.nextInt();
 		switch(operacao){
-<<<<<<< HEAD
 		case 1:
-=======
-		case 1: 
-			telacadastro.cadastroBanda();
->>>>>>> 9ecafd2b069e783821104a7f15a482a66090f52d
 			break;
 		case 2:  
 			telabanda.detalhesBanda(gerente);
