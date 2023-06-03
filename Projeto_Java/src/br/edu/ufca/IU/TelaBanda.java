@@ -41,22 +41,70 @@ public class TelaBanda {
 		
 	
 	}
-
-	public void trocaBanda(Fachada fachada2, Gerente gerente,NegocioBanda bandas) {
-		
-		int escolha;
-		
-		System.out.println("Selecione a banda que você deseja gerenciar:");
-		System.out.println("Quantidade de bandas ("+fachada2.checarQuantidadeBanda()+")");
 	
-		for(int i = 0; i < fachada2.checarQuantidadeBanda();i++) {
-			System.out.println(i+")"+fachada.consultarNomeBanda(i));
-		}
-		
-		escolha = scanner.nextInt();
-		
-		fachada.trocarBanda(gerente,bandas,escolha);
+	public void trocaBanda(Gerente gerente, NegocioBanda bandas) {
+
+	    if (fachada.checarQuantidadeBanda() == 1) {
+	        System.out.println("Você possui apenas uma banda cadastrada. Procedimento inválido.");
+	        return;
+	    } else {
+	        int escolha;
+	        boolean escolhaValida = false;
+
+	        System.out.println("Selecione o índice da banda que você deseja gerenciar:");
+	        System.out.println("Quantidade de bandas (" + fachada.checarQuantidadeBanda() + ")");
+
+	        while (!escolhaValida) {
+	            for (int i = 0; i < fachada.checarQuantidadeBanda(); i++) {
+	                System.out.println(i + ")" + fachada.consultarNomeBanda(i));
+	            }
+
+	            escolha = scanner.nextInt();
+
+	            if (escolha >= 0 && escolha < fachada.checarQuantidadeBanda()) {
+	                escolhaValida = true;
+	                fachada.trocarBanda(gerente, bandas, escolha);
+	            } else {
+	                System.out.println("Escolha inválida. Digite um índice existente.");
+	            }
+	        }
+	    }
+	}
+
+	public void excluirBanda(Gerente gerente, NegocioBanda bandas) {
+		if (fachada.checarQuantidadeBanda() == 1) {
+	        System.out.println("Para continuar com o sistema de gerenciamento de bandas você não pode excluir sua única banda.");
+	        return;
+	    } else {
+	    	
+	    	int escolha;
+	        boolean escolhaValida = false;
+
+	        System.out.println("Selecione o índice da banda que você deseja excluir:");
+	        System.out.println("Quantidade de bandas (" + fachada.checarQuantidadeBanda() + ")");
+
+	        while (!escolhaValida) {
+	            for (int i = 0; i < fachada.checarQuantidadeBanda(); i++) {
+	                System.out.println(i + ")" + fachada.consultarNomeBanda(i));
+	            }
+
+	            escolha = scanner.nextInt();
+
+	            if (escolha >= 0 && escolha < fachada.checarQuantidadeBanda()) {
+	                escolhaValida = true;
+	                //remover a banda pelo indice
+	                fachada.excluirBanda(gerente, bandas, escolha);
+	                //setar primeira banda da lista para o gerente
+	                fachada.setarPrimeiraBanda(gerente, bandas);
+	            } else {
+	                System.out.println("Escolha inválida. Digite um índice existente.");
+	            }
+	        
+	        }
+	    	
+	    }
 		
 	}
+
 
 }

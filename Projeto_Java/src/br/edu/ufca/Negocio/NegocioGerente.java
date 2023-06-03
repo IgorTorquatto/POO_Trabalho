@@ -18,8 +18,8 @@ public class NegocioGerente {
 		if(gerente != null) {
 			return g.getDinheiro();
 		}else {
-			//exceção
-			return 0;
+			// throw new GerenteNaoCriadoException
+			return 0;  // isso deve sair daqui depois de implementar exceções
 		}
 	}
 	
@@ -29,7 +29,6 @@ public class NegocioGerente {
 			g = new Gerente(nome, banda, dinheiro);
 		}else {
 			//exceção
-
 		}
 		return g;
 		
@@ -64,22 +63,37 @@ public class NegocioGerente {
 		if(gerente != null) {
 			return gerente.getNome();
 		}else {
-			return gerente.getNome(); //excecao
+			// throw new GerenteNaoCriadoException()
+			return gerente.getNome(); // isso deve sair daqui depois de implementar exceções
 		}
 	}
 
 	public String checaNomeBanda(Gerente g) {
 		return g.getBanda().getNome();
+		//exceção
 	}
 
 	public String[] checaDetalhesBanda(Gerente g) {
 		return g.getBanda().imprimirBanda();
+		//exceção
 	}
 
 	public void trocaBanda(Gerente gerente2,int escolha, NegocioBanda bandas2) {
 		gerente2.setBanda(bandas2.getRepositorio().pegarBanda(escolha));
+		//exceção
 		
 	}
 
+	public void excluiBanda(Gerente gerente2, int escolha, NegocioBanda bandas2) {
+		Banda b = bandas2.getRepositorio().pegarBanda(escolha);
+		bandas2.removeBanda(b);
+		//exceção
+	}
+
+	public void setaPrimeiraBanda(Gerente gerente2, NegocioBanda bandas2) {
+		gerente2.setBanda(bandas2.getRepositorio().primeiroElemento());
+		//exceção
+		
+	}
 
 }
