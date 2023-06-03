@@ -20,31 +20,31 @@ public class RepositorioBanda implements IRepositorio <Banda>{
 
 	//Read
 	@Override
-	public void consulta(Banda banda) {
-		if(bandas.contains(banda)) {
-				System.out.println(bandas.indexOf(banda)); 
-			}
+	public int consulta(Banda banda) {
+		return bandas.indexOf(banda);
 	}
 		
 	//Update
 	@Override
 	public void atualiza(Banda bandaExistente, Banda novaBanda) {
 	    int index = bandas.indexOf(bandaExistente);
-	    if (index != -1) { 
-	        bandas.set(index, novaBanda); 
-	    } else {
-	        System.out.println("Banda não encontrada na lista.");
-	    }
+	    bandas.set(index, novaBanda); 
 	}
 
 	//Delete
 	@Override
 	public void remove(Banda banda) {
-		if(bandas.contains(banda)) {
-			bandas.remove(banda);
-			}
+		bandas.remove(banda);
+	}
+	
+	@Override
+	public boolean existe(Banda banda) {
+		int index = bandas.indexOf(banda);
+		if(index != -1) {
+			return true;
+		}
 		else {
-			System.out.println("Banda não está contida na lista.");
+			return false;
 		}
 	}
 
@@ -58,18 +58,39 @@ public class RepositorioBanda implements IRepositorio <Banda>{
 		
 	//Outros métodos:
 	
-	public void adicionaBanda(Banda banda) {
+	@Override
+	public void adiciona(Banda banda) {
 		this.bandas.add(banda);
 	}
 	
-	public int qtdBandas() {
+	@Override
+	public int qtd() {
 		int qtd = bandas.size();
 		return qtd;
 	}
 	
-	public void imprimeNomesBandas() {
-		for(int i = 0 ; i < bandas.size();i++) {
-			System.out.println(bandas.get(i).getNome());
+	@Override
+	public boolean vazio() {
+		if(bandas.size() > 0) {
+			return false;
+		}else {
+			return true;
 		}
 	}
+	
+	public Banda geraBanda(ArrayList<String> nomes,String nome_banda) {
+		Banda b = new Banda(null, null, null, null, null, nome_banda);
+		b.gerarBanda(nomes, nome_banda);
+		return b;
+	}
+	
+	public String consultaNome(int indice) {
+		return bandas.get(indice).getNome();
+	}
+
+	@Override
+	public Banda pegarBanda(int indice) {
+		return bandas.get(indice);
+	}
+
 }

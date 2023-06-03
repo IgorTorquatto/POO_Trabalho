@@ -35,16 +35,7 @@ public class Gerente {
 	public void setDinheiro(double dinheiro) {
 		this.dinheiro = dinheiro;
 	}
-	
-	
-	//Métodos:
-	public void comprarArtista() {
-		
-	}
-	
-	public void realizarShow() {
-		
-	}
+
 	
 	
 }

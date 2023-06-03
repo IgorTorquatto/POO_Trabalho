@@ -7,8 +7,8 @@ import br.edu.ufca.Negocio.*;
 
 public class App {
 	/*
-	 Aqui deve ficar a main
-	*/
+	  Antiga main 
+	
   public static void main(String[] args) {
 	  
 	  //A intenção é deixar similar a um sistema de gerenciamento
@@ -185,5 +185,5 @@ public class App {
       scanner.close();
       System.exit(0);
   
-  }
+  }*/
 }
