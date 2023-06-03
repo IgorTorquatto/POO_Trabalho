@@ -104,5 +104,11 @@ public class RepositorioMusicos implements IRepositorio<MusicoAbstrato> {
 		return null;
 	}
 
+	@Override
+	public Banda primeiroElemento() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

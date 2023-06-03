@@ -12,6 +12,7 @@ public class RepositorioBanda implements IRepositorio <Banda>{
 	*/
 	
 	ArrayList<Banda> bandas; 
+	private int capacidadeMaxima = 1000;
 	
 	//Create
 	public RepositorioBanda() {
@@ -26,15 +27,22 @@ public class RepositorioBanda implements IRepositorio <Banda>{
 		
 	//Update
 	@Override
-	public void atualiza(Banda bandaExistente, Banda novaBanda) {
+	public void atualiza(Banda bandaExistente, Banda novaBanda) /*throws*/ {
 	    int index = bandas.indexOf(bandaExistente);
-	    bandas.set(index, novaBanda); 
+        if (index != -1) {
+            bandas.set(index, novaBanda);
+        } else {
+           // throw new ElementoNaoEncontradoException();
+        } 
 	}
 
 	//Delete
 	@Override
-	public void remove(Banda banda) {
-		bandas.remove(banda);
+	public void remove(Banda banda) /*throws*/{
+		boolean removido = bandas.remove(banda);
+        if (!removido) {
+           // throw new ElementoNaoEncontradoException();
+        }
 	}
 	
 	@Override
@@ -59,8 +67,12 @@ public class RepositorioBanda implements IRepositorio <Banda>{
 	//Outros métodos:
 	
 	@Override
-	public void adiciona(Banda banda) {
-		this.bandas.add(banda);
+	public void adiciona(Banda banda) /*throws RepositorioCheioException() */ {
+	   if (bandas.size() < capacidadeMaxima) {
+		   this.bandas.add(banda);
+		 } else {
+		       // throw new RepositorioCheioException();
+	 }
 	}
 	
 	@Override
@@ -89,8 +101,23 @@ public class RepositorioBanda implements IRepositorio <Banda>{
 	}
 
 	@Override
-	public Banda pegarBanda(int indice) {
-		return bandas.get(indice);
+	public Banda pegarBanda(int indice) /*throws*/{
+		if (indice >= 0 && indice < bandas.size()) {
+            return bandas.get(indice);
+        } else {
+           // throw new IndiceInvalidoException();
+        	return null; // retirar
+        }
+	}
+
+	@Override
+	public Banda primeiroElemento()/*throws*/ {
+		if (!bandas.isEmpty()) {
+            return bandas.get(0);
+        } else {
+            //throw new RepositorioVazioException();
+            return null; // retirar
+        }
 	}
 
 }

@@ -60,9 +60,10 @@ public class TelaPrincipal {
 			//telashow.iniciar();
 			break;
 		case 5:
+			telabanda.excluirBanda(gerente,fachada.getBandas());
 			break;
 		case 6:
-			telabanda.trocaBanda(fachada,gerente,fachada.getBandas());
+			telabanda.trocaBanda(gerente,fachada.getBandas());
 			break;
 		case 7: 
 			System.out.println("Você realmente deseja encerrar o programa? [s / n]");

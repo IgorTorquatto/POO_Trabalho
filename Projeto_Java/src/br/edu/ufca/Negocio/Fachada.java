@@ -30,8 +30,8 @@ public class Fachada {
 		bandas.adicionaBanda(b);
 	}
 	
-	public int consultarBanda(Banda banda) {   //throws bandainexistenteException
-		return bandas.consultaBanda(banda);
+	public int consultarIndiceBanda(Banda banda) {   //throws bandainexistenteException
+		return bandas.consultaIndiceBanda(banda);
 	}
 	
 	public void atualizarBanda(Banda bandaExistente, Banda novaBanda) {  //throws bandainexistente Exception
@@ -145,6 +145,16 @@ public class Fachada {
 	
 	public void trocarBanda(Gerente gerente2, NegocioBanda bandas2, int escolha) {
 		gerente.trocaBanda(gerente2,escolha,bandas2);	
+	}
+	
+	public void excluirBanda(Gerente gerente2, NegocioBanda bandas2, int escolha) {
+		gerente.excluiBanda(gerente2,escolha,bandas2);
+		
+	}
+	
+	public void setarPrimeiraBanda(Gerente gerente2, NegocioBanda bandas2) {
+		gerente.setaPrimeiraBanda(gerente2,bandas2);
+		
 	}
 	
 	//Get & Set
