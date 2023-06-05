@@ -12,4 +12,13 @@ public class TelaShow {
 		this.fachada = fachada;
 		scanner = new Scanner(System.in);
 	}
+	
+	
+	public void iniciar(Gerente gerente) {
+		fachada.realizarShow(gerente);
+		fachada.pagarDespesas(gerente);
+	}
+
+
+
 }

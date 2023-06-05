@@ -32,7 +32,7 @@ public class TelaCadastro {
 	        }
 	    }
 	    
-	   gerente = fachada.adicionarGerente(nome, 5000, cadastroBanda());
+	   gerente = fachada.adicionarGerente(nome, 10000, cadastroBanda());
 	   return gerente;
 	}
 	

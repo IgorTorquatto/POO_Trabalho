@@ -57,7 +57,7 @@ public class TelaPrincipal {
 			telaloja.iniciar(gerente);
 			break;
 		case 4:
-			//telashow.iniciar();
+			telashow.iniciar(gerente);
 			break;
 		case 5:
 			telabanda.excluirBanda(gerente,fachada.getBandas());
