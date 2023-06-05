@@ -96,4 +96,16 @@ public class NegocioGerente {
 		
 	}
 
+	public void realizaShow(Gerente gerente2) {
+		Show show = new Show();
+		show.realizarShow(gerente2.getBanda(), gerente2);
+		//exceção
+	}
+
+	public void pagaDespesa(Gerente gerente2) {
+		Show show = new Show();
+		show.pagarDespesas(gerente2.getBanda(), gerente2);
+		//exceção
+	}
+
 }

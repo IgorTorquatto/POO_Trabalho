@@ -157,6 +157,14 @@ public class Fachada {
 		
 	}
 	
+	public void realizarShow(Gerente gerente2) {
+		gerente.realizaShow(gerente2);
+	}
+	
+	public void pagarDespesas(Gerente gerente2) {
+		gerente.pagaDespesa(gerente2);
+	}
+	
 	//Get & Set
 	
 	public NegocioBanda getBandas() {

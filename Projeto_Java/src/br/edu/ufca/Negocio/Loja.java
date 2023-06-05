@@ -26,15 +26,15 @@ public class Loja {
 		Random random = new Random();
 		
 		for(int i = 0 ; i < 3 ; i++) {
-			vocalistas_lendarios.adiciona(new Vocalista(nomes_lendarios[i],random.nextInt(99-90)+90, 5000));
+			vocalistas_lendarios.adiciona(new Vocalista(nomes_lendarios[i],random.nextInt(99-90)+90, 10000));
 		}
 		
 		for(int i = 0 ; i < 3 ; i++) {
-			vocalistas_bons.adiciona(new Vocalista(nomes_bons[i],random.nextInt(89-80)+80, 3000));
+			vocalistas_bons.adiciona(new Vocalista(nomes_bons[i],random.nextInt(89-80)+80, 5000));
 		}
 		
 		for(int i = 0 ; i < 3 ; i++) {
-			vocalistas_medios.adiciona(new Vocalista(nomes_medios[i],random.nextInt(79-70)+70, 2000));
+			vocalistas_medios.adiciona(new Vocalista(nomes_medios[i],random.nextInt(79-70)+70, 3000));
 		}
 		
 		System.out.println("Selecione a categoria de vocalistas: ");
