@@ -2,6 +2,7 @@ package br.edu.ufca.IU;
 
 import java.util.Scanner;
 
+import br.edu.ufca.Excecoes.gerenteInexistenteException;
 import br.edu.ufca.Negocio.*;
 
 public class TelaShow {
@@ -15,8 +16,18 @@ public class TelaShow {
 	
 	
 	public void iniciar(Gerente gerente) {
-		fachada.realizarShow(gerente);
-		fachada.pagarDespesas(gerente);
+		try {
+			fachada.realizarShow(gerente);
+		} catch (gerenteInexistenteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			fachada.pagarDespesas(gerente);
+		} catch (gerenteInexistenteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 

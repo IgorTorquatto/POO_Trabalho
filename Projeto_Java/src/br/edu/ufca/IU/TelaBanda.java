@@ -3,6 +3,8 @@ package br.edu.ufca.IU;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
+import br.edu.ufca.Excecoes.bandaInexistenteException;
+import br.edu.ufca.Excecoes.gerenteInexistenteException;
 import br.edu.ufca.Excecoes.repositorioVazioException;
 import br.edu.ufca.Negocio.*;
 
@@ -24,10 +26,21 @@ public class TelaBanda {
 		while(sair == false) {
 			
 			System.out.println("Detalhes da Banda: ");
-			System.out.println("\nBanda: "+fachada.checarNomeBanda(gerente));
+			try {
+				System.out.println("\nBanda: "+fachada.checarNomeBanda(gerente));
+			} catch (gerenteInexistenteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			System.out.println("Integrantes da banda: \n");
 			
-			String[] nome_integrantes = fachada.checarDetalhesBanda(gerente);
+			String[] nome_integrantes = null;
+			try {
+				nome_integrantes = fachada.checarDetalhesBanda(gerente);
+			} catch (gerenteInexistenteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			for(i=0;i<5;i++) {
 				   System.out.println(nome_integrantes[i]);
 			 }
@@ -45,65 +58,90 @@ public class TelaBanda {
 	
 	public void trocaBanda(Gerente gerente, NegocioBanda bandas) {
 
-	    if (fachada.checarQuantidadeBanda() == 1) {
-	        System.out.println("Você possui apenas uma banda cadastrada. Procedimento inválido.");
-	        return;
-	    } else {
-	        int escolha;
-	        boolean escolhaValida = false;
+	    try {
+			if (fachada.checarQuantidadeBanda() == 1) {
+			    System.out.println("Você possui apenas uma banda cadastrada. Procedimento inválido.");
+			    return;
+			} else {
+			    int escolha;
+			    boolean escolhaValida = false;
 
-	        System.out.println("Selecione o índice da banda que você deseja gerenciar:");
-	        System.out.println("Quantidade de bandas (" + fachada.checarQuantidadeBanda() + ")");
+			    System.out.println("Selecione o índice da banda que você deseja gerenciar:");
+			    System.out.println("Quantidade de bandas (" + fachada.checarQuantidadeBanda() + ")");
 
-	        while (!escolhaValida) {
-	            for (int i = 0; i < fachada.checarQuantidadeBanda(); i++) {
-	                System.out.println(i + ")" + fachada.consultarNomeBanda(i));
-	            }
+			    while (!escolhaValida) {
+			        for (int i = 0; i < fachada.checarQuantidadeBanda(); i++) {
+			            System.out.println(i + ")" + fachada.consultarNomeBanda(i));
+			        }
 
-	            escolha = scanner.nextInt();
+			        escolha = scanner.nextInt();
 
-	            if (escolha >= 0 && escolha < fachada.checarQuantidadeBanda()) {
-	                escolhaValida = true;
-	                fachada.trocarBanda(gerente, bandas, escolha);
-	            } else {
-	                System.out.println("Escolha inválida. Digite um índice existente.");
-	            }
-	        }
-	    }
+			        if (escolha >= 0 && escolha < fachada.checarQuantidadeBanda()) {
+			            escolhaValida = true;
+			            try {
+							fachada.trocarBanda(gerente, bandas, escolha);
+						} catch (gerenteInexistenteException | bandaInexistenteException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+			        } else {
+			            System.out.println("Escolha inválida. Digite um índice existente.");
+			        }
+			    }
+			}
+		} catch (repositorioVazioException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void excluirBanda(Gerente gerente, NegocioBanda bandas) {
-		if (fachada.checarQuantidadeBanda() == 1) {
-	        System.out.println("Para continuar com o sistema de gerenciamento de bandas você não pode excluir sua única banda.");
-	        return;
-	    } else {
-	    	
-	    	int escolha;
-	        boolean escolhaValida = false;
+		try {
+			if (fachada.checarQuantidadeBanda() == 1) {
+			    System.out.println("Para continuar com o sistema de gerenciamento de bandas você não pode excluir sua única banda.");
+			    return;
+			} else {
+				
+				int escolha;
+			    boolean escolhaValida = false;
 
-	        System.out.println("Selecione o índice da banda que você deseja excluir:");
-	        System.out.println("Quantidade de bandas (" + fachada.checarQuantidadeBanda() + ")");
+			    System.out.println("Selecione o índice da banda que você deseja excluir:");
+			    System.out.println("Quantidade de bandas (" + fachada.checarQuantidadeBanda() + ")");
 
-	        while (!escolhaValida) {
-	            for (int i = 0; i < fachada.checarQuantidadeBanda(); i++) {
-	                System.out.println(i + ")" + fachada.consultarNomeBanda(i));
-	            }
+			    while (!escolhaValida) {
+			        for (int i = 0; i < fachada.checarQuantidadeBanda(); i++) {
+			            System.out.println(i + ")" + fachada.consultarNomeBanda(i));
+			        }
 
-	            escolha = scanner.nextInt();
+			        escolha = scanner.nextInt();
 
-	            if (escolha >= 0 && escolha < fachada.checarQuantidadeBanda()) {
-	                escolhaValida = true;
-	                //remover a banda pelo indice
-	                fachada.excluirBanda(gerente, bandas, escolha);
-	                //setar primeira banda da lista para o gerente
-	                fachada.setarPrimeiraBanda(gerente, bandas);
-	            } else {
-	                System.out.println("Escolha inválida. Digite um índice existente.");
-	            }
-	        
-	        }
-	    	
-	    }
+			        if (escolha >= 0 && escolha < fachada.checarQuantidadeBanda()) {
+			            escolhaValida = true;
+			            //remover a banda pelo indice
+			            try {
+							fachada.excluirBanda(gerente, bandas, escolha);
+						} catch (gerenteInexistenteException | bandaInexistenteException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+			            //setar primeira banda da lista para o gerente
+			            try {
+							fachada.setarPrimeiraBanda(gerente, bandas);
+						} catch (gerenteInexistenteException | bandaInexistenteException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+			        } else {
+			            System.out.println("Escolha inválida. Digite um índice existente.");
+			        }
+			    
+			    }
+				
+			}
+		} catch (repositorioVazioException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 

@@ -22,13 +22,12 @@ public class NegocioBanda {
 		this.repositorio = repositorio;
 	}
 	
-	public int consultaIndiceBanda(Banda banda) {
+	public int consultaIndiceBanda(Banda banda) throws bandaInexistenteException{
 		boolean existe = repositorio.existe(banda);
 		if (existe == true) {
 			return repositorio.consulta(banda);
 		}else{
-			//throw new BandaInexistenteException
-			return 0; //isso deve sair daqui depois de implementar exceções
+			throw new bandaInexistenteException();
 		}
 	}
 	
@@ -37,7 +36,7 @@ public class NegocioBanda {
 		if(existe == true) {
 			repositorio.atualiza(bandaExistente, novaBanda);
 		}else {
-			//throw new BandaInexistenteException
+			throw new bandaInexistenteException();
 		}
 	}
 	
@@ -46,7 +45,7 @@ public class NegocioBanda {
 		if(existe == true) {
 			repositorio.remove(banda);
 		}else {
-			//throw new BandaInexistenteException
+			throw new bandaInexistenteException();
 		}
 	}
 	
@@ -54,19 +53,18 @@ public class NegocioBanda {
 		boolean existe = repositorio.existe(banda);
 		if(banda != null) {
 			if(existe == true) {
-				// throw new BandaJaExisteException
+				throw new bandaExistenteException(banda);
 			}else {
 				repositorio.adiciona(banda);
 			}
 		}else {
-			//throw new BandaNaoCriadaException
+			throw new bandaInexistenteException();
 		}
 	}
 	
 	public int qtdBandas() throws repositorioVazioException{
 		if(repositorio.vazio() == true) {
-			// throw new RepositorioVazioException
-			return 0;
+			throw new repositorioVazioException();
 		}else {
 			return repositorio.qtd();
 		}

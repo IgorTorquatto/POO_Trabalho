@@ -41,18 +41,23 @@ public class TelaPrincipal {
 		
 		while(sair == false){
 		try {
-			System.out.println(
-					">>>> Menu Principal <<<<\n"
-					+ "1-Cadastrar nova banda\n"
-			   		+ "2-Detalhes da banda\n"
-			   		+ "3-Abrir loja \n"
-			   		+ "4-Realizar show \n"
-			   		+ "5-Excluir bandas\n"
-			   		+ "6-Trocar de banda \n"
-			   		+ "7-Encerrar programa\n"
-			   		+ "Quantidade de bandas sendo gerenciadas:"+fachada.checarQuantidadeBanda()+"\n"
-			   		+ "Nome da Banda sendo gerenciada atualmente:"+fachada.checarNomeBanda(gerente)+"\n"
-			   		);
+			try {
+				System.out.println(
+						">>>> Menu Principal <<<<\n"
+						+ "1-Cadastrar nova banda\n"
+				   		+ "2-Detalhes da banda\n"
+				   		+ "3-Abrir loja \n"
+				   		+ "4-Realizar show \n"
+				   		+ "5-Excluir bandas\n"
+				   		+ "6-Trocar de banda \n"
+				   		+ "7-Encerrar programa\n"
+				   		+ "Quantidade de bandas sendo gerenciadas:"+fachada.checarQuantidadeBanda()+"\n"
+				   		+ "Nome da Banda sendo gerenciada atualmente:"+fachada.checarNomeBanda(gerente)+"\n"
+				   		);
+			} catch (gerenteInexistenteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} catch (repositorioVazioException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

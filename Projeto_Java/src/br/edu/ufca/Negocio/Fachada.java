@@ -48,8 +48,13 @@ public class Fachada {
 		}
 	}
 	
-	public int consultarIndiceBanda(Banda banda) {   //throws bandainexistenteException
-		return bandas.consultaIndiceBanda(banda);
+	public int consultarIndiceBanda(Banda banda) throws bandaInexistenteException{   //throws bandainexistenteException
+		boolean existe = repositorio.existe(banda);
+		if (existe == true) {
+			return bandas.consultaIndiceBanda(banda);
+		}else{
+			throw new bandaInexistenteException();
+		}
 	}
 	
 	public void atualizarBanda(Banda bandaExistente, Banda novaBanda) throws bandaInexistenteException{  //throws bandainexistente Exception
@@ -244,34 +249,72 @@ public class Fachada {
 		gerente.compraBaterista(g);
 	}
 
-	public String checarNomeBanda(Gerente g) {
-		return gerente.checaNomeBanda(g);
+	public String checarNomeBanda(Gerente g) throws gerenteInexistenteException{
+		if(g != null) {
+			return gerente.checaNomeBanda(g);
+		}else {
+			throw new gerenteInexistenteException();
+		}
 	}
 	
-	public String [] checarDetalhesBanda(Gerente g) {
-		return gerente.checaDetalhesBanda(g);
+	public String [] checarDetalhesBanda(Gerente g) throws gerenteInexistenteException{
+		if(g != null) {
+			return gerente.checaDetalhesBanda(g);
+		}else {
+			throw new gerenteInexistenteException();
+		}
 	}
 	
-	public void trocarBanda(Gerente gerente2, NegocioBanda bandas2, int escolha) {
-		gerente.trocaBanda(gerente2,escolha,bandas2);	
+	public void trocarBanda(Gerente gerente2, NegocioBanda bandas2, int escolha) throws gerenteInexistenteException, bandaInexistenteException{	
+		if(gerente2 != null) {
+			if(bandas2 != null) {
+				gerente.trocaBanda(gerente2,escolha,bandas2);
+			}else {
+				throw new bandaInexistenteException();
+			}
+		}else {
+			throw new gerenteInexistenteException();
+		}
 	}
 	
-	public void excluirBanda(Gerente gerente2, NegocioBanda bandas2, int escolha) {
-		gerente.excluiBanda(gerente2,escolha,bandas2);
-		
+	public void excluirBanda(Gerente gerente2, NegocioBanda bandas2, int escolha) throws gerenteInexistenteException, bandaInexistenteException{
+		if(bandas2 != null) {
+			if(gerente2 != null) {
+				gerente.excluiBanda(gerente2,escolha,bandas2);
+			}else {
+				throw new gerenteInexistenteException();
+			}
+		}else {
+			throw new bandaInexistenteException();
+		}		
 	}
 	
-	public void setarPrimeiraBanda(Gerente gerente2, NegocioBanda bandas2) {
-		gerente.setaPrimeiraBanda(gerente2,bandas2);
-		
+	public void setarPrimeiraBanda(Gerente gerente2, NegocioBanda bandas2) throws gerenteInexistenteException, bandaInexistenteException{
+		if(bandas2 != null) {
+			if(gerente2 != null) {
+				gerente.setaPrimeiraBanda(gerente2,bandas2);
+			}else {
+				throw new gerenteInexistenteException();
+			}
+		}else {
+			throw new bandaInexistenteException();
+		}
 	}
 	
-	public void realizarShow(Gerente gerente2) {
-		gerente.realizaShow(gerente2);
+	public void realizarShow(Gerente gerente2) throws gerenteInexistenteException{
+		if(gerente2 != null) {
+			gerente.realizaShow(gerente2);
+		}else {
+			throw new gerenteInexistenteException();
+		}
 	}
 	
-	public void pagarDespesas(Gerente gerente2) {
-		gerente.pagaDespesa(gerente2);
+	public void pagarDespesas(Gerente gerente2) throws gerenteInexistenteException{
+		if(gerente2 != null) {
+			gerente.pagaDespesa(gerente2);
+		}else {
+			throw new gerenteInexistenteException();
+		}
 	}
 	
 	//Get & Set
