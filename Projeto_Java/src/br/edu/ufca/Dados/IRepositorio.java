@@ -19,4 +19,5 @@ public interface IRepositorio<T>{
 	public Banda geraBanda(ArrayList<String> nomes,String nome_banda);
 	public String consultaNome(int indice);
 	public Banda pegarBanda(int indice);
+	public Banda primeiroElemento();
 }

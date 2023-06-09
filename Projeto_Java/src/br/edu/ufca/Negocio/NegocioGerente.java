@@ -20,7 +20,8 @@ public class NegocioGerente {
 		if(gerente != null) {
 			return g.getDinheiro();
 		}else {
-			throw new gerenteInexistenteException();
+			// throw new GerenteNaoCriadoException
+			return 0;  // isso deve sair daqui depois de implementar exceções
 		}
 	}
 	
@@ -30,8 +31,10 @@ public class NegocioGerente {
 			g = new Gerente(nome, banda, dinheiro);
 			return g;
 		}else {
-			throw new gerenteException();
-		}	
+			//exceção
+		}
+		return g;
+		
 	}
 	
 	public void compraVocalista(Gerente gerente) {
@@ -63,22 +66,49 @@ public class NegocioGerente {
 		if(gerente != null) {
 			return gerente.getNome();
 		}else {
-			throw new gerenteInexistenteException(); //excecao
+			// throw new GerenteNaoCriadoException()
+			return gerente.getNome(); // isso deve sair daqui depois de implementar exceções
 		}
 	}
 
 	public String checaNomeBanda(Gerente g) {
 		return g.getBanda().getNome();
+		//exceção
 	}
 
 	public String[] checaDetalhesBanda(Gerente g) {
 		return g.getBanda().imprimirBanda();
+		//exceção
 	}
 
 	public void trocaBanda(Gerente gerente2,int escolha, NegocioBanda bandas2) {
 		gerente2.setBanda(bandas2.getRepositorio().pegarBanda(escolha));
+		//exceção
 		
 	}
 
+	public void excluiBanda(Gerente gerente2, int escolha, NegocioBanda bandas2) {
+		Banda b = bandas2.getRepositorio().pegarBanda(escolha);
+		bandas2.removeBanda(b);
+		//exceção
+	}
+
+	public void setaPrimeiraBanda(Gerente gerente2, NegocioBanda bandas2) {
+		gerente2.setBanda(bandas2.getRepositorio().primeiroElemento());
+		//exceção
+		
+	}
+
+	public void realizaShow(Gerente gerente2) {
+		Show show = new Show();
+		show.realizarShow(gerente2.getBanda(), gerente2);
+		//exceção
+	}
+
+	public void pagaDespesa(Gerente gerente2) {
+		Show show = new Show();
+		show.pagarDespesas(gerente2.getBanda(), gerente2);
+		//exceção
+	}
 
 }

@@ -35,12 +35,7 @@ public class TelaCadastro {
 	        }
 	    }
 	    
-	   try {
-		gerente = fachada.adicionarGerente(nome, 5000, cadastroBanda());
-	} catch (gerenteException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+	   gerente = fachada.adicionarGerente(nome, 10000, cadastroBanda());
 	   return gerente;
 	}
 	

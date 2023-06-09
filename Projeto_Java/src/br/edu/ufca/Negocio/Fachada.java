@@ -48,13 +48,8 @@ public class Fachada {
 		}
 	}
 	
-	public int consultarBanda(Banda banda) throws bandaInexistenteException{   //throws bandainexistenteException
-		boolean existe = repositorio.existe(banda);
-		if (existe == true) {
-			return bandas.consultaBanda(banda);
-		}else{
-			throw new bandaInexistenteException();
-		}
+	public int consultarIndiceBanda(Banda banda) {   //throws bandainexistenteException
+		return bandas.consultaIndiceBanda(banda);
 	}
 	
 	public void atualizarBanda(Banda bandaExistente, Banda novaBanda) throws bandaInexistenteException{  //throws bandainexistente Exception
@@ -259,6 +254,24 @@ public class Fachada {
 	
 	public void trocarBanda(Gerente gerente2, NegocioBanda bandas2, int escolha) {
 		gerente.trocaBanda(gerente2,escolha,bandas2);	
+	}
+	
+	public void excluirBanda(Gerente gerente2, NegocioBanda bandas2, int escolha) {
+		gerente.excluiBanda(gerente2,escolha,bandas2);
+		
+	}
+	
+	public void setarPrimeiraBanda(Gerente gerente2, NegocioBanda bandas2) {
+		gerente.setaPrimeiraBanda(gerente2,bandas2);
+		
+	}
+	
+	public void realizarShow(Gerente gerente2) {
+		gerente.realizaShow(gerente2);
+	}
+	
+	public void pagarDespesas(Gerente gerente2) {
+		gerente.pagaDespesa(gerente2);
 	}
 	
 	//Get & Set

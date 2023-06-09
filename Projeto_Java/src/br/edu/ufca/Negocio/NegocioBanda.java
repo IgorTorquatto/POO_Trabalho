@@ -22,12 +22,13 @@ public class NegocioBanda {
 		this.repositorio = repositorio;
 	}
 	
-	public int consultaBanda(Banda banda) throws bandaInexistenteException{
+	public int consultaIndiceBanda(Banda banda) {
 		boolean existe = repositorio.existe(banda);
 		if (existe == true) {
 			return repositorio.consulta(banda);
 		}else{
-			throw new bandaInexistenteException();
+			//throw new BandaInexistenteException
+			return 0; //isso deve sair daqui depois de implementar exceções
 		}
 	}
 	
@@ -36,7 +37,7 @@ public class NegocioBanda {
 		if(existe == true) {
 			repositorio.atualiza(bandaExistente, novaBanda);
 		}else {
-			throw new bandaInexistenteException();
+			//throw new BandaInexistenteException
 		}
 	}
 	
@@ -45,7 +46,7 @@ public class NegocioBanda {
 		if(existe == true) {
 			repositorio.remove(banda);
 		}else {
-			throw new bandaInexistenteException();
+			//throw new BandaInexistenteException
 		}
 	}
 	
@@ -53,18 +54,19 @@ public class NegocioBanda {
 		boolean existe = repositorio.existe(banda);
 		if(banda != null) {
 			if(existe == true) {
-				throw new bandaExistenteException(banda);
+				// throw new BandaJaExisteException
 			}else {
 				repositorio.adiciona(banda);
 			}
 		}else {
-			throw new bandaInexistenteException();
+			//throw new BandaNaoCriadaException
 		}
 	}
 	
 	public int qtdBandas() throws repositorioVazioException{
 		if(repositorio.vazio() == true) {
-			throw new repositorioVazioException();
+			// throw new RepositorioVazioException
+			return 0;
 		}else {
 			return repositorio.qtd();
 		}
@@ -72,11 +74,21 @@ public class NegocioBanda {
 	}
 	
 	public Banda geraBanda(ArrayList<String> nomes,String nome_banda) {
-		 return repositorio.geraBanda(nomes,nome_banda);
+		if(repositorio.vazio() == true){
+			// throw new RepositorioVazioException
+			return repositorio.geraBanda(nomes,nome_banda); // isso deve sair daqui depois de implementar exceções
+		}else {
+			return repositorio.geraBanda(nomes,nome_banda);
+		}
 	}
 	
 	public String consultaNome(int indice) {
-		return repositorio.consultaNome(indice);
+		if(repositorio.vazio() == true) {
+			// throw new RepositorioVazioException
+			return repositorio.consultaNome(indice); // isso deve sair daqui depois de implementar exceções
+		} else {
+			return repositorio.consultaNome(indice);
+		}
 	}
 
 	//Get & Set:
@@ -89,6 +101,4 @@ public class NegocioBanda {
 		this.repositorio = repositorio;
 	}
 
-	
-	
 }
