@@ -3,6 +3,7 @@ package br.edu.ufca.IU;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
+import br.edu.ufca.Excecoes.repositorioVazioException;
 import br.edu.ufca.Negocio.*;
 
 public class TelaBanda {
@@ -47,10 +48,20 @@ public class TelaBanda {
 		int escolha;
 		
 		System.out.println("Selecione a banda que você deseja gerenciar:");
-		System.out.println("Quantidade de bandas ("+fachada2.checarQuantidadeBanda()+")");
+		try {
+			System.out.println("Quantidade de bandas ("+fachada2.checarQuantidadeBanda()+")");
+		} catch (repositorioVazioException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	
-		for(int i = 0; i < fachada2.checarQuantidadeBanda();i++) {
-			System.out.println(i+")"+fachada.consultarNomeBanda(i));
+		try {
+			for(int i = 0; i < fachada2.checarQuantidadeBanda(); i++) {
+				System.out.println(i+")"+fachada.consultarNomeBanda(i));
+			}
+		} catch (repositorioVazioException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		escolha = scanner.nextInt();

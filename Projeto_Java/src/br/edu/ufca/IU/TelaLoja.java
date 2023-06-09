@@ -3,7 +3,7 @@ package br.edu.ufca.IU;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-
+import br.edu.ufca.Excecoes.gerenteInexistenteException;
 import br.edu.ufca.Negocio.*;
 
 public class TelaLoja {
@@ -33,7 +33,14 @@ public class TelaLoja {
 			   
 			   escolha = scanner.nextInt();
 			   
-			   if(escolha==1) System.out.println("Saldo " +dp.format(fachada.checarSaldoGerente(gerente))+" R$.");   
+			   if(escolha==1) { 
+				   try {
+					System.out.println("Saldo " +dp.format(fachada.checarSaldoGerente(gerente))+" R$.");
+				} catch (gerenteInexistenteException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}   
+			   }
 			   
 			   if(escolha==2) {
 				   System.out.println("Qual integrante você deseja comprar? ");

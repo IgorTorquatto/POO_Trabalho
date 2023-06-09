@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 import br.edu.ufca.Dados.IRepositorio;
 import br.edu.ufca.Dados.RepositorioBanda;
+import br.edu.ufca.Excecoes.bandaExistenteException;
+import br.edu.ufca.Excecoes.bandaInexistenteException;
+import br.edu.ufca.Excecoes.repositorioVazioException;
 
 public class NegocioBanda {
 	
@@ -19,51 +22,49 @@ public class NegocioBanda {
 		this.repositorio = repositorio;
 	}
 	
-	public int consultaBanda(Banda banda) {
+	public int consultaBanda(Banda banda) throws bandaInexistenteException{
 		boolean existe = repositorio.existe(banda);
 		if (existe == true) {
 			return repositorio.consulta(banda);
 		}else{
-			//Lança exceção
-			return repositorio.consulta(banda);
+			throw new bandaInexistenteException();
 		}
 	}
 	
-	public void atualizaBanda(Banda bandaExistente, Banda novaBanda) {
+	public void atualizaBanda(Banda bandaExistente, Banda novaBanda) throws bandaInexistenteException{
 		boolean existe = repositorio.existe(bandaExistente);
 		if(existe == true) {
 			repositorio.atualiza(bandaExistente, novaBanda);
 		}else {
-			//Lança a exceção
+			throw new bandaInexistenteException();
 		}
 	}
 	
-	public void removeBanda(Banda banda) {
+	public void removeBanda(Banda banda) throws bandaInexistenteException{
 		boolean existe = repositorio.existe(banda);
 		if(existe == true) {
 			repositorio.remove(banda);
 		}else {
-			//Lança a exceção 
+			throw new bandaInexistenteException();
 		}
 	}
 	
-	public void adicionaBanda(Banda banda) {
+	public void adicionaBanda(Banda banda) throws bandaInexistenteException, bandaExistenteException{
 		boolean existe = repositorio.existe(banda);
 		if(banda != null) {
 			if(existe == true) {
-				// lança exceção
+				throw new bandaExistenteException(banda);
 			}else {
 				repositorio.adiciona(banda);
 			}
 		}else {
-			// lança exceção
+			throw new bandaInexistenteException();
 		}
 	}
 	
-	public int qtdBandas() {
+	public int qtdBandas() throws repositorioVazioException{
 		if(repositorio.vazio() == true) {
-			//exceção
-			return 0;
+			throw new repositorioVazioException();
 		}else {
 			return repositorio.qtd();
 		}

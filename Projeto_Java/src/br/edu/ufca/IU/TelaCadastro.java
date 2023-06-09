@@ -3,6 +3,9 @@ package br.edu.ufca.IU;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import br.edu.ufca.Excecoes.bandaExistenteException;
+import br.edu.ufca.Excecoes.bandaInexistenteException;
+import br.edu.ufca.Excecoes.gerenteException;
 import br.edu.ufca.Negocio.Banda;
 import br.edu.ufca.Negocio.Fachada;
 import br.edu.ufca.Negocio.Gerente;
@@ -21,7 +24,7 @@ public class TelaCadastro {
 	public Gerente cadastroIncial() {
 		
 		String nome = "";
-		Gerente gerente ;
+		Gerente gerente = null;
 		
 	    while (nome.isEmpty() || !nome.matches("[a-zA-Z]+")) {
 	        System.out.println("Digite seu nome: ");
@@ -32,7 +35,12 @@ public class TelaCadastro {
 	        }
 	    }
 	    
-	   gerente = fachada.adicionarGerente(nome, 5000, cadastroBanda());
+	   try {
+		gerente = fachada.adicionarGerente(nome, 5000, cadastroBanda());
+	} catch (gerenteException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	   return gerente;
 	}
 	
@@ -72,7 +80,12 @@ public class TelaCadastro {
 			  }
 		 
 		 banda = fachada.gerarBanda(nome_musicos_inicial, nome_banda);
-		 fachada.adicionarBanda(banda, nome_banda);
+		 try {
+			fachada.adicionarBanda(banda, nome_banda);
+		} catch (bandaInexistenteException | bandaExistenteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		 return  banda;
 		   
 	}

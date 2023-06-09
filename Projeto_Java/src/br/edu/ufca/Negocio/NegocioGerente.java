@@ -1,6 +1,8 @@
 package br.edu.ufca.Negocio;
 
 import br.edu.ufca.Dados.IRepositorio;
+import br.edu.ufca.Excecoes.gerenteException;
+import br.edu.ufca.Excecoes.gerenteInexistenteException;
 
 public class NegocioGerente {
 	/*
@@ -14,25 +16,22 @@ public class NegocioGerente {
 		this.gerente = gerente;
 	}
 	
-	public double saldo(Gerente g) {
+	public double saldo(Gerente g) throws gerenteInexistenteException{
 		if(gerente != null) {
 			return g.getDinheiro();
 		}else {
-			//exceção
-			return 0;
+			throw new gerenteInexistenteException();
 		}
 	}
 	
-	public Gerente adicionaGerente(String nome,double dinheiro,Banda banda) {
+	public Gerente adicionaGerente(String nome,double dinheiro,Banda banda) throws gerenteException{
 		Gerente g = null;
 		if(nome != null && dinheiro!= 0 && banda != null) {
 			g = new Gerente(nome, banda, dinheiro);
+			return g;
 		}else {
-			//exceção
-
-		}
-		return g;
-		
+			throw new gerenteException();
+		}	
 	}
 	
 	public void compraVocalista(Gerente gerente) {
@@ -60,11 +59,11 @@ public class NegocioGerente {
 		
 	}
 	
-	public String consultaNomeGerente(Gerente gerente) {
+	public String consultaNomeGerente(Gerente gerente) throws gerenteInexistenteException{
 		if(gerente != null) {
 			return gerente.getNome();
 		}else {
-			return gerente.getNome(); //excecao
+			throw new gerenteInexistenteException(); //excecao
 		}
 	}
 
