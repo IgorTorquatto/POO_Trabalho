@@ -3,6 +3,8 @@ package br.edu.ufca.IU;
 import java.util.Scanner;
 
 import br.edu.ufca.Dados.IRepositorio;
+import br.edu.ufca.Excecoes.gerenteInexistenteException;
+import br.edu.ufca.Excecoes.repositorioVazioException;
 import br.edu.ufca.Negocio.*;
 
 public class TelaPrincipal {
@@ -30,25 +32,39 @@ public class TelaPrincipal {
 	 
 	    gerente = telacadastro.cadastroIncial();
 	   
-	    System.out.println("Olá, "+ fachada.consultarNomeGerente(gerente)+ "!");
+	    try {
+			System.out.println("Olá, "+ fachada.consultarNomeGerente(gerente)+ "!");
+		} catch (gerenteInexistenteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		while(sair == false){
-		System.out.println(
-				">>>> Menu Principal <<<<\n"
-				+ "1-Cadastrar nova banda\n"
-		   		+ "2-Detalhes da banda\n"
-		   		+ "3-Abrir loja \n"
-		   		+ "4-Realizar show \n"
-		   		+ "5-Excluir bandas\n"
-		   		+ "6-Trocar de banda \n"
-		   		+ "7-Encerrar programa\n"
-		   		+ "Quantidade de bandas sendo gerenciadas:"+fachada.checarQuantidadeBanda()+"\n"
-		   		+ "Nome da Banda sendo gerenciada atualmente:"+fachada.checarNomeBanda(gerente)+"\n"
-		   		);
+		try {
+			try {
+				System.out.println(
+						">>>> Menu Principal <<<<\n"
+						+ "1-Cadastrar nova banda\n"
+				   		+ "2-Detalhes da banda\n"
+				   		+ "3-Abrir loja \n"
+				   		+ "4-Realizar show \n"
+				   		+ "5-Excluir bandas\n"
+				   		+ "6-Trocar de banda \n"
+				   		+ "7-Encerrar programa\n"
+				   		+ "Quantidade de bandas sendo gerenciadas:"+fachada.checarQuantidadeBanda()+"\n"
+				   		+ "Nome da Banda sendo gerenciada atualmente:"+fachada.checarNomeBanda(gerente)+"\n"
+				   		);
+			} catch (gerenteInexistenteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} catch (repositorioVazioException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		int operacao = scanner.nextInt();
 		switch(operacao){
-		case 1: 
-			telacadastro.cadastroBanda();
+		case 1:
 			break;
 		case 2:  
 			telabanda.detalhesBanda(gerente);
@@ -80,6 +96,11 @@ public class TelaPrincipal {
 			System.out.println("Opção inválida!");
 		}
 		}
-	 System.out.println("Programa finalizado com sucesso "+fachada.consultarNomeGerente(gerente)+".");
+	 try {
+		System.out.println("Programa finalizado com sucesso "+fachada.consultarNomeGerente(gerente)+".");
+	} catch (gerenteInexistenteException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	}
 }
