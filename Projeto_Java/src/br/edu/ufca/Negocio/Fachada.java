@@ -2,8 +2,17 @@ package br.edu.ufca.Negocio;
 
 import java.util.ArrayList;
 
+
 import br.edu.ufca.Dados.RepositorioBanda;
 import br.edu.ufca.Dados.RepositorioMusicos;
+import br.edu.ufca.Excecoes.bandaExistenteException;
+import br.edu.ufca.Excecoes.bandaInexistenteException;
+import br.edu.ufca.Excecoes.gerenteException;
+import br.edu.ufca.Excecoes.gerenteInexistenteException;
+import br.edu.ufca.Excecoes.musicoExistenteException;
+import br.edu.ufca.Excecoes.musicoInexistenteException;
+import br.edu.ufca.Excecoes.repositorioVazioException;
+import br.edu.ufca.Dados.IRepositorio;
 
 public class Fachada {
 	/*
@@ -11,6 +20,7 @@ public class Fachada {
 	 Aqui deve ser toda a classe responsável por fazer toda a conexão entre a camada de negócios, que por sua vez já usa a camada dos dados,
 	 e a IU
 	*/
+	private IRepositorio repositorio;
 	private NegocioBanda bandas;
 	private NegocioMusico musicos;
 	private NegocioGerente gerente;
@@ -19,27 +29,50 @@ public class Fachada {
 	
 	public Fachada() {
 		this.bandas = new NegocioBanda(new RepositorioBanda());
-		this.musicos = new NegocioMusico(new RepositorioMusicos());
-		this.gerente = new NegocioGerente(new Gerente(null, null, 0));
+		this.gerente = new NegocioGerente(new Gerente(null, null, 5000));
 	}
 	
 	//Banda:
 	
-	public void adicionarBanda(Banda banda,String nome) {   //deve ter throws bandajaexisteException
+	public void adicionarBanda(Banda banda,String nome) throws bandaInexistenteException, bandaExistenteException{   //deve ter throws bandaexistenteException
 		Banda b = new Banda(banda.getVocalista(), banda.getTecladista(), banda.getGuitarrista(), banda.getBaterista(), banda.getBaixista(), nome);
-		bandas.adicionaBanda(b);
+		boolean existe = repositorio.existe(banda);
+		if(banda != null) {
+			if(existe == true) {
+				throw new bandaExistenteException(banda);
+			}else {
+				bandas.adicionaBanda(b);
+			}
+		}else {
+			throw new bandaInexistenteException();
+		}
 	}
 	
-	public int consultarIndiceBanda(Banda banda) {   //throws bandainexistenteException
-		return bandas.consultaIndiceBanda(banda);
+	public int consultarIndiceBanda(Banda banda) throws bandaInexistenteException{   //throws bandainexistenteException
+		boolean existe = repositorio.existe(banda);
+		if (existe == true) {
+			return bandas.consultaIndiceBanda(banda);
+		}else{
+			throw new bandaInexistenteException();
+		}
 	}
 	
-	public void atualizarBanda(Banda bandaExistente, Banda novaBanda) {  //throws bandainexistente Exception
-		bandas.atualizaBanda(bandaExistente, novaBanda);
+	public void atualizarBanda(Banda bandaExistente, Banda novaBanda) throws bandaInexistenteException{  //throws bandainexistente Exception
+		boolean existe = repositorio.existe(bandaExistente);
+		if(existe == true) {
+			bandas.atualizaBanda(bandaExistente, novaBanda);
+		}else {
+			throw new bandaInexistenteException();
+		}
 	}
 	
-	public void removerBanda(Banda banda) {  //throws bandainexistente Exception
-		bandas.removeBanda(banda);
+	public void removerBanda(Banda banda) throws bandaInexistenteException{  //throws bandainexistente Exception
+		boolean existe = repositorio.existe(banda);
+		if(existe == true) {
+			bandas.removeBanda(banda);
+		}else {
+			throw new bandaInexistenteException();
+		}
 	}
 	
 	public Banda gerarBanda(ArrayList<String> nomes,String nome_banda) {
@@ -47,8 +80,12 @@ public class Fachada {
 		
 	}
 	
-	public int checarQuantidadeBanda() {  //throws repositoriovazioException
-		return bandas.qtdBandas();
+	public int checarQuantidadeBanda() throws repositorioVazioException{  //throws repositoriovazioException
+		if(repositorio.vazio() == true) {
+			throw new repositorioVazioException();
+		}else {
+			return bandas.qtdBandas();
+		}
 	}
 	
 	public String consultarNomeBanda(int indice) {
@@ -57,61 +94,138 @@ public class Fachada {
 	
 	//Musico:
 	
-	public void adicionarBaixista(String nome,double exp,int preco) {   //deve ter throws musicojaexisteException
+	public void adicionarBaixista(String nome,double exp,int preco) throws musicoInexistenteException, musicoExistenteException{   //deve ter throws musicojaexisteException
 		MusicoAbstrato m = new Baixista(nome,exp,preco);
-		musicos.adicionaMusico(m);
+		boolean existe = repositorio.existe(m);
+		if(m != null) {
+			if(existe == true) {
+				throw new musicoExistenteException(m);
+			}else {
+				musicos.adicionaMusico(m);
+			}
+		}else {
+			throw new musicoInexistenteException();
+		}
 	}
 	
-	public void adicionarBaterista(String nome,double exp,int preco) {   //deve ter throws musicojaexisteException
+	public void adicionarBaterista(String nome,double exp,int preco) throws musicoInexistenteException, musicoExistenteException{   //deve ter throws musicojaexisteException
 		MusicoAbstrato m = new Baterista(nome,exp,preco);
-		musicos.adicionaMusico(m);
+		boolean existe = repositorio.existe(m);
+		if(m != null) {
+			if(existe == true) {
+				throw new musicoExistenteException(m);
+			}else {
+				musicos.adicionaMusico(m);
+			}
+		}else {
+			throw new musicoInexistenteException();
+		}
 	}
 	
-	public void adicionarGuitarrista(String nome,double exp,int preco) {   //deve ter throws musicojaexisteException
+	public void adicionarGuitarrista(String nome,double exp,int preco) throws musicoInexistenteException, musicoExistenteException{   //deve ter throws musicojaexisteException
 		MusicoAbstrato m = new Guitarrista(nome,exp,preco);
-		musicos.adicionaMusico(m);
+		boolean existe = repositorio.existe(m);
+		if(m != null) {
+			if(existe == true) {
+				throw new musicoExistenteException(m);
+			}else {
+				musicos.adicionaMusico(m);
+			}
+		}else {
+			throw new musicoInexistenteException();
+		}
 	}
 	
-	public void adicionarTecladista(String nome,double exp,int preco) {   //deve ter throws musicojaexisteException
+	public void adicionarTecladista(String nome,double exp,int preco) throws musicoInexistenteException, musicoExistenteException {   //deve ter throws musicojaexisteException
 		MusicoAbstrato m = new Tecladista(nome,exp,preco);
-		musicos.adicionaMusico(m);
+		boolean existe = repositorio.existe(m);
+		if(m != null) {
+			if(existe == true) {
+				throw new musicoExistenteException(m);
+			}else {
+				musicos.adicionaMusico(m);
+			}
+		}else {
+			throw new musicoInexistenteException();
+		}
+		
 	}
 	
-	public void adicionarVocalista(String nome,double exp,int preco) {   //deve ter throws musicojaexisteException
+	public void adicionarVocalista(String nome,double exp,int preco) throws musicoInexistenteException, musicoExistenteException{   //deve ter throws musicojaexisteException
 		MusicoAbstrato m = new Vocalista(nome,exp,preco);
-		musicos.adicionaMusico(m);
+		boolean existe = repositorio.existe(m);
+		if(m != null) {
+			if(existe == true) {
+				throw new musicoExistenteException(m);
+			}else {
+				musicos.adicionaMusico(m);
+			}
+		}else {
+			throw new musicoInexistenteException();
+		}
 	}
 	
-	public void consultarMusico(MusicoAbstrato musico) {   //throws musicoinexistenteException
-		musicos.consultaMusico(musico);
+	public void consultarMusico(MusicoAbstrato musico) throws musicoInexistenteException {   //throws musicoinexistenteException
+		boolean existe = repositorio.existe(musico);
+		if (existe == true) {
+			musicos.consultaMusico(musico);
+		}else{
+			throw new musicoInexistenteException();
+		}
 	}
 	
-	public void atualizarMusico(MusicoAbstrato musicoExistente, MusicoAbstrato novoMusico) {  //throws musicoinexistente Exception
-		musicos.atualizaMusico(musicoExistente, novoMusico);
+	public void atualizarMusico(MusicoAbstrato musicoExistente, MusicoAbstrato novoMusico) throws musicoInexistenteException{  //throws musicoinexistente Exception
+		boolean existe = repositorio.existe(musicoExistente);
+		if(existe == true) {
+			musicos.atualizaMusico(musicoExistente, novoMusico);
+		}else {
+			throw new musicoInexistenteException();
+		}
 	}
 	
-	public void removerMusico(MusicoAbstrato musico) {  //throws musicoinexistenteException
-		musicos.removeMusico(musico);
+	public void removerMusico(MusicoAbstrato musico) throws musicoInexistenteException {  //throws musicoinexistenteException
+		boolean existe = repositorio.existe(musico);
+		if(existe == true) {
+			musicos.removeMusico(musico);
+		}else {
+			throw new musicoInexistenteException();
+		}
 	}
 	
-	public int checarQuantidadeMusico() {  //throws repositoriovazioException
-		return musicos.qtdBandas();
+	public int checarQuantidadeMusico() throws repositorioVazioException {  //throws repositoriovazioException
+		if(repositorio.vazio() == true) {
+			throw new repositorioVazioException();
+		}else {
+			return musicos.qtdBandas();
+		}
 	}
 	
 	//Gerente:
 	
-	public Gerente adicionarGerente(String nome,double dinheiro,Banda banda) {
+	public Gerente adicionarGerente(String nome,double dinheiro,Banda banda) throws gerenteException{
 		Gerente g = null;
-		g= gerente.adicionaGerente(nome, dinheiro, banda);
-		return g;
+		if(nome != null && dinheiro!= 0 && banda != null) {
+			g = gerente.adicionaGerente(nome, dinheiro, banda);
+			return g;
+		}else {
+			throw new gerenteException();
+		}
 	}
 	
-	public double checarSaldoGerente(Gerente g) {
-		return gerente.saldo(g);
+	public double checarSaldoGerente(Gerente g) throws gerenteInexistenteException{
+		if(g != null) {
+			return gerente.saldo(g);
+		}else {
+			throw new gerenteInexistenteException();
+		}
 	}
 	
-	public String consultarNomeGerente(Gerente g) {
-		return gerente.consultaNomeGerente(g);
+	public String consultarNomeGerente(Gerente g) throws gerenteInexistenteException{
+		if(gerente != null) {
+			return gerente.consultaNomeGerente(g);
+		}else {
+			throw new gerenteInexistenteException(); //excecao
+		}
 	}
 	
 	
@@ -135,34 +249,72 @@ public class Fachada {
 		gerente.compraBaterista(g);
 	}
 
-	public String checarNomeBanda(Gerente g) {
-		return gerente.checaNomeBanda(g);
+	public String checarNomeBanda(Gerente g) throws gerenteInexistenteException{
+		if(g != null) {
+			return gerente.checaNomeBanda(g);
+		}else {
+			throw new gerenteInexistenteException();
+		}
 	}
 	
-	public String [] checarDetalhesBanda(Gerente g) {
-		return gerente.checaDetalhesBanda(g);
+	public String [] checarDetalhesBanda(Gerente g) throws gerenteInexistenteException{
+		if(g != null) {
+			return gerente.checaDetalhesBanda(g);
+		}else {
+			throw new gerenteInexistenteException();
+		}
 	}
 	
-	public void trocarBanda(Gerente gerente2, NegocioBanda bandas2, int escolha) {
-		gerente.trocaBanda(gerente2,escolha,bandas2);	
+	public void trocarBanda(Gerente gerente2, NegocioBanda bandas2, int escolha) throws gerenteInexistenteException, bandaInexistenteException{	
+		if(gerente2 != null) {
+			if(bandas2 != null) {
+				gerente.trocaBanda(gerente2,escolha,bandas2);
+			}else {
+				throw new bandaInexistenteException();
+			}
+		}else {
+			throw new gerenteInexistenteException();
+		}
 	}
 	
-	public void excluirBanda(Gerente gerente2, NegocioBanda bandas2, int escolha) {
-		gerente.excluiBanda(gerente2,escolha,bandas2);
-		
+	public void excluirBanda(Gerente gerente2, NegocioBanda bandas2, int escolha) throws gerenteInexistenteException, bandaInexistenteException{
+		if(bandas2 != null) {
+			if(gerente2 != null) {
+				gerente.excluiBanda(gerente2,escolha,bandas2);
+			}else {
+				throw new gerenteInexistenteException();
+			}
+		}else {
+			throw new bandaInexistenteException();
+		}		
 	}
 	
-	public void setarPrimeiraBanda(Gerente gerente2, NegocioBanda bandas2) {
-		gerente.setaPrimeiraBanda(gerente2,bandas2);
-		
+	public void setarPrimeiraBanda(Gerente gerente2, NegocioBanda bandas2) throws gerenteInexistenteException, bandaInexistenteException{
+		if(bandas2 != null) {
+			if(gerente2 != null) {
+				gerente.setaPrimeiraBanda(gerente2,bandas2);
+			}else {
+				throw new gerenteInexistenteException();
+			}
+		}else {
+			throw new bandaInexistenteException();
+		}
 	}
 	
-	public void realizarShow(Gerente gerente2) {
-		gerente.realizaShow(gerente2);
+	public void realizarShow(Gerente gerente2) throws gerenteInexistenteException{
+		if(gerente2 != null) {
+			gerente.realizaShow(gerente2);
+		}else {
+			throw new gerenteInexistenteException();
+		}
 	}
 	
-	public void pagarDespesas(Gerente gerente2) {
-		gerente.pagaDespesa(gerente2);
+	public void pagarDespesas(Gerente gerente2) throws gerenteInexistenteException{
+		if(gerente2 != null) {
+			gerente.pagaDespesa(gerente2);
+		}else {
+			throw new gerenteInexistenteException();
+		}
 	}
 	
 	//Get & Set
