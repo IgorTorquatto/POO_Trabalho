@@ -48,12 +48,12 @@ public class App {
     		  
       while(sair==false) {
     	  
-    	  System.out.println("indice"+ indice); // Mostrando para corrigir bugs, apagar depois
+    	  System.out.println("banda nº"+ "  " + indice); // Mostrando para corrigir bugs, apagar depois
     	  
     	  System.out.println(
 				  "\n1-Cadastrar nova banda\n"
 		   		+ "2-Detalhes da banda\n"
-		   		+ "3-Comprar músicos com atributos especiais \n"
+		   		+ "3-Entrar na loja \n"
 		   		+ "4-Realizar show \n"
 		   		+ "5-Excluir bandas\n"
 		   		+ "6-Trocar de banda \n"
