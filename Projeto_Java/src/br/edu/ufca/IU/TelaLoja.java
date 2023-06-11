@@ -56,6 +56,7 @@ public class TelaLoja {
 				   switch(escolh) {
 				   
 				   case 1:
+<<<<<<< HEAD
 					   System.out.println("Selecione a categoria de vocalistas: ");
 					   System.out.println("1-Lendários\n2-Bons\n3-Médios");
 					   int categoria = scanner.nextInt();
@@ -144,6 +145,21 @@ public class TelaLoja {
 					   }
 					   posicao = scanner.nextInt();
 					   System.out.println(fachada.comprarBaixistaGerente(gerente,  categoria, posicao));
+=======
+					   fachada.comprarVocalistaGerente(gerente);
+					   break;
+				   case 2:
+					   fachada.comprarTecladistaGerente(gerente);
+					   break;
+				   case 3:
+					   fachada.comprarGuitarristaGerente(gerente);
+					   break;
+				   case 4:
+					   fachada.comprarBateristaGerente(gerente);
+					   break;
+				   case 5:
+					   fachada.comprarBaixistaGerente(gerente);
+>>>>>>> main
 					   break;
 					
 					default:

@@ -122,6 +122,7 @@ public class Fachada {
 	}
 	
 	
+<<<<<<< HEAD
 	public String comprarVocalistaGerente(Gerente g, int categoria, int posicao) {
 		return gerente.compraVocalista(g, categoria, posicao);
 	}
@@ -141,6 +142,28 @@ public class Fachada {
 	public String comprarBateristaGerente(Gerente g, int categoria, int posicao) {
 		return gerente.compraBaterista(g, categoria, posicao);
 	}
+=======
+	public void comprarVocalistaGerente(Gerente g) {
+		gerente.compraVocalista(g);
+	}
+	
+	public void comprarTecladistaGerente(Gerente g) {
+		gerente.compraTecladista(g);
+	}
+	
+	public void comprarGuitarristaGerente(Gerente g) {
+		gerente.compraGuitarrista(g);
+	}
+	
+	public void comprarBaixistaGerente(Gerente g) {
+		gerente.compraBaixista(g);
+	}
+	
+	public void comprarBateristaGerente(Gerente g) {
+		gerente.compraBaterista(g);
+	}
+
+>>>>>>> main
 	public String checarNomeBanda(Gerente g) throws gerenteInexistenteException {
 		return gerente.checaNomeBanda(g);
 	}
