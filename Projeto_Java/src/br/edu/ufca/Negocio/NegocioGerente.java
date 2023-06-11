@@ -34,7 +34,6 @@ public class NegocioGerente {
 		}	
 	}
 	
-<<<<<<< HEAD
 	public String compraVocalista(Gerente gerente, int categoria, int posicao) {
 		return Loja.comprarVocalista(gerente, categoria, posicao);
 		
@@ -57,30 +56,6 @@ public class NegocioGerente {
 	
 	public String compraBaterista(Gerente gerente, int categoria, int posicao) {
 		return Loja.comprarBaterista(gerente, categoria, posicao);
-=======
-	public void compraVocalista(Gerente gerente) {
-		Loja.comprarVocalista(gerente);
-		
-	}
-	
-	public void compraGuitarrista(Gerente gerente) {
-		Loja.comprarGuitarrista(gerente);
-		
-	}
-	
-	public void compraTecladista(Gerente gerente) {
-		Loja.comprarTecladista(gerente);
-		
-	}
-	
-	public void compraBaixista(Gerente gerente) {
-		Loja.comprarBaixista(gerente);
-		
-	}
-	
-	public void compraBaterista(Gerente gerente) {
-		Loja.comprarBaterista(gerente);
->>>>>>> main
 		
 	}
 	

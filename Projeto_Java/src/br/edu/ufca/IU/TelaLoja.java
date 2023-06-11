@@ -56,7 +56,6 @@ public class TelaLoja {
 				   switch(escolh) {
 				   
 				   case 1:
-<<<<<<< HEAD
 					   System.out.println("Selecione a categoria de vocalistas: ");
 					   System.out.println("1-Lendários\n2-Bons\n3-Médios");
 					   int categoria = scanner.nextInt();
@@ -75,18 +74,18 @@ public class TelaLoja {
 					   System.out.println(fachada.comprarVocalistaGerente(gerente, categoria, posicao));
 					   break;
 				   case 2:
-					   System.out.println("Selecione a categoria de tecladeistas: ");
+					   System.out.println("Selecione a categoria de tecladistas: ");
 					   System.out.println("1-Lendários\n2-Bons\n3-Médios");
 					   categoria = scanner.nextInt();
 					   switch(categoria) {
 					   case 1:
-						   System.out.println("Qual tecladeista você quer comprar? 10000 R$ \n 1 - Rick Wakeman \n 2 - Jon Lord \n 3 - Keith Emerson");
+						   System.out.println("Qual tecladista você quer comprar? 10000 R$ \n 1 - Rick Wakeman \n 2 - Jon Lord \n 3 - Keith Emerson");
 						   break;
 					   case 2:
-						   System.out.println("Qual tecladeista você quer comprar? 5.000 R$ \n 1 - Josh Silver \n 2 - Geddy Lee \n 3 - Trent Reznor");
+						   System.out.println("Qual tecladista você quer comprar? 5.000 R$ \n 1 - Josh Silver \n 2 - Geddy Lee \n 3 - Trent Reznor");
 						   break;
 					   case 3:
-						   System.out.println("Qual tecladeista você quer comprar? 3.000 R$ \n 1 - Jon Oliva \n 2 - Per Wiberg \n 3 - Steven Wilson");
+						   System.out.println("Qual tecladista você quer comprar? 3.000 R$ \n 1 - Jon Oliva \n 2 - Per Wiberg \n 3 - Steven Wilson");
 						   break;
 					   }
 					   posicao = scanner.nextInt();
@@ -134,32 +133,17 @@ public class TelaLoja {
 					   categoria = scanner.nextInt();
 					   switch(categoria) {
 					   case 1:
-						   System.out.println("Qual baixista você quer comprar? 10000 R$ \n 1 - Freddie Mercury \n 2 - Elvis Presley \n 3 - Paul McCartney");
+						   System.out.println("Qual baixista você quer comprar? 10000 R$ \n 1 - James Jamerson \n 2 - Charles Mingus \n 3 - John Entwistle");
 						   break;
 					   case 2:
-						   System.out.println("Qual baixista você quer comprar? 5.000 R$ \n 1 - Angus Young \n 2 - Steve Vai \n 3 - George Harrison");
+						   System.out.println("Qual baixista você quer comprar? 5.000 R$ \n 1 - Justin Chancellor \n 2 - John Myung \n 3 - Joe Dart");
 						   break;
 					   case 3:
-						   System.out.println("Qual baixista você quer comprar? 3.000 R$ \n 1 - Santana \n 2 - David Gilmour \n 3 - Eddie Van Halen");
+						   System.out.println("Qual baixista você quer comprar? 3.000 R$ \n 1 - Paz Lenchantin \n 2 - Mike Kerr \n 3 - Matt Freeman");
 						   break;
 					   }
 					   posicao = scanner.nextInt();
 					   System.out.println(fachada.comprarBaixistaGerente(gerente,  categoria, posicao));
-=======
-					   fachada.comprarVocalistaGerente(gerente);
-					   break;
-				   case 2:
-					   fachada.comprarTecladistaGerente(gerente);
-					   break;
-				   case 3:
-					   fachada.comprarGuitarristaGerente(gerente);
-					   break;
-				   case 4:
-					   fachada.comprarBateristaGerente(gerente);
-					   break;
-				   case 5:
-					   fachada.comprarBaixistaGerente(gerente);
->>>>>>> main
 					   break;
 					
 					default:
