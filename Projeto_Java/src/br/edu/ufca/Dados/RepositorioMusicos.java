@@ -7,8 +7,6 @@ public class RepositorioMusicos implements IRepositorio<MusicoAbstrato> {
 	
 	/*
 	 Só deve conter código de acesso a dados
-	 não lança exceções
-	 não imprime mensagens
 	*/
 	
 	private ArrayList<MusicoAbstrato> musicos;

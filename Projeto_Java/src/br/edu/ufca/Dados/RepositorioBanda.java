@@ -7,8 +7,6 @@ public class RepositorioBanda implements IRepositorio <Banda>{
 	
 	/*
 	 Só deve conter código de acesso a dados
-	 não lança exceções
-	 não imprime mensagens
 	*/
 	
 	ArrayList<Banda> bandas; 
