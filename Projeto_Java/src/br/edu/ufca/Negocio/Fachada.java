@@ -32,20 +32,20 @@ public class Fachada {
 	
 	//Banda:
 	
-	public void adicionarBanda(Banda banda,String nome) throws bandaInexistenteException, bandaExistenteException {   //deve ter throws bandajaexisteException
+	public void adicionarBanda(Banda banda,String nome) throws bandaInexistenteException, bandaExistenteException {   
 		Banda b = new Banda(banda.getVocalista(), banda.getTecladista(), banda.getGuitarrista(), banda.getBaterista(), banda.getBaixista(), nome);
 		bandas.adicionaBanda(b);
 	}
 	
-	public int consultarIndiceBanda(Banda banda) throws bandaInexistenteException {   //throws bandainexistenteException
+	public int consultarIndiceBanda(Banda banda) throws bandaInexistenteException {   
 		return bandas.consultaIndiceBanda(banda);
 	}
 	
-	public void atualizarBanda(Banda bandaExistente, Banda novaBanda) throws bandaInexistenteException {  //throws bandainexistente Exception
+	public void atualizarBanda(Banda bandaExistente, Banda novaBanda) throws bandaInexistenteException {  
 		bandas.atualizaBanda(bandaExistente, novaBanda);
 	}
 	
-	public void removerBanda(Banda banda) throws bandaInexistenteException {  //throws bandainexistente Exception
+	public void removerBanda(Banda banda) throws bandaInexistenteException {  
 		bandas.removeBanda(banda);
 	}
 	
@@ -54,7 +54,7 @@ public class Fachada {
 		
 	}
 	
-	public int checarQuantidadeBanda() throws repositorioVazioException {  //throws repositoriovazioException
+	public int checarQuantidadeBanda() throws repositorioVazioException {  
 		return bandas.qtdBandas();
 	}
 	
@@ -64,44 +64,44 @@ public class Fachada {
 	
 	//Musico:
 	
-	public void adicionarBaixista(String nome,double exp,int preco) throws musicoInexistenteException, musicoExistenteException {   //deve ter throws musicojaexisteException
+	public void adicionarBaixista(String nome,double exp,int preco) throws musicoInexistenteException, musicoExistenteException {   
 		MusicoAbstrato m = new Baixista(nome,exp,preco);
 		musicos.adicionaMusico(m);
 	}
 	
-	public void adicionarBaterista(String nome,double exp,int preco) throws musicoInexistenteException, musicoExistenteException {   //deve ter throws musicojaexisteException
+	public void adicionarBaterista(String nome,double exp,int preco) throws musicoInexistenteException, musicoExistenteException {  
 		MusicoAbstrato m = new Baterista(nome,exp,preco);
 		musicos.adicionaMusico(m);
 	}
 	
-	public void adicionarGuitarrista(String nome,double exp,int preco) throws musicoInexistenteException, musicoExistenteException {   //deve ter throws musicojaexisteException
+	public void adicionarGuitarrista(String nome,double exp,int preco) throws musicoInexistenteException, musicoExistenteException {   
 		MusicoAbstrato m = new Guitarrista(nome,exp,preco);
 		musicos.adicionaMusico(m);
 	}
 	
-	public void adicionarTecladista(String nome,double exp,int preco) throws musicoInexistenteException, musicoExistenteException {   //deve ter throws musicojaexisteException
+	public void adicionarTecladista(String nome,double exp,int preco) throws musicoInexistenteException, musicoExistenteException {   
 		MusicoAbstrato m = new Tecladista(nome,exp,preco);
 		musicos.adicionaMusico(m);
 	}
 	
-	public void adicionarVocalista(String nome,double exp,int preco) throws musicoInexistenteException, musicoExistenteException {   //deve ter throws musicojaexisteException
+	public void adicionarVocalista(String nome,double exp,int preco) throws musicoInexistenteException, musicoExistenteException {   
 		MusicoAbstrato m = new Vocalista(nome,exp,preco);
 		musicos.adicionaMusico(m);
 	}
 	
-	public void consultarMusico(MusicoAbstrato musico) throws musicoInexistenteException {   //throws musicoinexistenteException
+	public void consultarMusico(MusicoAbstrato musico) throws musicoInexistenteException {   
 		musicos.consultaMusico(musico);
 	}
 	
-	public void atualizarMusico(MusicoAbstrato musicoExistente, MusicoAbstrato novoMusico) throws musicoInexistenteException {  //throws musicoinexistente Exception
+	public void atualizarMusico(MusicoAbstrato musicoExistente, MusicoAbstrato novoMusico) throws musicoInexistenteException {  
 		musicos.atualizaMusico(musicoExistente, novoMusico);
 	}
 	
-	public void removerMusico(MusicoAbstrato musico) throws musicoInexistenteException {  //throws musicoinexistenteException
+	public void removerMusico(MusicoAbstrato musico) throws musicoInexistenteException {  
 		musicos.removeMusico(musico);
 	}
 	
-	public int checarQuantidadeMusico() throws repositorioVazioException {  //throws repositoriovazioException
+	public int checarQuantidadeMusico() throws repositorioVazioException {  
 		return musicos.qtdBandas();
 	}
 	
@@ -122,24 +122,25 @@ public class Fachada {
 	}
 	
 	
-	public void comprarVocalistaGerente(Gerente g) {
-		gerente.compraVocalista(g);
+
+	public String comprarVocalistaGerente(Gerente g, int categoria, int posicao) {
+		return gerente.compraVocalista(g, categoria, posicao);
 	}
 	
-	public void comprarTecladistaGerente(Gerente g) {
-		gerente.compraTecladista(g);
+	public String comprarTecladistaGerente(Gerente g, int categoria, int posicao) {
+		return gerente.compraTecladista(g, categoria, posicao);
 	}
 	
-	public void comprarGuitarristaGerente(Gerente g) {
-		gerente.compraGuitarrista(g);
+	public String comprarGuitarristaGerente(Gerente g, int categoria, int posicao) {
+		return gerente.compraGuitarrista(g, categoria, posicao);
 	}
 	
-	public void comprarBaixistaGerente(Gerente g) {
-		gerente.compraBaixista(g);
+	public String comprarBaixistaGerente(Gerente g, int categoria, int posicao) {
+		return gerente.compraBaixista(g, categoria, posicao);
 	}
 	
-	public void comprarBateristaGerente(Gerente g) {
-		gerente.compraBaterista(g);
+	public String comprarBateristaGerente(Gerente g, int categoria, int posicao) {
+		return gerente.compraBaterista(g, categoria, posicao);
 	}
 
 	public String checarNomeBanda(Gerente g) throws gerenteInexistenteException {

@@ -8,7 +8,6 @@ import br.edu.ufca.Excecoes.gerenteInexistenteException;
 public class NegocioGerente {
 	/*
 	 Regras de négocio para manipulação do gerente
-	 Envia exceções para a interface com o usuário
 	*/
 	
 	private Gerente gerente;
@@ -35,28 +34,28 @@ public class NegocioGerente {
 		}	
 	}
 	
-	public void compraVocalista(Gerente gerente) {
-		Loja.comprarVocalista(gerente);
+	public String compraVocalista(Gerente gerente, int categoria, int posicao) {
+		return Loja.comprarVocalista(gerente, categoria, posicao);
 		
 	}
 	
-	public void compraGuitarrista(Gerente gerente) {
-		Loja.comprarGuitarrista(gerente);
+	public String compraGuitarrista(Gerente gerente, int categoria, int posicao) {
+		return Loja.comprarGuitarrista(gerente, categoria, posicao);
 		
 	}
 	
-	public void compraTecladista(Gerente gerente) {
-		Loja.comprarTecladista(gerente);
+	public String compraTecladista(Gerente gerente, int categoria, int posicao) {
+		return Loja.comprarTecladista(gerente, categoria, posicao);
 		
 	}
 	
-	public void compraBaixista(Gerente gerente) {
-		Loja.comprarBaixista(gerente);
+	public String compraBaixista(Gerente gerente, int categoria, int posicao) {
+		return Loja.comprarBaixista(gerente, categoria, posicao);
 		
 	}
 	
-	public void compraBaterista(Gerente gerente) {
-		Loja.comprarBaterista(gerente);
+	public String compraBaterista(Gerente gerente, int categoria, int posicao) {
+		return Loja.comprarBaterista(gerente, categoria, posicao);
 		
 	}
 	

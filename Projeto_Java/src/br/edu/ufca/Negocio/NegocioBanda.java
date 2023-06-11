@@ -73,8 +73,7 @@ public class NegocioBanda {
 	
 	public Banda geraBanda(ArrayList<String> nomes,String nome_banda) {
 		if(repositorio.vazio() == true){
-			// throw new RepositorioVazioException
-			return repositorio.geraBanda(nomes,nome_banda); // isso deve sair daqui depois de implementar exceções
+			return repositorio.geraBanda(nomes,nome_banda); 
 		}else {
 			return repositorio.geraBanda(nomes,nome_banda);
 		}
@@ -82,8 +81,7 @@ public class NegocioBanda {
 	
 	public String consultaNome(int indice) {
 		if(repositorio.vazio() == true) {
-			// throw new RepositorioVazioException
-			return repositorio.consultaNome(indice); // isso deve sair daqui depois de implementar exceções
+			return repositorio.consultaNome(indice); 
 		} else {
 			return repositorio.consultaNome(indice);
 		}
